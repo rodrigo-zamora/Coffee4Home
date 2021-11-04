@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/shopping_cart.css">
+</head>
+<body>
+    <style>
+        .item {
+            width: 145px;
+            height: 145px;
+            padding: 0px 10px;
+        }
+        .media {
+            display: flex;
+            border-radius: 3px;
+            align-items: center;
+            background-color: #fff;
+            padding: 10px 0px 10px 20px;
+            border: 1px solid rgba(0,0,0,.125);
+            transition: border .5s ease-in-out;
+        }
+        .media:hover {
+            border: 1px solid black;
+        }
+        .pagos > .btn {
+            width: 100%;
+        }
+        .btn-outline-success {
+            height: 45px;
+        }
+        .btn-outline-danger {
+            height: 30px;
+            display: flex;
+            font-size: 12px;
+            margin-top: 10px;
+            align-items: center;
+            justify-content: center;
+        }
+        .resumen {
+            display: flex;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            justify-content: center;
+        }
+        .trash {
+            margin-left: 7px;
+            margin-top: -15px;
+            border-radius: 0 3px 3px 0;
+        }
+        .pen {
+            margin-left: -3px;
+            border-radius: 0 3px 3px 0;
+            border-color: rgb(0, 0, 0, .125);
+            background-color: rgb(13, 205, 223, 0.8);
+        }
+        .pen:hover {
+            background-color: rgb(13, 205, 223, 1);
+        }
+        .fa-pen {
+            color: #fff;
+        }
+        .input-price, .input-quantity {
+            width: 75%;
+        }
+        .input-group-text, .form-control{
+            margin-left: -3px;
+        }
+        .total {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .producto {
+            font-size: 20px;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .controls, .btn-center {
+            display: flex;
+            justify-content: center;
+        }
+        .control {
+            display: flex;
+            justify-content: flex-end;
+        }
+        .btn-success {
+            width: 360px;
+        }
+        .fas {
+            margin-left: 0px;
+        }
+        .input-group-prepend {
+            margin-left: -1px;
+        }
+        .input-group-text {
+            border-radius: 0 3px 3px 0 !important;
+        }
+    </style>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand nav-item nav-link" active href="/practica1_Bootstrap/home.html">DASW</a>
+
+        <div class="flex-grow-1">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control col-sm-9 col-lg-10" type="text" placeholder="Encuentra de todo, empieza a buscar">
+                <button class="btn btn-outline-light col-sm-3 col-lg-2" type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mr-2" href="#" id="dropdownId" data-toggle="dropdown">
+                        Mi cuenta
+                    </a>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ingresar">Ingresar</a>
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#registrar">Registrar</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/practica1_Bootstrap/shopping_cart.html">Mis pedidos</a>
+                    </div>
+                </li>
+                <li>
+                    <a class="nav-item">
+                        <a class="nav-link" href="/practica1_Bootstrap/shopping_cart.html">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            <span class="badge badge-dark">2</span>
+                        </a>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="resumen container">
+        <h2>
+            Resumen de la compra
+        </h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="cards container col-md-8 col-12">
+                <div class="media">
+
+                    <div class="media-body">
+                        <div class="d-flex align-items-center ml-2">
+                            <p class="producto mt-0">Robot</p>
+                            <button type="button" class="trash btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="input-quantity input-group mb-3">
+                            <span class="input-group-text">Cantidad:</span>
+                            <input type="number" class="chiquito form-control" min="1" max="5" value="1" id="quantity">
+                            <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
+                        </div>
+                        
+                        <div class="input-price input-group">
+                            <span class="input-group-text">precio:</span>
+                            <input type="text" class="form-control " value="130.50">
+                            <span class="input-group-text">$ m.n.</span>
+                        </div>
+                    </div>
+                    <div class="media-right">
+                        <img class="item" src="https://images.freeimages.com/images/large-previews/884/blue-robot-1460213.jpg" alt="Generic placeholder image">
+                    </div>
+                </div>
+
+                <div class="media">
+
+                    <div class="media-body">
+                        <div class="d-flex align-items-center ml-2">
+                            <p class="producto mt-0">Sonaja para bebé</p>
+                            <button type="button" class="trash btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                        </div>
+                        <div class="input-quantity input-group mb-3">
+                            <span class="input-group-text">Cantidad:</span>
+                            <input type="number" class="chiquito form-control" min="1" max="5" value="2" id="quantity">
+                            <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
+                        </div>
+                        
+                        <div class="input-price input-group">
+                            <span class="input-group-text">precio:</span>
+                            <input type="text" class="form-control " value="120.00">
+                            <span class="input-group-text">$ m.n.</span>
+                        </div>
+                    </div>
+                    <div class="media-right">
+                        <img class="item" src="https://images.freeimages.com/images/large-previews/ec8/toys-11-1258527.jpg" alt="Generic placeholder image">
+                    </div>
+                </div>
+            </div>
+            <div class="container col-md-4 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">Total de compra</h4>
+                        <div class="dropdown-divider"></div>
+                        <p class="card-text">Robot: 1 x $130.50</p>
+                        <p class="card-text">Sonaja: 2 x $60.00</p>
+                        <p class="card-text">Costo de envío: $40.00</p>
+                        <div class="dropdown-divider"></div>
+                        <div class="total">
+                            <b>Total a pagar: $290.50</b>
+                        </div>
+                        <div class="pagos">
+                            <button class="btn btn-outline-success">Pagar</button>
+                            <button class="btn btn-outline-danger">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal -->
+<div class="modal fade" id="ingresar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Ingresar</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="form-group">
+                        <label for="">Correo</label>
+                        <div class="input-group mb-3">
+                            <input type="text" class="col-10 form-control" name="" id="" aria-describedby="helpId" placeholder="Ingresa tu correo">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><i class="fas fa-user    "></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-group mb-3">
+                            <input type="password" class="col-10 form-control" name="" id="" aria-describedby="helpId" placeholder="Ingresa tu contraseña">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2"><i class="fas fa-key    "></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="controls">
+                            <button type="button" class="login-button btn btn-success" data-dismiss="modal">Login</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="dropdown-divider"></div>
+                        <div class="col-md-12 control">
+                            <div>
+                                No tienes cuenta!
+                                <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registro">
+                                    Registrate aquí
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Registrar usuario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="text" name="" id="" class="form-control" placeholder="Nombre(s)" aria-describedby="helpId" required>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" name="" id="" class="form-control" placeholder="Apellidos" aria-describedby="helpId" required>
+                        </div>
+                    </div>
+                    <input type="mail" name="" id="" class="form-control mt-3" placeholder="Tu correo" aria-describedby="helpId" required>
+                    <input type="password" name="" id="" class="form-control mt-3" placeholder="Contraseña" aria-describedby="helpId" required>
+                    <input type="password" name="" id="" class="form-control mt-3" placeholder="Confirmar contraseña" aria-describedby="helpId" required>                        
+                    <div class="btn-center">
+                        <button type="submit" class="btn btn-success mt-3">Registrarse</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+<!--MEDIA OBJECT bootstrap -->
