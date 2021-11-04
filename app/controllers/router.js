@@ -4,12 +4,14 @@ const express = require('express');
 const router = express.Router();
 const userRouter = require('../routes/user');
 const adminProductRouter = require('../routes/admin_user');
+const productRouter = require('../routes/products');
 
 router.get('/', (req, res) => {
     res.redirect('/home')
 });
 
-router.use('/user', productRouter);
+router.use('/user', userRouter);
+router.use('/products', productRouter);
 router.use('/admin/user', validateAdmin, adminProductRouter);
 
 function validateAdmin(req, res, next) {
