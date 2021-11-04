@@ -1,0 +1,51 @@
+.card {
+    padding: 10px;
+    max-width: 220px;
+    border: 1px solid rgba(0,0,0,.125);
+    transition: border .5s ease-in-out;
+}
+.card:hover {
+    border: 1px solid black;
+}
+.card-img-top {
+    height: 200px;
+    max-height: 200px;
+    max-width: 200px;
+}
+.carousel-item {
+    max-height: 400px;
+}
+.large-image {
+    height: 300px;
+    width: 100% !important;
+}
+.carousel-inner {
+    margin-bottom: 50px;
+}
+.row:last-child {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.precio {
+    bottom: 0px;
+}
+.controls, .btn-center, .row, .Page.navigation {
+    display: flex;
+    justify-content: center;
+}
+.control {
+    display: flex;
+    justify-content: flex-end;
+}
+.fas {
+    margin-left: 0px;
+}
+.input-group-prepend {
+    margin-left: -1px;
+}
+.input-group-text {
+    border-radius: 0 3px 3px 0 !important;
+}
+.btn-success {
+    width: 360px;
+}

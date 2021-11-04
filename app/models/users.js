@@ -80,29 +80,3 @@ User.findByIdAndUpdate('234567896gdfgsfcxzc6576', {'firstName': 'Lupito'}, (err,
 // Eliminar documentos
 
 User.findOneAndDelete({'firstName': 'Juan'}, (err, docs) => {console.log(docs)});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -54,6 +54,7 @@ function isUserValid(firstName, lastName, email) {
     return true;
 }
 */
+
 exports.getUsers = getUsers;
 exports.getUserByEmail = getUserByEmail;
 exports.createUser = createUser;
