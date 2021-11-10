@@ -1,33 +1,64 @@
-.card {
-    padding: 10px;
-    max-width: 220px;
-    border: 1px solid rgba(0,0,0,.125);
-    transition: border .5s ease-in-out;
+
+body{
+    font-family: "Patrick Hand", sans-serif;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;	
 }
-.card:hover {
-    border: 1px solid black;
-}
-.card-img-top {
-    height: 200px;
-    max-height: 200px;
-    max-width: 200px;
-}
+/* card */
+    .card {
+        padding: 1px;
+        max-width: 300px;
+        border: 1px solid rgba(0,0,0,.125);
+        transition: border .5s ease-in-out;
+        border-radius: .25rem;
+        box-shadow: 0 0.5rem 1rem rgba(0,0,0,.15);
+        margin: 10px;
+        font-family: "Patrick Hand", sans-serif;
+        font-size: 1.5rem;
+    }
+    .card:hover {
+        border: 1px solid black;
+    }
+    .card-body {
+        padding: .5rem;
+    }
+    .card-title {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+    .card-img-top {
+        height: 200px;
+        max-height: 200px;
+        max-width: 250px;
+    }
+    #mainList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+        background-color: #f5f5f5;
+    }
+
+
 .carousel-item {
     max-height: 400px;
-}
-.large-image {
-    height: 300px;
-    width: 100% !important;
 }
 .carousel-inner {
     margin-bottom: 50px;
 }
+
+.large-image {
+    height: 300px;
+    width: 100% !important;
+}
+
 .precio {
     bottom: 0px;
 }
 .controls, .btn-center, .row, .Page.navigation {
     display: flex;
     justify-content: center;
+    margin: 50px;
 }
 .control {
     display: flex;
@@ -103,9 +134,6 @@
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
-}
-body {
-    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;	
 }
 
 /* Footer */
