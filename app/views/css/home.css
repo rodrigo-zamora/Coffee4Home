@@ -1,4 +1,3 @@
-
 body{
     font-family: "Patrick Hand", sans-serif;
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;	
@@ -29,6 +28,7 @@ body{
         height: 200px;
         max-height: 200px;
         max-width: 250px;
+        padding-top: 5px;
     }
     #mainList {
         display: flex;
@@ -197,4 +197,8 @@ ul, ol {
     opacity: 0;
     visibility: hidden;
     transition: .22s ease;
+}
+.card-title {
+    display: flex;
+    justify-content: center;
 }
