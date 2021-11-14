@@ -6,6 +6,7 @@ body {
 /* card */
 .card {
     padding: 1px;
+    width: 220px;
     max-width: 300px;
     border: 1px solid rgba(0, 0, 0, .125);
     transition: border .5s ease-in-out;
@@ -17,8 +18,10 @@ body {
 }
 
 .card-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
     background-color: burlywood;
-    padding-left: 10px;
     border-radius:10px 10px 10px 10px;
 }
 .form-check-input {
@@ -75,7 +78,6 @@ body {
 
 .controls,
 .btn-center,
-.row,
 .Page.navigation {
     display: flex;
     justify-content: center;
@@ -205,10 +207,6 @@ body {
     visibility: visible;
 }
 
-.row:last-child {
-    margin-top: 50px;
-}
-
 ul,
 ol {
     list-style: none;
@@ -263,4 +261,23 @@ ol {
     font-family: patrick hand;
     color: #000
     
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.items {
+    margin-bottom: 50px;
+}
+
+.row-30 {
+    margin-top: 50px;
+}
+.prepare {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
