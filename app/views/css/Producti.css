@@ -4,16 +4,19 @@ body {
 }
 
 /* card */
+
 .card {
     padding: 1px;
     width: 220px;
-    max-width: 300px;
+    max-width: 350px;
     border: 1px solid rgba(0, 0, 0, .125);
     transition: border .5s ease-in-out;
     border-radius: .25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
     font-family: "Patrick Hand", sans-serif;
     font-size: 1.5rem;
+    margin:10px;
+    margin-bottom: 10px;
 }
 
 .card-title{
@@ -22,6 +25,7 @@ body {
     text-align: center;
     background-color: burlywood;
     border-radius:10px 10px 10px 10px;
+    height: max-content;
 }
 .form-check-input {
     position: absolute;
@@ -37,10 +41,7 @@ body {
 .card-body {
     margin: 1.25rem;
 }
-#datos{
-    border: black solid 1px;
-    border-radius: 10px;
-}
+
 .scroll{
     border:black;
 }
@@ -72,9 +73,15 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    border-color:#000 !important;
+    border:double;
 }
 
-
+.coffeeStockContainer{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border:currentColor;
+}
 .carousel-item {
     max-height: 400px;
 }
