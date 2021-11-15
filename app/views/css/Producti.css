@@ -11,7 +11,6 @@ body {
     transition: border .5s ease-in-out;
     border-radius: .25rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
-    margin: 10px;
     font-family: "Patrick Hand", sans-serif;
     font-size: 1.5rem;
 }
@@ -33,7 +32,24 @@ body {
 }
 
 .card-body {
-    padding: .5rem;
+    margin: 1.25rem;
+}
+#datos{
+    border: black solid 1px;
+    border-radius: 10px;
+}
+.scroll{
+    border:black;
+}
+#info{
+    padding: 1px;
+
+    border: 1px solid rgba(0, 0, 0, .125);
+    transition: border .5s ease-in-out;
+    border-radius: .25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 1.5rem;
 }
 
 .card-title {
