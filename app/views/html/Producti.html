@@ -192,10 +192,8 @@
         </a>
     </div>
 
-
-
-
-    <div class="items container col-6" id="mainList">
+    <!-- Select type coffee -->
+    <div class="items container " id="mainList">
         <div class="title">
             <div class="flex-grow-1">
                 <form class="form-inline my-2 my-lg-0">
@@ -204,279 +202,320 @@
                     <!--<button class="btn btn-outline-light col-sm-3 col-lg-2" type="submit">Search</button>-->
                 </form>
             </div>
-            <div class="row">
-                <!-- Products Search bar -->
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tipo de Café</h5>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <input class="form-check-input" type="radio" name="flexRadioTC"
-                                                id="Café-capsulas">
-                                            <label class="form-check-label" for="Café-capsulas">
-                                                Café en capsulas
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioTC"
-                                                id="Cafe-grano">
-                                            <label class="form-check-label" for="Cafe-grano">
-                                                Café en grano
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioTC"
-                                                id="Cafe-instantaneo" checked>
-                                            <label class="form-check-label" for="Cafe-instantaneo">
-                                                Café instantaneo
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioTC"
-                                                id="Cafe-molido">
-                                            <label class="form-check-label" for="Cafe-molido">
-                                                Café molido
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
+            <br>
 
-                            <td rowspan="3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Café local</h5>
-
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <input class="form-check-input" type="radio" name="Ubicación" id="Chiapas">
-                                            <label class="form-check-label" for="Chiapas">
-                                                Chiapas
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Colima">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Colima
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero"
-                                                checked>
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Guerrero
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco">
-                                            <label class="form-check-label" for="Jalisco">
-                                                Jalisco
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo"
-                                                checked>
-                                            <label class="form-check-label" for="Hidalgo">
-                                                Hidalgo
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit"
-                                                checked>
-                                            <label class="form-check-label" for="Nayarit">
-                                                Nayarit
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca"
-                                                checked>
-                                            <label class="form-check-label" for="Oaxaca">
-                                                Oaxaca
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla"
-                                                checked>
-                                            <label class="form-check-label" for="Puebla">
-                                                Puebla
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion"
-                                                id="San-luis-potosi" checked>
-                                            <label class="form-check-label" for="San-luis-potosi">
-                                                San luis potosí
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td rowspan="3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Café Internacional</h5>
-
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Brasil">
-                                            <label class="form-check-label" for="Brasil">
-                                                Brasil
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Colombia">
-                                            <label class="form-check-label" for="Colombia">
-                                                Colombia
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion"
-                                                id="Estados-Unidos" checked>
-                                            <label class="form-check-label" for="Estados-Unidos">
-                                                Estados unidos
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Etiopia">
-                                            <label class="form-check-label" for="Etiopia">
-                                                Etiopia
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Hawai"
-                                                checked>
-                                            <label class="form-check-label" for="Hawai">
-                                                Hawai
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Honduras">
-                                            <label class="form-check-label" for="Honduras">
-                                                Honduras
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="India"
-                                                checked>
-                                            <label class="form-check-label" for="India">
-                                                India
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Italia">
-                                            <label class="form-check-label" for="Italia">
-                                                Italia
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Indonesia"
-                                                checked>
-                                            <label class="form-check-label" for="Indonesia">
-                                                Indonesia
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Jamaica">
-                                            <label class="form-check-label" for="Jamaica">
-                                                Jamaica
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Kenia"
-                                                checked>
-                                            <label class="form-check-label" for="Kenia">
-                                                Kenia
-                                            </label>
-                                        </div>
-
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="Ubicacion" id="Tanzania">
-                                            <label class="form-check-label" for="Tanzania">
-                                                Tanzania
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Tipo de Grano </h5>
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                            <input class="form-check-input" type="radio" name="flexRadioTG"
-                                                id="arabico">
-                                            <label class="form-check-label" for="arabico">
-                                                arabico
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioTG" id="mixta">
-                                            <label class="form-check-label" for="mixta">
-                                                mixta
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioTG" id="robusta"
-                                                checked>
-                                            <label class="form-check-label" for="robusta">
-                                                robusta
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+        <div class="row prepare">
+            <div class="column">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tipo de Café</h5>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="exampleCheck1">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Café-capsulas">
+                            <label class="form-check-label" for="Café-capsulas">
+                                Café en capsulas
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-grano">
+                            <label class="form-check-label" for="Cafe-grano">
+                                Café en grano
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-instantaneo" checked>
+                            <label class="form-check-label" for="Cafe-instantaneo">
+                                Café instantaneo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-molido">
+                            <label class="form-check-label" for="Cafe-molido">
+                                Café molido
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tipo de Grano </h5>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="arabico">
+                            <label class="form-check-label" for="arabico">
+                                Arabico
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="mixta">
+                            <label class="form-check-label" for="mixta">
+                                Mixta
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="robusta" checked>
+                            <label class="form-check-label" for="robusta">
+                                Robusta
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Café local</h5>
 
-            <div data-spy="scroll" data-target="#navbar-example3" data-offset="0">
-                <h4 id="item-1">Item 1</h4>
-                <p>...</p>
-                <h5 id="item-1-1">Item 1-1</h5>
-                <p>...</p>
-                <h5 id="item-1-2">Item 2-2</h5>
-                <p>...</p>
-                <h4 id="item-2">Item 2</h4>
-                <p>...</p>
-                <h4 id="item-3">Item 3</h4>
-                <p>...</p>
-                <h5 id="item-3-1">Item 3-1</h5>
-                <p>...</p>
-                <h5 id="item-3-2">Item 3-2</h5>
-                <p>...</p>
-              </div>
-              
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Chiapas">
+                        <label class="form-check-label" for="Chiapas">
+                            Chiapas
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colima">
+                        <label class="form-check-label" for="Colima">
+                            Colima
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero">
+                        <label class="form-check-label" for="Guerrero">
+                            Guerrero
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco" checked>
+                        <label class="form-check-label" for="Jalisco">
+                            Jalisco
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo">
+                        <label class="form-check-label" for="Hidalgo">
+                            Hidalgo
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit">
+                        <label class="form-check-label" for="Nayarit">
+                            Nayarit
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca">
+                        <label class="form-check-label" for="Oaxaca">
+                            Oaxaca
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla">
+                        <label class="form-check-label" for="Puebla">
+                            Puebla
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="San-luis-potosi">
+                        <label class="form-check-label" for="San-luis-potosi">
+                            San luis potosí
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Café Internacional</h5>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Brasil">
+                        <label class="form-check-label" for="Brasil">
+                            Brasil
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colombia">
+                        <label class="form-check-label" for="Colombia">
+                            Colombia
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Estados-Unidos">
+                        <label class="form-check-label" for="Estados-Unidos">
+                            Estados unidos
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Etiopia">
+                        <label class="form-check-label" for="Etiopia">
+                            Etiopia
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hawai">
+                        <label class="form-check-label" for="Hawai">
+                            Hawai
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Honduras">
+                        <label class="form-check-label" for="Honduras">
+                            Honduras
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="India">
+                        <label class="form-check-label" for="India">
+                            India
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Italia">
+                        <label class="form-check-label" for="Italia">
+                            Italia
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Indonesia">
+                        <label class="form-check-label" for="Indonesia">
+                            Indonesia
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jamaica">
+                        <label class="form-check-label" for="Jamaica">
+                            Jamaica
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Kenia">
+                        <label class="form-check-label" for="Kenia">
+                            Kenia
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Tanzania">
+                        <label class="form-check-label" for="Tanzania">
+                            Tanzania
+                        </label>
+                    </div>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Preparación</h5>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="Expresso">
+                        <label class="form-check-label" for="Expresso">
+                            Expresso
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="Filtrar">
+                        <label class="form-check-label" for="Filtrar">
+                            Filtrar
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="Goteo">
+                        <label class="form-check-label" for="Goteo">
+                            Goteo
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="GotearVerter">
+                        <label class="form-check-label" for="GotearVerter">
+                            Gotear y verter
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="PrensaFrancesa">
+                        <label class="form-check-label" for="PrensaFrancesa">
+                            Prensa Francesa
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="PrensaGoteo">
+                        <label class="form-check-label" for="PrensaGoteo">
+                            Prensa de goteo
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="PreparacionPresion">
+                        <label class="form-check-label" for="PreparacionPresion">
+                            Preparación a presión
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="Preparation" id="VerterFiltrar">
+                        <label class="form-check-label" for="VerterFiltrar">
+                            Verter y filtrar
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
-
+    <!-- Coffee stock -->
+    <div class="container coffeeStockContainer">
+        <div class="row rowProducts">
+            <div class="productContainer">
+                <div class="coffeeImg">
+                    <img class="productImg" src="../../Resources/Cofee Items/peetsCoffee.jpg" alt="Peet's Coffee">
+                </div>
+                <div class="coffeeIntormation">
+                    <h4>Peet's Coffee</h4>
+                    <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
+                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                    <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
+                    <p class="productText"><b>Tipo:</b> Mezcla.</p>
+                    <p class="productText"><b>Sabor:</b> Fuerte.</p>
+                    <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
+                </div>
+            </div>
+            <div class="productContainer">
+                <div class="coffeeImg">
+                    <img class="productImg" src="../../Resources/Cofee Items/KenyaAA.jpeg" alt="Peet's Coffee">
+                </div>
+                <div class="coffeeIntormation">
+                    <h4>Kenya AA</h4>
+                    <p class="productText"><b>Marca:</b> Java House Africa.</p>
+                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                    <p class="productText"><b>Origen:</b> Kenya.</p>
+                    <p class="productText"><b>Tipo:</b> Origen único.</p>
+                    <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
+                    <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!--FOOTER-->
