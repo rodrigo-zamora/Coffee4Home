@@ -20,8 +20,9 @@
 <body>
     <!--Navigation header-->
     <nav class="navbar navbar-expand-sm navbar-dark">
-        <img class="logo" src="/app/Resources/logo.png" href="/app/views/html/shopping_cart.html" alt="Logo">
-
+        <a href="./home.html">
+        <img class="logo" src="/app/Resources/logo.png" alt="Logo">
+        </a>
         <div class="flex-grow-1">
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control" type="text" placeholder="Search coffee...">
@@ -205,388 +206,394 @@
             </div>
             <br>
 
-        <div class="row prepare">
-            <div class="column">
+            <div class="row prepare">
+                <div class="column">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tipo de Café</h5>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" id="exampleCheck1">
+                                <input class="form-check-input" type="radio" name="flexRadioTC" id="Café-capsulas">
+                                <label class="form-check-label" for="Café-capsulas">
+                                    Café en capsulas
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-grano">
+                                <label class="form-check-label" for="Cafe-grano">
+                                    Café en grano
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-instantaneo"
+                                    checked>
+                                <label class="form-check-label" for="Cafe-instantaneo">
+                                    Café instantaneo
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-molido">
+                                <label class="form-check-label" for="Cafe-molido">
+                                    Café molido
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Tipo de Grano </h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioTG" id="arabico">
+                                <label class="form-check-label" for="arabico">
+                                    Arabico
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioTG" id="mixta">
+                                <label class="form-check-label" for="mixta">
+                                    Mixta
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="flexRadioTG" id="robusta" checked>
+                                <label class="form-check-label" for="robusta">
+                                    Robusta
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Tipo de Café</h5>
+                        <h5 class="card-title">Café local</h5>
+
                         <div class="form-check">
-                            <input type="radio" class="form-check-input" id="exampleCheck1">
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Café-capsulas">
-                            <label class="form-check-label" for="Café-capsulas">
-                                Café en capsulas
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Chiapas">
+                            <label class="form-check-label" for="Chiapas">
+                                Chiapas
                             </label>
                         </div>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-grano">
-                            <label class="form-check-label" for="Cafe-grano">
-                                Café en grano
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Colima">
+                            <label class="form-check-label" for="Colima">
+                                Colima
                             </label>
                         </div>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-instantaneo" checked>
-                            <label class="form-check-label" for="Cafe-instantaneo">
-                                Café instantaneo
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero">
+                            <label class="form-check-label" for="Guerrero">
+                                Guerrero
                             </label>
                         </div>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-molido">
-                            <label class="form-check-label" for="Cafe-molido">
-                                Café molido
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco" checked>
+                            <label class="form-check-label" for="Jalisco">
+                                Jalisco
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo">
+                            <label class="form-check-label" for="Hidalgo">
+                                Hidalgo
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit">
+                            <label class="form-check-label" for="Nayarit">
+                                Nayarit
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca">
+                            <label class="form-check-label" for="Oaxaca">
+                                Oaxaca
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla">
+                            <label class="form-check-label" for="Puebla">
+                                Puebla
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="San-luis-potosi">
+                            <label class="form-check-label" for="San-luis-potosi">
+                                San luis potosí
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Tipo de Grano </h5>
+                        <h5 class="card-title">Café Internacional</h5>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="arabico">
-                            <label class="form-check-label" for="arabico">
-                                Arabico
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Brasil">
+                            <label class="form-check-label" for="Brasil">
+                                Brasil
                             </label>
                         </div>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="mixta">
-                            <label class="form-check-label" for="mixta">
-                                Mixta
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Colombia">
+                            <label class="form-check-label" for="Colombia">
+                                Colombia
                             </label>
                         </div>
+
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="robusta" checked>
-                            <label class="form-check-label" for="robusta">
-                                Robusta
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Estados-Unidos">
+                            <label class="form-check-label" for="Estados-Unidos">
+                                Estados unidos
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Etiopia">
+                            <label class="form-check-label" for="Etiopia">
+                                Etiopia
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Hawai">
+                            <label class="form-check-label" for="Hawai">
+                                Hawai
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Honduras">
+                            <label class="form-check-label" for="Honduras">
+                                Honduras
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="India">
+                            <label class="form-check-label" for="India">
+                                India
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Italia">
+                            <label class="form-check-label" for="Italia">
+                                Italia
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Indonesia">
+                            <label class="form-check-label" for="Indonesia">
+                                Indonesia
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Jamaica">
+                            <label class="form-check-label" for="Jamaica">
+                                Jamaica
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Kenia">
+                            <label class="form-check-label" for="Kenia">
+                                Kenia
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Ubicacion" id="Tanzania">
+                            <label class="form-check-label" for="Tanzania">
+                                Tanzania
+                            </label>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Preparación</h5>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="Expresso">
+                            <label class="form-check-label" for="Expresso">
+                                Expresso
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="Filtrar">
+                            <label class="form-check-label" for="Filtrar">
+                                Filtrar
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="Goteo">
+                            <label class="form-check-label" for="Goteo">
+                                Goteo
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="GotearVerter">
+                            <label class="form-check-label" for="GotearVerter">
+                                Gotear y verter
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="PrensaFrancesa">
+                            <label class="form-check-label" for="PrensaFrancesa">
+                                Prensa Francesa
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="PrensaGoteo">
+                            <label class="form-check-label" for="PrensaGoteo">
+                                Prensa de goteo
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="PreparacionPresion">
+                            <label class="form-check-label" for="PreparacionPresion">
+                                Preparación a presión
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Preparation" id="VerterFiltrar">
+                            <label class="form-check-label" for="VerterFiltrar">
+                                Verter y filtrar
                             </label>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Café local</h5>
 
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Chiapas">
-                        <label class="form-check-label" for="Chiapas">
-                            Chiapas
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colima">
-                        <label class="form-check-label" for="Colima">
-                            Colima
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero">
-                        <label class="form-check-label" for="Guerrero">
-                            Guerrero
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco" checked>
-                        <label class="form-check-label" for="Jalisco">
-                            Jalisco
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo">
-                        <label class="form-check-label" for="Hidalgo">
-                            Hidalgo
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit">
-                        <label class="form-check-label" for="Nayarit">
-                            Nayarit
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca">
-                        <label class="form-check-label" for="Oaxaca">
-                            Oaxaca
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla">
-                        <label class="form-check-label" for="Puebla">
-                            Puebla
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="San-luis-potosi">
-                        <label class="form-check-label" for="San-luis-potosi">
-                            San luis potosí
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Café Internacional</h5>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Brasil">
-                        <label class="form-check-label" for="Brasil">
-                            Brasil
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colombia">
-                        <label class="form-check-label" for="Colombia">
-                            Colombia
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Estados-Unidos">
-                        <label class="form-check-label" for="Estados-Unidos">
-                            Estados unidos
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Etiopia">
-                        <label class="form-check-label" for="Etiopia">
-                            Etiopia
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hawai">
-                        <label class="form-check-label" for="Hawai">
-                            Hawai
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Honduras">
-                        <label class="form-check-label" for="Honduras">
-                            Honduras
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="India">
-                        <label class="form-check-label" for="India">
-                            India
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Italia">
-                        <label class="form-check-label" for="Italia">
-                            Italia
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Indonesia">
-                        <label class="form-check-label" for="Indonesia">
-                            Indonesia
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jamaica">
-                        <label class="form-check-label" for="Jamaica">
-                            Jamaica
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Kenia">
-                        <label class="form-check-label" for="Kenia">
-                            Kenia
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Tanzania">
-                        <label class="form-check-label" for="Tanzania">
-                            Tanzania
-                        </label>
-                    </div>
-
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Preparación</h5>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="Expresso">
-                        <label class="form-check-label" for="Expresso">
-                            Expresso
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="Filtrar">
-                        <label class="form-check-label" for="Filtrar">
-                            Filtrar
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="Goteo">
-                        <label class="form-check-label" for="Goteo">
-                            Goteo
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="GotearVerter">
-                        <label class="form-check-label" for="GotearVerter">
-                            Gotear y verter
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="PrensaFrancesa">
-                        <label class="form-check-label" for="PrensaFrancesa">
-                            Prensa Francesa
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="PrensaGoteo">
-                        <label class="form-check-label" for="PrensaGoteo">
-                            Prensa de goteo
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="PreparacionPresion">
-                        <label class="form-check-label" for="PreparacionPresion">
-                            Preparación a presión
-                        </label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="VerterFiltrar">
-                        <label class="form-check-label" for="VerterFiltrar">
-                            Verter y filtrar
-                        </label>
+            <!-- Coffee stock -->
+            <div class="container coffeeStockContainer">
+                <div class="row rowProducts">
+                    <a href="./ItemDesc.html">
+                        <div class="productContainer">
+                            <div class="coffeeImg">
+                                <img class="productImg" src="../../Resources/Cofee Items/peetsCoffee.jpg"
+                                    alt="Peet's Coffee">
+                            </div>
+                            <div class="coffeeIntormation">
+                                <h4>Peet's Coffee</h4>
+                                <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
+                                <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                                <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                                <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).
+                                </p>
+                                <p class="productText"><b>Tipo:</b> Mezcla.</p>
+                                <p class="productText"><b>Sabor:</b> Fuerte.</p>
+                                <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="productContainer">
+                        <div class="coffeeImg">
+                            <img class="productImg" src="../../Resources/Cofee Items/KenyaAA.jpeg" alt="Peet's Coffee">
+                        </div>
+                        <div class="coffeeIntormation">
+                            <h4>Kenya AA</h4>
+                            <p class="productText"><b>Marca:</b> Java House Africa.</p>
+                            <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                            <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                            <p class="productText"><b>Origen:</b> Kenya.</p>
+                            <p class="productText"><b>Tipo:</b> Origen único.</p>
+                            <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
+                            <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-         <!-- Coffee stock -->
-    <div class="container coffeeStockContainer">
-        <div class="row rowProducts">
-            <div class="productContainer">
-                <div class="coffeeImg">
-                    <img class="productImg" src="../../Resources/Cofee Items/peetsCoffee.jpg" alt="Peet's Coffee">
-                </div>
-                <div class="coffeeIntormation">
-                    <h4>Peet's Coffee</h4>
-                    <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
-                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                    <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
-                    <p class="productText"><b>Tipo:</b> Mezcla.</p>
-                    <p class="productText"><b>Sabor:</b> Fuerte.</p>
-                    <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="coffeeImg">
-                    <img class="productImg" src="../../Resources/Cofee Items/KenyaAA.jpeg" alt="Peet's Coffee">
-                </div>
-                <div class="coffeeIntormation">
-                    <h4>Kenya AA</h4>
-                    <p class="productText"><b>Marca:</b> Java House Africa.</p>
-                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                    <p class="productText"><b>Origen:</b> Kenya.</p>
-                    <p class="productText"><b>Tipo:</b> Origen único.</p>
-                    <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
-                    <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-   
 
 
-    <!--FOOTER-->
-    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
-        <div class="container">
-            <div class="row row-30">
-                <div class="col-md-4 col-xl-5">
-                    <div class="pr-xl-4"><a class="brand" href="index.html"></a>
-                        <p>We are an award-winning creative agency, dedicated to the best result in web design,
-                            promotion, business consulting, and marketing.</p>
-                        <!-- Rights-->
-                        <p class="rights"><span>©  </span><span class="copyright-year">2021</span>
-                            <span> </span><span>Company</span><span>
-                                - </span><span>All Rights Reserved.</span></p>
+
+        <!--FOOTER-->
+        <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+            <div class="container">
+                <div class="row row-30">
+                    <div class="col-md-4 col-xl-5">
+                        <div class="pr-xl-4"><a class="brand" href="index.html"></a>
+                            <p>We are an award-winning creative agency, dedicated to the best result in web design,
+                                promotion, business consulting, and marketing.</p>
+                            <!-- Rights-->
+                            <p class="rights"><span>©  </span><span class="copyright-year">2021</span>
+                                <span> </span><span>Company</span><span>
+                                    - </span><span>All Rights Reserved.</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacts</h5>
+                        <dl class="contact-list">
+                            <dt>Address:</dt>
+                            <dd>Anillo Perif. Sur Manuel Gómez Morín 8585, Santa María Tequepexpan, 45604 San Pedro
+                                Tlaquepaque, Jal.</dd>
+                        </dl>
+                        <dl class="contact-list">
+                            <dt>email:</dt>
+                            <dd><a href="mailto:#">coffee4home@gmail.com</a></dd>
+                        </dl>
+                        <dl class="contact-list">
+                            <dt>phones:</dt>
+                            <dd><a href="tel:#">+52 1 452 107 5541</a> <span>or</span> <a href="tel:#">+52 1 33 1242
+                                    1332</a>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-md-4 col-xl-3">
+                        <h5>Links</h5>
+                        <ul class="nav-list">
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Projects</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contacts</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contacts</h5>
-                    <dl class="contact-list">
-                        <dt>Address:</dt>
-                        <dd>Anillo Perif. Sur Manuel Gómez Morín 8585, Santa María Tequepexpan, 45604 San Pedro
-                            Tlaquepaque, Jal.</dd>
-                    </dl>
-                    <dl class="contact-list">
-                        <dt>email:</dt>
-                        <dd><a href="mailto:#">coffee4home@gmail.com</a></dd>
-                    </dl>
-                    <dl class="contact-list">
-                        <dt>phones:</dt>
-                        <dd><a href="tel:#">+52 1 452 107 5541</a> <span>or</span> <a href="tel:#">+52 1 33 1242
-                                1332</a>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="col-md-4 col-xl-3">
-                    <h5>Links</h5>
-                    <ul class="nav-list">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">Pricing</a></li>
-                    </ul>
-                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
 
 
 
-    <!-- Optional JavaScript -->
-    <script src="../../controllers/data_handler.js"></script>
-    <script src="../../controllers/products.js"></script>
-    <script src="../../controllers/shopping_cart.js"></script>
-    <script src="../../controllers/utils.js"></script>
-    <!--<script src="../../controllers/index.js"></script>-->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+        <!-- Optional JavaScript -->
+        <script src="../../controllers/data_handler.js"></script>
+        <script src="../../controllers/products.js"></script>
+        <script src="../../controllers/shopping_cart.js"></script>
+        <script src="../../controllers/utils.js"></script>
+        <!--<script src="../../controllers/index.js"></script>-->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
 </body>
 
 </html>
