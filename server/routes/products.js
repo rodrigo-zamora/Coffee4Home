@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const dataHandler = require('../controllers/data_handler');
+const dataHandler = require('../../server/controllers/data_handler');
 
 router.route('/')
     .get((req, res) => {

@@ -1,4 +1,4 @@
-const utils = require('./utils');
+const utils = require('../../server/controllers/utils');
 
 class ProductException {
     constructor(errorMessage) {

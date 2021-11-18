@@ -4,7 +4,16 @@ const express = require('express');
 const router = express.Router();
 const dataHandler = require('../controllers/data_handler');
 
-router.route('/:id')
+router.route('/')
+    .get((req, res) => {
+        dataHandler.getUsers(req, res);
+    })
+    .post((req, res) => {
+        dataHandler.createUser(req, res);
+    });
+
+
+router.route('/:uuid')
     .get((req, res) => {
         let query = req.params.id;
         let user = dataHandler.getUserByUUID(query);

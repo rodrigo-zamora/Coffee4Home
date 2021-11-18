@@ -1,56 +1,6 @@
 "use strict";
 
-const User = require('./users');
-const Product = require('./products');
-
-function getUsers(req, res) {
-    User.find({}).then(users => {
-        res.status(200).json(users);
-    });
-}
-
-function getUserByUUID(req, res) {
-    let uuid = req.params.uuid;
-    User.findOne({uuid: uuid}).then(user => {
-        res.status(200).json(user);
-    });
-}
-
-function createUser(user) {
-    let user = User(req.body);
-
-    user.save().then(user => {
-        res.set('Content-Type', 'text/plain; charset=utf-8');
-        res.send(`User ${user.firstName} was created!`);
-    });
-}
-
-function updateUser(UUID, updatedUser) {
-    let uuid = req.params.uuid;
-    let updatedUser = req.body;
-
-    for (let property in updatedUser) {
-        if (['firstName', 'lastName', 'password', 'email', 'imageURL'].includes(property)) continue;
-        delete updatedUser[property];
-    }
-
-    User.findOneAndUpdate({uuid: uuid}, updatedUser, {new: true}).then(user => {
-        res.type('text/plain; charset=utf-8');
-        res.send(`User ${user.firstName} was updated!`);
-    })
-}
-
-function deleteUser(uuid) {
-    let uuid = req.params.uuid;
-    User.findOneAndDelete({uuid: uuid}).then(user => {
-        res.type('text/plain; charset=utf-8');
-        res.send(`User ${user.firstName} was deleted!`);
-    });
-}
-
-function isUserValid(firstName, lastName, email) {
-    return (firstName && lastName && email);
-}
+const Product = require('../models/order');
 
 function getProduct(req, res) {
     Product.find({}).then(products => {
@@ -73,21 +23,6 @@ function createProduct(product) {
         res.send(`User ${product.title} was created!`);
     });
 }
-
-/*function updateProduct(UUID, updatedProduct) {
-    let uuid = req.params.uuid;
-    let updatedProduct = req.body;
-
-    for (let property in updatedProduct) {
-        if (['title', 'description', 'imageURL', 'pricePerUnit', 'category'].includes(property)) continue;
-        delete updatedProduct[property];
-    }
-
-    Product.findOneAndUpdate({uuid: uuid}, updatedProduct, {new: true}).then(product => {
-        res.type('text/plain; charset=utf-8');
-        res.send(`User ${product.title} was updated!`);
-    })
-}*/
 
 function deleteProduct(uuid) {
     let uuid = req.params.uuid;
@@ -137,4 +72,3 @@ function findProduct(query) {
     }
     return list;
 }
-

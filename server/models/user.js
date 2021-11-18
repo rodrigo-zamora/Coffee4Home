@@ -1,7 +1,11 @@
 // Conectarse a la instalcia local de MongoDB a traves de Mongoose
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
-let MongoDB = 'mongodb://localhost:27017/UsersDB';
+let MongoDB = 'mongodb://127.0.0.1:27017/Coffe4Home';
+let privateKey = process.env.TOKEN_KEY;
+
 mongoose.connect(MongoDB, { useNewUrlParser: true });
 
 // Creamos el modelo de Usuario con un esquema específico usando Mongoose
@@ -53,6 +57,32 @@ let userSchema = mongoose.Schema({
     },
 });
 
+userSchema.pre('save', function (next) {
+    let user = this;
+    user.password = bcrypt.hashSync(user.password, 10);
+    next();
+});
+
+userSchema.methods.generateAuthToken = function (password) {
+    let user = this;
+    let payload = {
+        _id: user._id,
+        role: user.role
+    };
+    let options = {
+        expiresIn: 60 * 60
+    };
+
+    if (bcrypt.compareSync(password, user.password)) {
+        try {
+            jwt.sign(payload, privateKey, options);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+};
+
 let User = mongoose.model('User', userSchema);
 
-
+module.exports = User;
