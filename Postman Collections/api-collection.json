@@ -1,0 +1,88 @@
+{
+  "info": {
+    "_postman_id": "45022f65-93c2-44f0-844b-f244bbaffc32",
+    "name": "Coffe4Home",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Admin",
+          "item": [
+            {
+              "name": "admin/users",
+              "_postman_id": "015cde4c-afd1-410f-8f3e-8ed316bcee7d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"UUID\": \"0001\",\r\n    \"firstName\": \"Rodrigo\",\r\n    \"lastName\": \"Zamora\",\r\n    \"email\": \"rodrigo.zamora@coffe4home.com\",\r\n    \"password\": \"password\",\r\n    \"street\": \"street\",\r\n    \"city\": \"city\",\r\n    \"state\": \"state\",\r\n    \"zip\": \"46851\",\r\n    \"phone\": \"1234567897\",\r\n    \"role\": \"USER\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": "localhost:8080/admin"
+              },
+              "response": []
+            },
+            {
+              "name": "admin/users/:email",
+              "_postman_id": "83669c2b-4ef5-496b-a32f-24f0a736e843",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": "localhost:8080/admin/rodrigo.zamora@coffe4home.com"
+              },
+              "response": []
+            }
+          ],
+          "_postman_id": "a34e3da8-0a07-4962-afbd-73e80650399d",
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "users",
+          "_postman_id": "a12f1c73-cb23-4504-b893-e1da9ab00b1f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "localhost:8080/users"
+          },
+          "response": []
+        },
+        {
+          "name": "users/:uuid",
+          "_postman_id": "c1e96a75-7525-4d0d-8a32-547820770d48",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": null
+          },
+          "response": []
+        }
+      ],
+      "_postman_id": "f5d55a01-c5f6-40cc-af45-57617d057c90"
+    },
+    {
+      "name": "Orders",
+      "item": [],
+      "_postman_id": "1bed7008-31b3-4f0b-93ac-100a9730b1bc"
+    }
+  ]
+}
