@@ -1,6 +1,3 @@
-"use strict";
-
-/*
 // Conectarse a la instalcia local de MongoDB a traves de Mongoose
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -12,7 +9,6 @@ let privateKey = process.env.TOKEN_KEY;
 let Utils = require('../controllers/utils');
 
 mongoose.connect(MongoDB, { useNewUrlParser: true });
-*/
 
 let productSchema = new mongoose.Schema({
     name: {
@@ -46,5 +42,5 @@ let productSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     }
-});
+}, { collection : 'products' });
 

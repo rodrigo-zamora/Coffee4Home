@@ -60,7 +60,7 @@ let userSchema = mongoose.Schema({
         enum: ['ADMIN', 'USER', 'GUEST'],
         required: true
     },
-});
+}, { collection : 'users' });
 
 userSchema.pre('save', function (next) {
     let user = this;
