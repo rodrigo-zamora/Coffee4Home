@@ -32,3 +32,14 @@ app.route('/home').get(
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
+
+// npm i -S express
+// npm i -S cors
+// npm i -S bcrypt
+// npm i -S jsonwebtoken
+// npm i -S mongodb
+// npm i -S mongoose
+// npm i -S node
+// npm i -S nodemon
+
+// npm start
