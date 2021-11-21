@@ -19,17 +19,6 @@ router.route('/')
 
 router.route('/:email', tokenUtils.verifyToken);
 
-router.route('/:email')
-    .get((req, res) => {
-        dataHandler.getUserByEmail(req, res);
-    })
-    .put((req, res) => {
-        dataHandler.updateUser(req, res);
-    })
-    .delete((req, res) => {
-        dataHandler.deleteUser(req, res);
-    });
-
 router.use('/users', userRouter);
 router.use('/products', productRouter);
 router.use('/admin', adminUserRouter);

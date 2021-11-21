@@ -28,22 +28,30 @@ function login(req, res) {
 }
 
 function getUsers(req, res) {
-    User.find({}).then(users => res.status(200).json(users));
+    User.find().then(users => res.status(200).json(users));
 }
 
 function getUserByEmail(req, res) {
     let email = req.params.email;
-    User.findOne({ email: `${email}` }).then(user => res.status(200).json(user));
+    User.findOne({ email: `${email}` })
+        .then(user => {
+            if (user == undefined) {
+                res.status(404).type('text/plain')
+                .send(`User with email ${email} was NOT found!`);
+            } else{
+                res.status(200).json(user);
+            }
+        })
 }
 
 function createUser(req, res) {
     let user = req.body;
     try {
-        User.findOne({ email: `${user.email}` }).then(user => {
-            if (user == undefined) {
+        User.findOne({ email: `${user.email}` }).then(newUser => {
+            if (newUser == undefined) {
                 User.create(user).then(user => {
                     res.type('text/plain; charset=utf-8');
-                    res.send(`User ${user.firstName} was created!`);
+                    res.send(`User ${user.email} was created!`);
                 });
             } else {
                 res.type('text/plain; charset=utf-8');

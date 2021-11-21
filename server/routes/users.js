@@ -12,17 +12,9 @@ router.route('/')
         dataHandler.createUser(req, res);
     });
 
-
-router.route('/:uuid')
+router.route('/:email')
     .get((req, res) => {
-        let query = req.params.id;
-        let user = dataHandler.getUserByUUID(query);
-        if(user == undefined) {
-                res.status(404).type('text/plain')
-                .send(`User with uuid ${query} was NOT found!`);
-        } else{
-            res.status(200).json(user);
-        } 
+        dataHandler.getUserByEmail(req, res);
     });
 
 module.exports = router;
