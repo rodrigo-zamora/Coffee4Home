@@ -31,6 +31,10 @@ function getUsers(req, res) {
     User.find().then(users => res.status(200).json(users));
 }
 
+function getUserByUUID(UUID) {
+    return User.findOne({ UUID: `${UUID}` });
+}
+
 function getUserByEmail(req, res) {
     let email = req.params.email;
     User.findOne({ email: `${email}` })

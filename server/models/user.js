@@ -6,13 +6,16 @@ const jwt = require('jsonwebtoken');
 let MongoDB = 'mongodb://127.0.0.1:27017/Coffe4Home';
 let privateKey = process.env.TOKEN_KEY;
 
+let Utils = require('../controllers/utils');
+let dataHandler = require('../controllers/data_handler');
+
 mongoose.connect(MongoDB, { useNewUrlParser: true });
 
 // Creamos el modelo de Usuario con un esquema específico usando Mongoose
 let userSchema = mongoose.Schema({
     UUID: {
         type: String,
-        required: true
+        required: false
     },
     firstName: {
         type: String,
@@ -60,6 +63,7 @@ let userSchema = mongoose.Schema({
 userSchema.pre('save', function (next) {
     let user = this;
     user.password = bcrypt.hashSync(user.password, 10);
+    user.UUID = Utils.generateUUID();
     next();
 });
 
