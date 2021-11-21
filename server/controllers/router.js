@@ -1,7 +1,7 @@
 "use strict";
 
 const router = require('express').Router();
-const dataHandler = require('./data_handler');
+const dataHandler = require('./datahandler/users_data_handler');
 
 const userRouter = require('../routes/users');
 const adminUserRouter = require('../routes/admin_user');

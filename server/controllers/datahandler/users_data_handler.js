@@ -1,6 +1,6 @@
 "use strict";
 
-const User = require('../models/user')
+const User = require('../../models/user')
 
 function login(req, res) {
     let email = req.body.email;
