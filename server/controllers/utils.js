@@ -8,4 +8,13 @@ function generateUUID() {
     });
 }
 
+function generateOrderUUID() {
+    return 'xxxyyxxxx-xxxx-4xxx-yxxx-xxyxxxyxxxxx'.replace(/[xy]/g, c => {
+        let r = Math.random() * 16 | 0;
+        let v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
 exports.generateUUID = generateUUID;
+exports.generateOrderUUID = generateOrderUUID;
