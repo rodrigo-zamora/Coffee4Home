@@ -2,7 +2,7 @@
 
 const express = require("express");
 const router = express.Router();
-const dataHandler = require("../controllers/datahandler/orders_data_handler");
+const dataHandler = require("../../controllers/datahandler/orders_data_handler");
 
 router.route("/")
     .get((req, res) => {
@@ -19,3 +19,5 @@ router.route("/:uuid")
     .delete((req, res) => {
         dataHandler.deleteOrder(req, res);
     });
+
+module.exports = router;
