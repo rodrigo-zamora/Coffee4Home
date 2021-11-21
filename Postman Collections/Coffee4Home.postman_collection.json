@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0913d240-a8c9-40ea-b7d0-00290fbd91e7",
+		"_postman_id": "b2f0d12a-4d74-4e86-8e70-18f0345f4718",
 		"name": "Coffee4Home",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -37,13 +37,14 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/admin",
+									"raw": "localhost:8080/admin/users",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
-										"admin"
+										"admin",
+										"users"
 									]
 								}
 							},
@@ -61,13 +62,14 @@
 									}
 								],
 								"url": {
-									"raw": "localhost:8080/admin/rodrigo.zamora@coffe4home.com",
+									"raw": "localhost:8080/admin/users/rodrigo.zamora@coffe4home.com",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"admin",
+										"users",
 										"rodrigo.zamora@coffe4home.com"
 									]
 								}
@@ -127,12 +129,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/orders?x-auth=admin",
+									"raw": "localhost:8080/admin/orders?x-auth=admin",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
+										"admin",
 										"orders"
 									],
 									"query": [
@@ -175,16 +178,18 @@
 					"name": "Admin",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "admin/products",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "admin/products?Content-Type=application/json&x-auth=admin",
+									"raw": "localhost:8080/admin/products?Content-Type=application/json&x-auth=admin",
 									"host": [
-										"admin"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
+										"admin",
 										"products"
 									],
 									"query": [
@@ -207,7 +212,16 @@
 								"method": "PUT",
 								"header": [],
 								"url": {
-									"raw": "?Content-Type=application/json&x-auth=admin",
+									"raw": "localhost:8080/admin/products/?Content-Type=application/json&x-auth=admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products",
+										""
+									],
 									"query": [
 										{
 											"key": "Content-Type",
@@ -228,7 +242,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "?x-auth=admin",
+									"raw": "localhost:8080/admin/products/?x-auth=admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products",
+										""
+									],
 									"query": [
 										{
 											"key": "x-auth",
@@ -260,12 +283,19 @@
 					"response": []
 				},
 				{
-					"name": "products/cart",
+					"name": "cart",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "localhost:8080/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
 						}
 					},
 					"response": []
@@ -276,7 +306,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "localhost:8080/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								""
+							]
 						}
 					},
 					"response": []
