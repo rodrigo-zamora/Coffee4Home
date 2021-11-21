@@ -27,15 +27,28 @@ function getOrderByUUID(req, res) {
 }
 
 function createOrder(req, res) {
-    const order = new Order(req.body);
-    order.save((err, order) => {
-        if (err) {
-            return res.status(400).json({
-                error: "Failed to create new order"
+    let order = req.body;
+    try {
+        Order.findOne({
+            uuid: order.uuid
+        }, (err, existingOrder) => {
+            if (err) {
+                return res.status(400).send(err);
+            }
+            if (existingOrder) {
+                return res.status(400).send("Order already exists");
+            }
+            let newOrder = new Order(order);
+            newOrder.save((err, order) => {
+                if (err) {
+                    return res.status(400).send(err);
+                }
+                return res.status(200).send("Order created!");
             });
-        }
-        return res.json(order);
-    });
+        });
+    } catch (err) {
+        res.status(400).json(err);
+    }
 }
 
 function updateOrder(req, res) {

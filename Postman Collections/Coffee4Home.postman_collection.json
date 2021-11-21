@@ -124,12 +124,18 @@
 					"name": "Admin",
 					"item": [
 						{
-							"name": "orders",
+							"name": "admin/orders",
 							"request": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "localhost:8080/admin/orders?x-auth=admin",
+									"raw": "localhost:8080/admin/orders",
 									"host": [
 										"localhost"
 									],
@@ -137,12 +143,40 @@
 									"path": [
 										"admin",
 										"orders"
-									],
-									"query": [
-										{
-											"key": "x-auth",
-											"value": "admin"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"2cf4c2e8-2e8b-4464-8216-d3a6e0477926\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 300,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"uuid\",\r\n        \"productName\": \"productName\",\r\n        \"productPrice\": 100,\r\n        \"productQuantity\": 5,\r\n        \"productTotal\": 500\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders"
 									]
 								}
 							},
