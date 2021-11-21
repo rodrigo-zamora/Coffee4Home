@@ -24,7 +24,8 @@ let orderSchema = new mongoose.Schema({
     },
     orderDate: {
         type: Date,
-        required: true
+        required: false,
+        default: Date.now
     },
     orderStatus: { 
         type: String,
@@ -36,7 +37,7 @@ let orderSchema = new mongoose.Schema({
         required: true
     },
     orderItems: [{
-        productId: {
+        productUUID: {
             type: String,
             required: true
         },
