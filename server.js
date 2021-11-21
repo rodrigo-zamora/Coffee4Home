@@ -7,6 +7,7 @@ const router = require('./server/controllers/router');
 const loginRouter = require('./server/controllers/login_router');
 
 const app = express();
+const path = require('path');
 const port = process.env.PORT || 8080;
 const cors = require('cors');
 
@@ -15,31 +16,39 @@ app.use(cors(
         origin: ['http://127.0.0.1:5500']
     }
 ));
+
+app.set('views', path.join(__dirname, '/app/views'));
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+
 app.use(express.json());
 app.use(loginRouter);
 app.use(router);
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.render('home');
 });
 
-app.route('/home').get(
-    (req, res) => {
-        res.send('Home!');
-    }
-);
+app.get('/home', (req, res) => {
+    res.render('home');
+});
+
+app.get('/orders', (req, res) => {
+    res.render('orders');
+});
+
+app.get('/products', (req, res) => {
+    res.render('products');
+});
+
+app.get('/cart', (req, res) => {
+    res.render('cart');
+    });
+
+app.get('*', function(req, res){
+    res.render('404');
+  });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Coffe4Home app listening on port ${port}`);
 });
-
-// npm i -S express
-// npm i -S cors
-// npm i -S bcrypt
-// npm i -S jsonwebtoken
-// npm i -S mongodb
-// npm i -S mongoose
-// npm i -S node
-// npm i -S nodemon
-
-// npm start
