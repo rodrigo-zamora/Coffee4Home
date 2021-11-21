@@ -19,3 +19,5 @@ router.route("/:uuid")
     .delete((req, res) => {
         dataHandler.deleteOrder(req, res);
     });
+
+module.exports = router;
