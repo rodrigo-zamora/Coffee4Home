@@ -6,11 +6,11 @@ function getAllOrders(req, res) {
     Order.find({}, (err, orders) => {
         if (err) {
         return res.status(400).json({
-            error: "Orders not found"
+            error: "Failed to get orders"
         });
         }
         return res.json(orders);
-    }).select("-__v");
+    });
 }
 
 function getOrderByUUID(req, res) {

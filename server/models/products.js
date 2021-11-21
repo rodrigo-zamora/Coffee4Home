@@ -44,3 +44,6 @@ let productSchema = new mongoose.Schema({
     }
 }, { collection : 'products' });
 
+let Product = mongoose.model('product', productSchema);
+
+module.exports = Product;

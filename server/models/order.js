@@ -59,3 +59,6 @@ let orderSchema = new mongoose.Schema({
     }],
 }, { collection : 'orders' });
 
+let Order = mongoose.model('order', orderSchema);
+
+module.exports = Order;
