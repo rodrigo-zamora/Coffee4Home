@@ -1,3 +1,5 @@
+"use strict";
+
 // Conectarse a la instalcia local de MongoDB a traves de Mongoose
 /*const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
@@ -5,6 +7,20 @@ const jwt = require('jsonwebtoken');
 
 let MongoDB = 'mongodb://localhost:27017/OrdersDB';
 let privateKey = process.env.TOKEN_KEY;
+*/
+
+/*
+// Conectarse a la instalcia local de MongoDB a traves de Mongoose
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+let MongoDB = 'mongodb://127.0.0.1:27017/Coffe4Home';
+let privateKey = process.env.TOKEN_KEY;
+
+let Utils = require('../controllers/utils');
+
+mongoose.connect(MongoDB, { useNewUrlParser: true });
 */
 
 let orderSchema = new mongoose.Schema({
