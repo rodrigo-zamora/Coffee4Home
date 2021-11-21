@@ -20,7 +20,11 @@
 <body>
     <!--Navigation header-->
     <nav class="navbar navbar-expand-sm navbar-dark">
-        <img class="logo" src="/app/Resources/logo.png" href="/app/views/html/shopping_cart.html" alt="Logo">
+        <div>
+            <a href="/app/views/html/home.html">
+                <img class="logo" src="/app/Resources/logo.png" alt="Logo">
+            </a>
+        </div>
 
         <div class="flex-grow-1">
             <form class="form-inline my-2 my-lg-0">
@@ -232,13 +236,13 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="mixta">
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="mixta" checked>
                             <label class="form-check-label" for="mixta">
                                 Mixta
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="robusta" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="robusta">
                             <label class="form-check-label" for="robusta">
                                 Robusta
                             </label>
@@ -430,7 +434,7 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="Preparation" id="GotearVerter">
+                        <input class="form-check-input" type="radio" name="Preparation" id="GotearVerter" checked>
                         <label class="form-check-label" for="GotearVerter">
                             Gotear y verter
                         </label>
