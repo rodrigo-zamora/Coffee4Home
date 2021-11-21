@@ -1,27 +1,30 @@
 "use strict";
 
-const User = require('../../models/user')
+const User = require('../../models/user');
+const bcrypt = require('bcrypt');
 
 function login(req, res) {
     let email = req.body.email;
     let password = req.body.password;
-    
-    User.findOne({ email: `${email}` })
+    console.log(email, password);
+    User.findOne({
+            email: `${email}`
+        })
         .then(user => {
-            let token = user.generateToken(password);
-            console.log(token)
-            if (token != undefined) {
-                res.status(200)
-                res.set('Content-Type', 'text/plain; charset=utf-8');
-                res.send(token);
+            if (user == undefined) {
+                res.status(404).type('text/plain')
+                    .send(`User with email ${email} was NOT found!`);
             } else {
-                res.status(404);            
-                res.set('Content-Type', 'text/plain; charset=utf-8');
-                res.send(`Wrong email or password`);
+                if (bcrypt.compareSync(password, user.password)) {
+                    res.status(200).json(user);
+                } else {
+                    res.status(404).type('text/plain')
+                        .send(`User with email ${email} was NOT found!`);
+                }
             }
         })
         .catch(err => {
-            res.status(404);            
+            res.status(404);
             res.set('Content-Type', 'text/plain; charset=utf-8');
             res.send(`Wrong email or password`);
         });
@@ -32,17 +35,21 @@ function getUsers(req, res) {
 }
 
 function getUserByUUID(UUID) {
-    return User.findOne({ UUID: `${UUID}` });
+    return User.findOne({
+        UUID: `${UUID}`
+    });
 }
 
 function getUserByEmail(req, res) {
     let email = req.params.email;
-    User.findOne({ email: `${email}` })
+    User.findOne({
+            email: `${email}`
+        })
         .then(user => {
             if (user == undefined) {
                 res.status(404).type('text/plain')
-                .send(`User with email ${email} was NOT found!`);
-            } else{
+                    .send(`User with email ${email} was NOT found!`);
+            } else {
                 res.status(200).json(user);
             }
         })
@@ -51,7 +58,9 @@ function getUserByEmail(req, res) {
 function createUser(req, res) {
     let user = req.body;
     try {
-        User.findOne({ email: `${user.email}` }).then(newUser => {
+        User.findOne({
+            email: `${user.email}`
+        }).then(newUser => {
             if (newUser == undefined) {
                 User.create(user).then(user => {
                     res.type('text/plain; charset=utf-8');
@@ -76,7 +85,11 @@ function updateUser(req, res) {
         delete updatedUser[property];
     }
 
-    User.findOneAndUpdate({ email: `${email}` }, updatedUser, { new : true }).then(user => {
+    User.findOneAndUpdate({
+        email: `${email}`
+    }, updatedUser, {
+        new: true
+    }).then(user => {
         res.type('text/plain; charset=utf-8');
         res.send(`User ${user.firstName} was updated!`);
     });
@@ -85,7 +98,9 @@ function updateUser(req, res) {
 function deleteUser(req, res) {
     let email = req.params.email;
 
-    User.findOneAndDelete({ email: `${email}` }).then(user => {
+    User.findOneAndDelete({
+        email: `${email}`
+    }).then(user => {
         res.type('text/plain; charset=utf-8');
         res.send(user != undefined ? `User with email ${email} has been deleted!` : `No user with email ${email} was found!`);
     });

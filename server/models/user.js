@@ -68,26 +68,6 @@ userSchema.pre('save', function (next) {
     next();
 });
 
-userSchema.methods.generateAuthToken = function (password) {
-    let user = this;
-    let payload = {
-        _id: user._id,
-        role: user.role
-    };
-    let options = {
-        expiresIn: 60 * 60
-    };
-
-    if (bcrypt.compareSync(password, user.password)) {
-        try {
-            jwt.sign(payload, privateKey, options);
-        }
-        catch (error) {
-            console.log(error);
-        }
-    }
-};
-
 let User = mongoose.model('user', userSchema);
 
 module.exports = User;

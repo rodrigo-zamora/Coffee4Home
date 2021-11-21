@@ -10,13 +10,14 @@ function getAllProducts(req, res) {
       });
     }
     res.json(products);
-  }
-    );
+  });
 }
 
 function getProductByUUID(req, res) {
   let uuid = req.params.uuid;
-  Order.findOne({ uuid }, (err, product) => {
+  Order.findOne({
+    uuid
+  }, (err, product) => {
     if (err) {
       return res.status(400).json({
         error: "Product not found"
@@ -40,7 +41,11 @@ function createProduct(req, res) {
 
 function updateProduct(req, res) {
   let uuid = req.params.uuid;
-    Order.findOneAndUpdate({ uuid }, req.body, { new: true }, (err, product) => {
+  Order.findOneAndUpdate({
+    uuid
+  }, req.body, {
+    new: true
+  }, (err, product) => {
     if (err) {
       return res.status(400).json({
         error: "Failed to update product"
@@ -52,7 +57,9 @@ function updateProduct(req, res) {
 
 function removeProduct(req, res) {
   let uuid = req.params.uuid;
-    Order.findOneAndRemove({ uuid }, (err, product) => {
+  Order.findOneAndRemove({
+    uuid
+  }, (err, product) => {
     if (err) {
       return res.status(400).json({
         error: "Failed to delete product"
@@ -61,45 +68,49 @@ function removeProduct(req, res) {
     res.json({
       message: "Product deleted successfully"
     });
-  }
-    );
+  });
 }
 
 function getProductsByCategory(req, res) {
-    let category = req.params.category;
-    Order.find({ category }, (err, products) => {
-        if (err) {
-        return res.status(400).json({
-            error: "Products not found"
-        });
-        }
-        res.json(products);
-    });
+  let category = req.params.category;
+  Order.find({
+    category
+  }, (err, products) => {
+    if (err) {
+      return res.status(400).json({
+        error: "Products not found"
+      });
+    }
+    res.json(products);
+  });
 }
 
 function getProductsByPrice(req, res) {
-    let price = req.params.price;
-    Order.find({ price }, (err, products) => {
-        if (err) {
-        return res.status(400).json({
-            error: "Products not found"
-        });
-        }
-        res.json(products);
-    });
+  let price = req.params.price;
+  Order.find({
+    price
+  }, (err, products) => {
+    if (err) {
+      return res.status(400).json({
+        error: "Products not found"
+      });
+    }
+    res.json(products);
+  });
 }
 
 function getProductsByName(req, res) {
-    let name = req.params.name;
-    Order.find({ name }, (err, products) => {
-        if (err) {
-        return res.status(400).json({
-            error: "Products not found"
-        });
-        }
-        res.json(products);
+  let name = req.params.name;
+  Order.find({
+    name
+  }, (err, products) => {
+    if (err) {
+      return res.status(400).json({
+        error: "Products not found"
+      });
     }
-    );
+    res.json(products);
+  });
 }
 
 exports.getAllProducts = getAllProducts;
