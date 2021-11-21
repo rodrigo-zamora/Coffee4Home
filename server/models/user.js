@@ -7,7 +7,6 @@ let MongoDB = 'mongodb://127.0.0.1:27017/Coffe4Home';
 let privateKey = process.env.TOKEN_KEY;
 
 let Utils = require('../controllers/utils');
-let dataHandler = require('../controllers/data_handler');
 
 mongoose.connect(MongoDB, { useNewUrlParser: true });
 
@@ -15,7 +14,10 @@ mongoose.connect(MongoDB, { useNewUrlParser: true });
 let userSchema = mongoose.Schema({
     UUID: {
         type: String,
-        required: false
+        required: false,
+        unique: true,
+        index: true,
+        default: Utils.generateUUID()
     },
     firstName: {
         type: String,
@@ -63,7 +65,6 @@ let userSchema = mongoose.Schema({
 userSchema.pre('save', function (next) {
     let user = this;
     user.password = bcrypt.hashSync(user.password, 10);
-    user.UUID = Utils.generateUUID();
     next();
 });
 
