@@ -32,13 +32,14 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:8080/admin",
+									"raw": "localhost:8080/admin/users",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
-										"admin"
+										"admin",
+										"users"
 									]
 								}
 							},
@@ -50,13 +51,14 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/admin/rodrigo.zamora@coffe4home.com",
+									"raw": "localhost:8080/admin/users/rodrigo.zamora@coffe4home.com",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
 										"admin",
+										"users",
 										"rodrigo.zamora@coffe4home.com"
 									]
 								}
@@ -116,12 +118,41 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "localhost:8080/orders",
+									"raw": "localhost:8080/admin/orders",
 									"host": [
 										"localhost"
 									],
 									"port": "8080",
 									"path": [
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 100,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"\",\r\n        \"productName\": \"Café molido de Chiapas\",\r\n        \"productPrice\": 300,\r\n        \"productQuantity\": 3,\r\n        \"productTotal\": 900\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
 										"orders"
 									]
 								}
@@ -158,16 +189,18 @@
 					"name": "Admin",
 					"item": [
 						{
-							"name": "New Request",
+							"name": "admin/products",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"url": {
-									"raw": "admin/products",
+									"raw": "localhost:8080/admin/products",
 									"host": [
-										"admin"
+										"localhost"
 									],
+									"port": "8080",
 									"path": [
+										"admin",
 										"products"
 									]
 								}
@@ -179,7 +212,18 @@
 							"request": {
 								"method": "PUT",
 								"header": [],
-								"url": null
+								"url": {
+									"raw": "localhost:8080/admin/products/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products",
+										""
+									]
+								}
 							},
 							"response": []
 						},
@@ -188,7 +232,18 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
-								"url": null
+								"url": {
+									"raw": "localhost:8080/admin/products/",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products",
+										""
+									]
+								}
 							},
 							"response": []
 						}
@@ -213,11 +268,20 @@
 					"response": []
 				},
 				{
-					"name": "products/cart",
+					"name": "cart",
 					"request": {
 						"method": "POST",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost:8080/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
+						}
 					},
 					"response": []
 				},
@@ -226,7 +290,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "localhost:8080/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								""
+							]
+						}
 					},
 					"response": []
 				}
