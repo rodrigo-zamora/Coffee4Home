@@ -181,6 +181,67 @@
 								}
 							},
 							"response": []
+						},
+						{
+							"name": "admin/orders/:uuid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"2cf4c2e8-2e8b-4464-8216-d3a6e0477926\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 400,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"uuid\",\r\n        \"productName\": \"productName\",\r\n        \"productPrice\": 100,\r\n        \"productQuantity\": 5,\r\n        \"productTotal\": 500\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders",
+										"073a98bdc-ab54-41a8-bd7c-b6953a9d79c1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders/:uuid",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders",
+										"073a98bdc-ab54-41a8-bd7c-b6953a9d79c1"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				},

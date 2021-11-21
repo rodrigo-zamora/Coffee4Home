@@ -58,11 +58,9 @@ function updateOrder(req, res) {
         new: true
     }, (err, order) => {
         if (err) {
-            return res.status(400).json({
-                error: "Failed to update order"
-            });
+            return res.status(400).send(err);
         }
-        return res.json(order);
+        return res.status(200).send("Order updated successfully");
     });
 }
 
@@ -71,13 +69,9 @@ function deleteOrder(req, res) {
         uuid: req.params.uuid
     }, (err, order) => {
         if (err) {
-            return res.status(400).json({
-                error: "Failed to delete order"
-            });
+            return res.status(400).send(err);
         }
-        return res.json({
-            message: "Order deleted successfully"
-        });
+        return res.status(200).send("Order deleted successfully");
     });
 }
 

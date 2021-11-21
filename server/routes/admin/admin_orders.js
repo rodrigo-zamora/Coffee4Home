@@ -12,4 +12,15 @@ router.route("/")
         dataHandler.createOrder(req, res);
     });
 
+router.route("/:uuid")
+    .get((req, res) => {
+        dataHandler.getOrderByUUID(req, res);
+    })
+    .delete((req, res) => {
+        dataHandler.deleteOrder(req, res);
+    })
+    .post((req, res) => {
+        dataHandler.updateOrder(req, res);
+    });
+
 module.exports = router;

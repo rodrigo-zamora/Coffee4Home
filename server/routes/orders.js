@@ -6,7 +6,7 @@ const dataHandler = require('../controllers/datahandler/orders_data_handler');
 
 router.route('/:uuid')
     .get((req, res) => {
-        dataHandler.getOrder(req, res);
+        dataHandler.getOrderByUUID(req, res);
     });
 
 module.exports = router;
