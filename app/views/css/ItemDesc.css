@@ -3,6 +3,27 @@ body {
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
 }
 
+h4{
+    position: absolute;
+    right: 50%;
+    top: 10%;
+}
+
+
+#agregar {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    transition: all 0.3s ease-in-out;
+    background-color: burlywood !important;
+    border: 3px solid #000;
+    font-family: patrick hand;
+    color: #000;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 1px #000;
+}
+
 /* card */
 .card {
     padding: 1px;
@@ -291,14 +312,13 @@ ol {
     position: relative;
     overflow: auto;
     margin-bottom: 50px;
+    width: 100%;
 }
 .productContainer {
     display: flex;
-    border: 1.5px solid black;
     border-radius: 10px;
     padding: 10px 0px;
-    border-style: dashed;
-    width: 95%;
+    width: 100%;
     margin: 10px;
 }
 .productImg {
@@ -317,9 +337,9 @@ ol {
 }
 .coffeeImg {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .rowProducts {
     padding: 15px !important;
+    width: 100%;
 }
