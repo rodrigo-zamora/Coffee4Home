@@ -1,9 +1,9 @@
 "use strict";
 
-const Order = require("../../models/products");
+const Product = require("../../models/products");
 
-function getAllProducts(req, res) {
-  Order.find({}, (err, products) => {
+function getProduct(req, res) {
+  Product.find({}, (err, products) => {
     if (err) {
       return res.status(400).json({
         error: "Products not found"
@@ -15,7 +15,7 @@ function getAllProducts(req, res) {
 
 function getProductByUUID(req, res) {
   let uuid = req.params.uuid;
-  Order.findOne({
+  Product.findOne({
     uuid
   }, (err, product) => {
     if (err) {
@@ -28,96 +28,56 @@ function getProductByUUID(req, res) {
 }
 
 function createProduct(req, res) {
-  let product = new Order(req.body);
-  product.save((err, product) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Failed to create new product"
+  let product = req.body;
+  try {
+      Product.findOne({
+          uuid: `${product.UUID}`
+      }).then(newProduct => {
+          if (newProduct == undefined) {
+              Product.create(product).then(product => {
+                  res.type('text/plain; charset=utf-8');
+                  res.send(`Product ${product.UUID} was created!`);
+              });
+          } else {
+              res.type('text/plain; charset=utf-8');
+              res.send(`Product with uuid ${product.UUID} already exists!`);
+          }
       });
-    }
-    res.json(product);
-  });
+  } catch (err) {
+      res.status(400).json(err);
+  }
 }
 
 function updateProduct(req, res) {
-  let uuid = req.params.uuid;
-  Order.findOneAndUpdate({
-    uuid
-  }, req.body, {
-    new: true
-  }, (err, product) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Failed to update product"
-      });
-    }
-    res.json(product);
+  let uuid = req.params.UUID;
+  let updatedProduct = req.body;
+  for (let property in updatedProduct) {
+      if (['name', 'description', 'pricePerUnit', 'image', 'category', 'stock'].includes(property)) continue;
+      delete updatedProduct[property];
+  }
+  Product.findOneAndUpdate({
+      uuid: `${UUID}`
+  }, updatedProduct, {
+      new: true
+  }).then(product => {
+      res.type('text/plain; charset=utf-8');
+      res.send(`Product ${product.name} was updated!`);
   });
 }
 
 function removeProduct(req, res) {
-  let uuid = req.params.uuid;
-  Order.findOneAndRemove({
-    uuid
-  }, (err, product) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Failed to delete product"
-      });
-    }
-    res.json({
-      message: "Product deleted successfully"
-    });
+  let uuid = req.params.UUID;
+  Product.findOneAndDelete({
+      uuid: `${UUID}`
+  }).then(product => {
+      res.type('text/plain; charset=utf-8');
+      res.send(product != undefined ? `Product with uuid ${uuid} has been deleted!` 
+          : `No product with uuid ${uuid} was found!`);
   });
 }
 
-function getProductsByCategory(req, res) {
-  let category = req.params.category;
-  Order.find({
-    category
-  }, (err, products) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Products not found"
-      });
-    }
-    res.json(products);
-  });
-}
-
-function getProductsByPrice(req, res) {
-  let price = req.params.price;
-  Order.find({
-    price
-  }, (err, products) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Products not found"
-      });
-    }
-    res.json(products);
-  });
-}
-
-function getProductsByName(req, res) {
-  let name = req.params.name;
-  Order.find({
-    name
-  }, (err, products) => {
-    if (err) {
-      return res.status(400).json({
-        error: "Products not found"
-      });
-    }
-    res.json(products);
-  });
-}
-
-exports.getAllProducts = getAllProducts;
+exports.getProduct = getProduct;
 exports.getProductByUUID = getProductByUUID;
 exports.createProduct = createProduct;
 exports.updateProduct = updateProduct;
 exports.removeProduct = removeProduct;
-exports.getProductsByCategory = getProductsByCategory;
-exports.getProductsByPrice = getProductsByPrice;
-exports.getProductsByName = getProductsByName;
