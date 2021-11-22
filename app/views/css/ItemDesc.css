@@ -2,11 +2,20 @@ body {
     font-family: "Patrick Hand", sans-serif;
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
 }
+.column{
+    float: left;
+    width: 70%;
+
+}
+.productContainer{
+    width: 100% !important;
+}
+
 
 h4{
     position: absolute;
-    right: 50%;
-    top: 10%;
+    right: 40%;
+    top: 1%;
 }
 
 
@@ -330,7 +339,10 @@ ol {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 30px;
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+
 }
 .productText {
     margin: 0px 20px;
@@ -343,3 +355,64 @@ ol {
     padding: 15px !important;
     width: 100%;
 }
+
+.espiral{
+    width: 20%;
+}
+
+
+.progress{
+    background: linear-gradient(to right, #fff 35%,#915804 50%,#3a2101 68%);
+    border-radius: 20px;
+    height: 20px;
+    border-top: 1px solid #000;
+    box-shadow: 0 5px 4px -6px #aaa;
+    margin-top: 50px;
+    overflow: visible;
+}
+.progress .progress-bar{
+    border-radius: 20px;
+    position: relative;
+    animation: animate-positive 2s;
+}
+.progress .progress-bar:after{
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 10px;
+    size: 10px;
+    color: #fff;
+    position: absolute;
+    top: -1px;
+    right: 10px;
+}
+.progress .progress-value{
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    background:#191919;
+    position: absolute;
+    top: -40px;
+    right: -27px;
+}
+.progress .progress-value:after{
+    content: "";
+    border-top: 5px solid #191919;
+    border-left: 5px solid #191919;
+    border-bottom: 5px solid transparent ;
+    border-right: 5px solid transparent;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive{
+    0% { width: 0%; }
+}
+
+
+
