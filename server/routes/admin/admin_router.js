@@ -3,11 +3,13 @@
 const express = require("express");
 const router = express.Router();
 
-const adminOrderRouter = require("./admin_orders");
+const adminOrderRouter = require("./admin_order");
 const adminUserRouter = require("./admin_user");
+const adminProductRouter = require("./admin_product");
 
 router.use("/orders", validateAdmin, adminOrderRouter);
 router.use("/users", validateAdmin, adminUserRouter);
+router.use("/products", validateAdmin, adminProductRouter);
 
 function validateAdmin(req, res, next) {
     const auth = req.header('x-auth');
