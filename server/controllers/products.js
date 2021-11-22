@@ -7,13 +7,14 @@ class ProductException {
 }
 
 class Product {
-    constructor(title, description, imageURL, pricePerUnit, category) {
+    constructor(name, description, image, pricePerUnit, category, stock) {
         this._uuid = utils.generateUUID();
-        this.title = title;
+        this.name = name;
         this.description = description;
-        this.imageURL = imageURL;
+        this.image = image;
         this.pricePerUnit = pricePerUnit;
         this.category = category;
+        this.stock = stock;
     }
 
     get uuid() {
@@ -24,17 +25,17 @@ class Product {
         throw new ProductException('Products UUIDs are auto-generated');
     }
 
-    get title() {
-        return this._title;
+    get name() {
+        return this._name;
     }
 
-    set title(title) {
-        if (!title) {
-            throw new ProductException('Products must have a title');
-        } else if (typeof title !== 'string') {
-            throw new ProductException('Products title must be a string');
+    set name(name) {
+        if (!name) {
+            throw new ProductException('Products must have a name');
+        } else if (typeof name !== 'string') {
+            throw new ProductException('Products name must be a string');
         }
-        this._title = title;
+        this._name = name;
     }
 
     get description() {
@@ -50,17 +51,17 @@ class Product {
         this._description = description;
     }
     
-    get imageURL() {
-        return this._imageURL;
+    get image() {
+        return this._image;
     }
 
-    set imageURL(imageURL) {
-        if (!imageURL) {
+    set image(image) {
+        if (!image) {
             throw new ProductException('Products must have an image URL');
-        } else if (typeof imageURL !== 'string') {
+        } else if (typeof image !== 'string') {
             throw new ProductException('Products image URL must be a string');
         }
-        this._imageURL = imageURL;
+        this._image = image;
     }
 
     get pricePerUnit() {
@@ -89,6 +90,19 @@ class Product {
         this._category = category;
     }
 
+    get stock() {
+        return this._stock;
+    }
+
+    set stock(stock) {
+        if (!stock) {
+            throw new ProductException('Products must have a stock');
+        } else if (typeof stock !== 'number') {
+            throw new ProductException('Products stock must be a number');
+        }
+        this._stock = stock;
+    }
+
     static createFromJSON(json) {
         let object = JSON.parse(json);
         return Product.createFromObject(object);
@@ -98,12 +112,12 @@ class Product {
         let newProduct = {};
         Object.assign(newProduct, object);
         Product.cleanObject(newProduct);
-        let product = new Product(newProduct.title, newProduct.description, newProduct.imageURL, newProduct.pricePerUnit, newProduct.category);
+        let product = new Product(newProduct.name, newProduct.description, newProduct.image, newProduct.pricePerUnit, newProduct.category, newProduct.stock);
         return product;
     }
 
     static cleanObject(object) {
-        const props = ['uuid', 'title', 'description', 'imageURL', 'pricePerUnit', 'category'];
+        const props = ['uuid', 'name', 'description', 'image', 'pricePerUnit', 'category', 'stock'];
         for (let prop of object) {
             if (!props.includes(prop)) {
                 delete object[prop];

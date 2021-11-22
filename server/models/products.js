@@ -11,6 +11,13 @@ let Utils = require('../controllers/utils');
 mongoose.connect(MongoDB, { useNewUrlParser: true });
 
 let productSchema = new mongoose.Schema({
+    UUID: {
+        type: String,
+        required: false,
+        unique: true,
+        index: true,
+        default: Utils.generateUUID()
+    },
     name: {
         type: String,
         required: true
@@ -19,7 +26,7 @@ let productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    price: {
+    pricePerUnit: {
         type: Number,
         required: true
     },
@@ -36,10 +43,12 @@ let productSchema = new mongoose.Schema({
     },
     createdAt: {
         type: Date,
+        required: false,
         default: Date.now
     },
     updatedAt: {
         type: Date,
+        required: false,
         default: Date.now
     }
 }, { collection : 'products' });
