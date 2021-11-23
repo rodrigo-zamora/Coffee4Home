@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-let Utils = require('../controllers/utils');
+let Utils = require('../controllers/utils/uuid_utils');
 
 let orderSchema = new mongoose.Schema({
     orderUUID: {
