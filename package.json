@@ -11,6 +11,21 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
-  }
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.2.0",
+    "mongoose": "^6.0.13",
+    "node": "^17.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigo-zamora/Coffe4Home.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rodrigo-zamora/Coffe4Home/issues"
+  },
+  "homepage": "https://github.com/rodrigo-zamora/Coffe4Home#readme"
 }

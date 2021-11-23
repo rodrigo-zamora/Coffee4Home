@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "b2f0d12a-4d74-4e86-8e70-18f0345f4718",
+		"name": "Coffee4Home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "admin/users",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Rodrigo\",\r\n    \"lastName\": \"Zamora\",\r\n    \"email\": \"rodrigo.zamora@coffe4home.com\",\r\n    \"password\": \"password\",\r\n    \"street\": \"street\",\r\n    \"city\": \"city\",\r\n    \"state\": \"state\",\r\n    \"zip\": \"46851\",\r\n    \"phone\": \"11111111\",\r\n    \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/users",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/users/:email",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/admin/users/rodrigo.zamora@coffe4home.com",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"users",
+										"rodrigo.zamora@coffe4home.com"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/:email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/rodrigo.zamora@coffe4home.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"rodrigo.zamora@coffe4home.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "admin/orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/admin/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"2cf4c2e8-2e8b-4464-8216-d3a6e0477926\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 300,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"uuid\",\r\n        \"productName\": \"productName\",\r\n        \"productPrice\": 100,\r\n        \"productQuantity\": 5,\r\n        \"productTotal\": 500\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders/:uuid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"2cf4c2e8-2e8b-4464-8216-d3a6e0477926\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 400,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"uuid\",\r\n        \"productName\": \"productName\",\r\n        \"productPrice\": 100,\r\n        \"productQuantity\": 5,\r\n        \"productTotal\": 500\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders",
+										"073a98bdc-ab54-41a8-bd7c-b6953a9d79c1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders/:uuid",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:8080/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"orders",
+										"073a98bdc-ab54-41a8-bd7c-b6953a9d79c1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "orders:/uuid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/orders/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "admin/products",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/admin/products?Content-Type=application/json&x-auth=admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products"
+									],
+									"query": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-auth",
+											"value": "admin"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/products/:uuid",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/admin/products/?Content-Type=application/json&x-auth=admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products",
+										""
+									],
+									"query": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "x-auth",
+											"value": "admin"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/products/:uuid",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/admin/products/?x-auth=admin",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"products",
+										""
+									],
+									"query": [
+										{
+											"key": "x-auth",
+											"value": "admin"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cart",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/:uuid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
