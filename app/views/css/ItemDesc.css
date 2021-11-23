@@ -1,0 +1,418 @@
+body {
+    font-family: "Patrick Hand", sans-serif;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+}
+.column{
+    float: left;
+    width: 70%;
+
+}
+.productContainer{
+    width: 100% !important;
+}
+
+
+h4{
+    position: absolute;
+    right: 40%;
+    top: 1%;
+}
+
+
+#agregar {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    transition: all 0.3s ease-in-out;
+    background-color: burlywood !important;
+    border: 3px solid #000;
+    font-family: patrick hand;
+    color: #000;
+    font-size: 30px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px 1px #000;
+}
+
+/* card */
+.card {
+    padding: 1px;
+    width: 220px;
+    max-width: 300px;
+    border: 1px solid rgba(0, 0, 0, .125);
+    transition: border .5s ease-in-out;
+    border-radius: .25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    margin: 10px;
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 1.5rem;
+}
+
+.card-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: burlywood;
+    border-radius:10px 10px 10px 10px;
+}
+.form-check-input {
+    position: absolute;
+    margin-top: .9rem !important;
+    margin-left: -1.25rem;
+}
+
+
+.card:hover {
+    border: 1px solid black;
+}
+
+.card-body {
+    padding: .5rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-img-top {
+    height: 200px;
+    max-height: 200px;
+    max-width: 250px;
+}
+
+#mainList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.carousel-item {
+    max-height: 400px;
+}
+
+.carousel-inner {
+    margin-bottom: 50px;
+}
+
+.large-image {
+    height: 600px;
+    width: 100% !important;
+}
+
+.precio {
+    bottom: 0px;
+}
+
+.controls,
+.btn-center,
+.Page.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.control {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fas {
+    margin-left: 0px;
+}
+
+.input-group-prepend {
+    margin-left: -1px;
+}
+
+.input-group-text {
+    border-radius: 0 3px 3px 0 !important;
+}
+
+.btn-success {
+    width: 360px;
+}
+
+.userPart {
+    display: flex;
+    flex-flow: row;
+}
+
+/* Navigation Left*/
+.navbar {
+    padding: 0px 20px;
+    /*position: fixed;*/
+    top: 0;
+}
+
+.logo {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.form-control {
+    width: 100% !important;
+}
+
+.form-inline {
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Navigation Right*/
+.login,
+.signUp {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8px;
+    color: #000;
+}
+
+.login:hover,
+.signUp:hover {
+    color: #000;
+    text-decoration: none;
+
+}
+
+.fa-shopping-cart,
+.nav-link {
+    color: #000 !important;
+}
+
+/* Carousel */
+.carousel-item,
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.textInBanner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+/* Footer */
+.context-dark,
+.bg-gray-dark,
+.bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a,
+.footer-classic a:focus,
+.footer-classic a:active {
+    color: #ffffff;
+}
+
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #4d6de6;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}
+
+.btn.login-button.btn.btn-success {
+    background-color: burlywood;
+    border: black;
+    font-family: patrick hand;
+}
+
+.modal-content {
+    background-color: burlywood;
+    border: black;
+    font-family: patrick hand;
+
+}
+
+.btn.btn-success.mt-3 {
+    background-color: burlywood !important;
+    border: black;
+    font-family: patrick hand;
+    color: #000
+    
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.items {
+    margin-bottom: 50px;
+}
+
+.row-30 {
+    margin-top: 50px;
+}
+.prepare {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.coffeeStockContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    overflow: auto;
+    margin-bottom: 50px;
+    width: 100%;
+}
+.productContainer {
+    display: flex;
+    border-radius: 10px;
+    padding: 10px 0px;
+    width: 100%;
+    margin: 10px;
+}
+.productImg {
+    margin-left: 35px;
+    max-width: 120px;
+    max-height: 220px;
+}
+.coffeeIntormation {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+
+}
+.productText {
+    margin: 0px 20px;
+}
+.coffeeImg {
+    display: flex;
+    align-items: center;
+}
+.rowProducts {
+    padding: 15px !important;
+    width: 100%;
+}
+
+.espiral{
+    width: 20%;
+}
+
+
+.progress{
+    background: linear-gradient(to right, #fff 35%,#915804 50%,#3a2101 68%);
+    border-radius: 20px;
+    height: 20px;
+    border-top: 1px solid #000;
+    box-shadow: 0 5px 4px -6px #aaa;
+    margin-top: 50px;
+    overflow: visible;
+}
+.progress .progress-bar{
+    border-radius: 20px;
+    position: relative;
+    animation: animate-positive 2s;
+}
+.progress .progress-bar:after{
+    content: "\f111";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 10px;
+    size: 10px;
+    color: #fff;
+    position: absolute;
+    top: -1px;
+    right: 10px;
+}
+.progress .progress-value{
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    background:#191919;
+    position: absolute;
+    top: -40px;
+    right: -27px;
+}
+.progress .progress-value:after{
+    content: "";
+    border-top: 5px solid #191919;
+    border-left: 5px solid #191919;
+    border-bottom: 5px solid transparent ;
+    border-right: 5px solid transparent;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+}
+@-webkit-keyframes animate-positive{
+    0% { width: 0%; }
+}
+@keyframes animate-positive{
+    0% { width: 0%; }
+}
+
+
+
