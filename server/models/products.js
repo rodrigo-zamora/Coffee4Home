@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-let Utils = require('../controllers/utils');
+let Utils = require('../controllers/utils/uuid_utils');
 
 let productSchema = new mongoose.Schema({
     UUID: {

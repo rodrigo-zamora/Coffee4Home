@@ -1,4 +1,4 @@
-const utils = require('../../server/controllers/utils');
+const utils = require('../utils/uuid_utils');
 
 class ProductException {
     constructor(errorMessage) {
@@ -124,5 +124,9 @@ class Product {
             }
         }
     }
+}
 
+module.exports = {
+    ProductException,
+    Product
 }

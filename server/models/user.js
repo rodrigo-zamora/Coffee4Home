@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-let Utils = require('../controllers/utils');
+let Utils = require('../controllers/utils/uuid_utils');
 
 // Creamos el modelo de Usuario con un esquema específico usando Mongoose
 let userSchema = mongoose.Schema({

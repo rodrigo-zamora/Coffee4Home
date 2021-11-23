@@ -295,6 +295,15 @@
 							"request": {
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Etnia 52, Café de Altura Sabor Avellana, Tueste Medio, Molido, 454 gr\",\r\n    \"description\": \"CAFÉ SABORIZADO: acidez balanceada, sabor y aroma altamente agradable como la avellana recién tostada\\nCAFÉ GOURMET: 100% granos de café fresco de especialidad. Tueste Medio. Pre-Molido para una preparación fácil y para mantener su molino limpio de diferentes sabores\\nALTA CALIDAD: Zipper resellable y válvula de desgasificación unidireccional para preservar la frescura del café\\nOrgullosamente un producto 100% mexicano, comprometido con nuestro medio ambiente y con las comunidades que lo producen, libre de químicos\\nCERTIFICACIÓN Kosher. Calidad de exportación. Nuestra mejor selección en cada grano. Perfecto para cafeteras de filtro, prensa francesa, percoladora\",\r\n    \"pricePerUnit\": 140.72,\r\n    \"image\": \"https://m.media-amazon.com/images/I/81TAR7QtiQL._AC_SL1500_.jpg\",\r\n    \"category\": \"Café molido\",\r\n    \"stock\": 196\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "https://coffe4home-development.herokuapp.com/admin/products?Content-Type=application/json&x-auth=admin",
 									"protocol": "https",
