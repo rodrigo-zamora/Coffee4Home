@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-let MongoDB = 'mongodb://127.0.0.1:27017/Coffe4Home';
+let MongoDB = 'mongodb+srv://mongodb:znN7A9g27Cm6CPC@coffe4home.hyqw6.mongodb.net/Coffe4Home?retryWrites=true&w=majority';
 let privateKey = process.env.TOKEN_KEY;
 
 let Utils = require('../controllers/utils');
