@@ -6,10 +6,21 @@ const express = require('express');
 const router = require('./server/controllers/router');
 const loginRouter = require('./server/controllers/login_router');
 
+const mongoose = require('mongoose');
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Coffe4Home', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+});
+
+mongoose.connection.on('connected', () => {
+    console.log('Conectado a MongoDB');
+});
+
 const app = express();
 const path = require('path');
-const port = process.env.PORT || 8080;
 const cors = require('cors');
+const port = process.env.PORT || 8080;
 
 app.use(cors(
     {
@@ -18,6 +29,8 @@ app.use(cors(
 ));
 
 app.set('views', path.join(__dirname, '/app/views'));
+app.use(express.static(path.join(__dirname, '/app/public')));
+
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
 
@@ -33,7 +46,7 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
-app.get('/orders', (req, res) => {
+/*app.get('/orders', (req, res) => {
     res.render('orders');
 });
 
@@ -47,7 +60,7 @@ app.get('/cart', (req, res) => {
 
 app.get('*', function(req, res){
     res.render('404');
-  });
+  });*/
 
 app.listen(port, () => {
     console.log(`Coffe4Home app listening on port ${port}`);
