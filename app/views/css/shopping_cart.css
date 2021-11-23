@@ -3,79 +3,6 @@ body {
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
 }
 
-/* card */
-.card {
-    padding: 1px;
-    width: 220px;
-    max-width: 300px;
-    border: 1px solid rgba(0, 0, 0, .125);
-    transition: border .5s ease-in-out;
-    border-radius: .25rem;
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
-    margin: 10px;
-    font-family: "Patrick Hand", sans-serif;
-    font-size: 1.5rem;
-}
-
-.card-title{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    background-color: burlywood;
-    border-radius:10px 10px 10px 10px;
-}
-.form-check-input {
-    position: absolute;
-    margin-top: .9rem !important;
-    margin-left: -1.25rem;
-}
-
-
-.card:hover {
-    border: 1px solid black;
-}
-
-.card-body {
-    padding: .5rem;
-}
-
-.card-title {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.card-img-top {
-    height: 200px;
-    max-height: 200px;
-    max-width: 250px;
-}
-
-#mainList {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-}
-
-
-.carousel-item {
-    max-height: 400px;
-}
-
-.carousel-inner {
-    margin-bottom: 50px;
-}
-
-.large-image {
-    height: 600px;
-    width: 100% !important;
-}
-
-.precio {
-    bottom: 0px;
-}
-
 .controls,
 .btn-center,
 .Page.navigation {
@@ -95,10 +22,6 @@ body {
 
 .input-group-prepend {
     margin-left: -1px;
-}
-
-.input-group-text {
-    border-radius: 0 3px 3px 0 !important;
 }
 
 .btn-success {
@@ -262,6 +185,7 @@ ol {
     
 }
 
+/* Resumen de compra */
 .column {
     display: flex;
     flex-direction: column;
@@ -298,19 +222,19 @@ ol {
     border-radius: 10px;
     padding: 10px 0px;
     border-style: dashed;
-    width: 95%;
     margin: 10px;
+    width: 100%;
 }
 .productImg {
-    margin-left: 35px;
+    margin-left: 10px;
     max-width: 120px;
     max-height: 220px;
 }
 .coffeeIntormation {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: 30px;
+    align-items: center;
+    width: 100%;
 }
 .productText {
     margin: 0px 20px;
@@ -326,7 +250,6 @@ ol {
 
 
 /* Products Left */
-/* Products Right */
 .item {
     width: 145px;
     height: 145px;
@@ -344,31 +267,6 @@ ol {
 .media:hover {
     border: 1px solid black;
 }
-.pagos > .btn {
-    width: 100%;
-}
-.btn-outline-success {
-    height: 45px;
-}
-.btn-outline-danger {
-    height: 30px;
-    display: flex;
-    font-size: 12px;
-    margin-top: 10px;
-    align-items: center;
-    justify-content: center;
-}
-.resumen {
-    display: flex;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    justify-content: center;
-}
-.trash {
-    margin-left: 7px;
-    margin-top: -15px;
-    border-radius: 0 3px 3px 0;
-}
 .pen {
     margin-left: -3px;
     border-radius: 0 3px 3px 0;
@@ -379,43 +277,65 @@ ol {
     background-color: rgb(13, 205, 223, 1);
 }
 .fa-pen {
-    color: #fff;
-}
-.input-price, .input-quantity {
-    width: 75%;
-}
-.input-group-text, .form-control{
-    margin-left: -3px;
-}
-.total {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-.producto {
-    font-size: 20px;
+    color: #000;
 }
 .cards {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.controls, .btn-center {
+.input-group-text:first-child {
+    border-radius: 3px 0px 0px 3px !important;
+}
+.input-group-text:last-child {
+    border-radius: 0px 3px 3px 0px !important;
+}
+.quantity, .price {
+    width: 70px !important;
+    height: auto !important;
+    margin: 0px -2px 0px -2px !important;
+}
+.productTitle {
+    margin: 15px 0px;
+}
+.inputs {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+/* Products Right */
+.leftCard {
+    display: flex;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 10px 0px;
+    border-style: dashed;
+    margin: 10px;
+    width: 100%;
+}
+.pagos > .btn {
+    width: 100%;
+}
+.btn-outline-success {
+    height: 45px;
+    margin-bottom: 10px;
+}
+.btn-outline-danger {
+    height: 30px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
     justify-content: center;
 }
-.control {
+.resumen {
     display: flex;
-    justify-content: flex-end;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
 }
 .btn-success {
     width: 360px;
-}
-.fas {
-    margin-left: 0px;
-}
-.input-group-prepend {
-    margin-left: -1px;
-}
-.input-group-text {
-    border-radius: 0 3px 3px 0 !important;
 }

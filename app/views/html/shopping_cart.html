@@ -151,47 +151,12 @@
             </div>
         </div>
     </div>
-        <!-- Carrousel -->
-        <div id="carouselId" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselId" data-slide-to="1"></li>
-                <li data-target="#carouselId" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active coffee">
-                    <div class="textInBanner">
-                        <h4>Search the coffee YOU want</h4>
-                        <h5>Search by any andl all criteria</h5>
-                    </div>
-                    <img class="large-image" src="/app/Resources/Cofee Items/Banner1.jpg" alt="First slide">
-                </div>
-    
-                <div class="carousel-item">
-                    <div class="textInBanner">
-                    </div>
-                    <img class="large-image" src="/app/Resources/Cofee Items/Banner2.png" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <div class="textInBanner">
-                    </div>
-                    <img class="large-image" src="/app/Resources/Cofee Items/Banner3.jpg" alt="Third slide">
-                </div>
-    
-            </div>
-            <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+    <!-- Divider -->
+    <div class="dropdown-divider"></div>
     <!-- Title -->
     <div class="resumen container">
         <h2>
-            Resumen de la compra
+            Resumen de compra
         </h2>
     </div>
     <!-- Products -->
@@ -199,74 +164,72 @@
         <div class="row">
             <div class="cards container col-md-8 col-12">
                 <!-- Left -->
-                <div class="media">
-                    <div class="media-body">
-                        <div class="d-flex align-items-center ml-2">
-                            <p class="producto mt-0">Robot</p>
-                            <button type="button" class="trash btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        </div>
-                        <div class="input-quantity input-group mb-3">
-                            <span class="input-group-text">Cantidad:</span>
-                            <input type="number" class="chiquito form-control" min="1" max="5" value="1" id="quantity">
-                            <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
-                        </div>
-                        
-                        <div class="input-price input-group">
-                            <span class="input-group-text">precio:</span>
-                            <input type="text" class="form-control " value="130.50">
-                            <span class="input-group-text">$ m.n.</span>
-                        </div>
+                <div class="productContainer">
+                    <div class="coffeeImg">
+                        <img class="productImg" src="../../Resources/Cofee Items/peetsCoffee.jpg" alt="Peet's Coffee">
                     </div>
-                    <div class="media-right">
-                        <img class="item" src="https://images.freeimages.com/images/large-previews/884/blue-robot-1460213.jpg" alt="Generic placeholder image">
+                    <div class="coffeeIntormation">
+                        <h5 class="productTitle">Peet's Coffee</h5>
+                        <div class="inputs">
+                            <div class="input-quantity input-group mb-3">
+                                <span class="input-group-text">Cantidad:</span>
+                                <input type="number" class="quantity form-control" min="1" max="5" value="1" id="quantity">
+                                <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="input-price input-group mb-3">
+                                <span class="input-group-text">Precio:</span>
+                                <input type="text" class="price form-control " value="130.50">
+                                <span class="input-group-text">$ m.n.</span>
+                            </div>
+                            <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
+                        </div>
                     </div>
                 </div>
-                <div class="media">
-                    <div class="media-body">
-                        <div class="d-flex align-items-center ml-2">
-                            <p class="producto mt-0">Sonaja para bebé</p>
-                            <button type="button" class="trash btn btn-danger btn-sm"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        </div>
-                        <div class="input-quantity input-group mb-3">
-                            <span class="input-group-text">Cantidad:</span>
-                            <input type="number" class="chiquito form-control" min="1" max="5" value="2" id="quantity">
-                            <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
-                        </div>
-                        
-                        <div class="input-price input-group">
-                            <span class="input-group-text">precio:</span>
-                            <input type="text" class="form-control " value="120.00">
-                            <span class="input-group-text">$ m.n.</span>
-                        </div>
+                <div class="productContainer">
+                    <div class="coffeeImg">
+                        <img class="productImg" src="../../Resources/Cofee Items/KenyaAA.jpeg" alt="Peet's Coffee">
                     </div>
-                    <div class="media-right">
-                        <img class="item" src="https://images.freeimages.com/images/large-previews/ec8/toys-11-1258527.jpg" alt="Generic placeholder image">
+                    <div class="coffeeIntormation">
+                        <h5 class="productTitle">Kenya AA</h5>
+                        <div class="inputs">
+                            <div class="input-quantity input-group mb-3">
+                                <span class="input-group-text">Cantidad:</span>
+                                <input type="number" class="quantity form-control" min="1" max="5" value="1" id="quantity">
+                                <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
+                            </div>
+                            <div class="input-price input-group mb-3">
+                                <span class="input-group-text">Precio:</span>
+                                <input type="text" class="price form-control " value="130.50">
+                                <span class="input-group-text">$ m.n.</span>
+                            </div>
+                            <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <!-- Right -->
-            <div class="container col-md-4 col-12">
-                <div class="card h-100">
+            <div class="col-md-4 col-12">
+                <div class="leftCard">
                     <div class="card-body">
-                        <h4 class="card-title">Total de compra</h4>
+                        <h4 class="card-title">Total de Compra</h4>
                         <div class="dropdown-divider"></div>
-                        <p class="card-text">Robot: 1 x $130.50</p>
+                        <p class="card-text">Peet's Coffee</p>
                         <p class="card-text">Sonaja: 2 x $60.00</p>
                         <p class="card-text">Costo de envío: $40.00</p>
                         <div class="dropdown-divider"></div>
                         <div class="total">
-                            <b>Total a pagar: $290.50</b>
+                            <b>Monto a pagar: $290.50</b>
                         </div>
                         <div class="pagos">
                             <button class="btn btn-outline-success">Pagar</button>
-                            <button class="btn btn-outline-danger">Cancelar</button>
+                            <button class="btn btn-outline-danger d-flex">Cancelar</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
--->
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
