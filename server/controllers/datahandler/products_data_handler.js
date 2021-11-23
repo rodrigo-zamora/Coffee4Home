@@ -2,6 +2,20 @@
 
 const Product = require("../../models/products");
 
+function getProducts(req, res) {
+  Product.find({}, (err, products) => {
+    if (err) {
+      res.status(500).send({ message: "Error en la petición" });
+    } else {
+      if (!products) {
+        res.status(404).send({ message: "No hay productos" });
+      } else {
+        res.status(200).send({ products });
+      }
+    }
+  });
+}
+
 function getProduct(req, res) {
   Product.find({}, (err, products) => {
     if (err) {
@@ -76,6 +90,7 @@ function removeProduct(req, res) {
   });
 }
 
+exports.getProducts = getProducts;
 exports.getProduct = getProduct;
 exports.getProductByUUID = getProductByUUID;
 exports.createProduct = createProduct;
