@@ -46,21 +46,29 @@ app.get('/home', (req, res) => {
     res.render('home');
 });
 
-/*app.get('/orders', (req, res) => {
-    res.render('orders');
+app.get('/search', (req, res) => {
+    res.render('searchProducts'); 
 });
 
 app.get('/products', (req, res) => {
-    res.render('products');
+    res.render('searchProducts');
 });
 
-app.get('/cart', (req, res) => {
+app.get('/cart', (req, res) => {    
+    res.render('shoppingCart');
+});
+
+app.get('/shoppingCart', (req, res) => {
     res.render('cart');
-    });
+ });
+
+app.get('/orders', (req, res) => {
+    res.render('orders');
+});
 
 app.get('*', function(req, res){
     res.render('404');
-  });*/
+  });
 
 app.listen(port, () => {
     console.log(`Coffe4Home app listening on port ${port}`);
