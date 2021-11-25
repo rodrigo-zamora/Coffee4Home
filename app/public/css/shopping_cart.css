@@ -164,29 +164,25 @@ ol {
     transition: .22s ease;
 }
 
-.btn.login-button.btn.btn-success,
-.btn.btn-success.mt-3 {
-    background-color: burlywood !important;
-    border: 1px solid rgb(115, 73, 18) !important;
+.btn.login-button.btn.btn-success {
+    background-color: burlywood;
+    border: black;
     font-family: patrick hand;
 }
-
-.btn.login-button.btn.btn-success:active,
-.btn.login-button.btn.btn-success:focus,
-.btn.btn-success.mt-3:active,
-.btn.btn-success.mt-3:focus {
-    background-color: burlywood !important;
-    border: 1px solid rgb(115, 73, 18) !important;
-    font-family: patrick hand;
-    box-shadow: 0 0 0 .2rem rgb(115, 73, 18,.5) !important;
-}
-
 
 .modal-content {
     background-color: burlywood;
     border: black;
     font-family: patrick hand;
 
+}
+
+.btn.btn-success.mt-3 {
+    background-color: burlywood !important;
+    border: black;
+    font-family: patrick hand;
+    color: #000
+    
 }
 
 /* Resumen de compra */
@@ -251,9 +247,7 @@ ol {
 .rowProducts {
     padding: 15px !important;
 }
-input[disabled] {
-    background-color: rgb(255, 248, 238) !important;
-}
+
 
 /* Products Left */
 .item {
@@ -267,53 +261,36 @@ input[disabled] {
     align-items: center;
     background-color: #fff;
     padding: 10px 0px 10px 20px;
-    border: 1px solid rgb(115, 73, 18);
-    transition: border 1s ease-in-out;
+    border: 1px solid rgba(0,0,0,.125);
+    transition: border .5s ease-in-out;
 }
 .media:hover {
     border: 1px solid black;
 }
 .pen {
-    margin-left: -1px;
+    margin-left: -3px;
     border-radius: 0 3px 3px 0;
-    border-color: rgb(115, 73, 18) !important;
-    background-color: burlywood !important;
-    transition: background-color 1s ease-in-out;
-}
-.fa-pen {
-    color: rgb(115, 73, 18)!important;
-    transition: color 1s ease-in-out;
-    transition: background-color 1s ease-in-out;
-}
-.pen:hover > .fa-pen {
-    color: burlywood !important;
+    border-color: rgb(0, 0, 0, .125);
+    background-color: rgb(13, 205, 223, 0.8);
 }
 .pen:hover {
-    background-color: rgb(115, 73, 18) !important;
+    background-color: rgb(13, 205, 223, 1);
+}
+.fa-pen {
+    color: #000;
 }
 .cards {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.input-group-text {
-    background-color: burlywood !important;
-    color: rgb(63, 39, 8) !important;
-    border-color: rgb(115, 73, 18) !important;
-}
-.form-control {
-    border-color: rgb(115, 73, 18)  !important;
-    color: rgb(115, 73, 18) !important;
-}
-
 .input-group-text:first-child {
     border-radius: 3px 0px 0px 3px !important;
 }
 .input-group-text:last-child {
     border-radius: 0px 3px 3px 0px !important;
 }
-.quantityInput, .priceInput {
-    border-color: rgb(115, 73, 18) !important;
+.quantity, .price {
     width: 70px !important;
     height: auto !important;
     margin: 0px -2px 0px -2px !important;
@@ -361,25 +338,4 @@ input[disabled] {
 }
 .btn-success {
     width: 360px;
-}
-.totalProduct {
-    display: flex;
-}
-.coffeeTitle {
-    font-size: 15px;
-    font-weight: bold;
-    font-style: italic;
-}
-.quantityText, .priceText {
-    width: 50%;
-}
-.quantityText {
-    display: flex;
-    justify-content: center;
-}
-.divider {
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    margin: .5rem 0;
 }
