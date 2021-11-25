@@ -42,6 +42,18 @@ let productSchema = new mongoose.Schema({
         type: Date,
         required: false,
         default: Date.now
+    },
+    tipoCafe: {
+        type: String,
+        required: true
+    },
+    tipoGrano: {
+        type: String,
+        required: true
+    },
+    estado: {
+        type: String,
+        required: true
     }
 }, { collection : 'products' });
 
