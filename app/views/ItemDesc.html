@@ -20,19 +20,11 @@
 <body>
     <!--Navigation header-->
     <nav class="navbar navbar-expand-sm navbar-dark">
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-        <div>
-            <a href="home">
-                <img class="logo" src="resources/logo.png" alt="Logo">
-            </a>
-        </div>
-=======
         <img class="logo" src="resources/logo.png" active href="/" alt="Logo">
->>>>>>> develop:app/views/ItemDesc.html
 
         <div class="flex-grow-1">
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control" type="text" placeholder="Buscar café...">
+                <input class="form-control" type="text" placeholder="Search coffee...">
                 <i class="fas fa-search"></i>
                 <!--<button class="btn btn-outline-light col-sm-3 col-lg-2" type="submit">Search</button>-->
             </form>
@@ -41,17 +33,13 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <div class="userPart">
-                    <a class="login" href="#" data-toggle="modal" data-target="#ingresar">Iniciar sesión</a>
-                    <a class="signUp" href="#" data-toggle="modal" data-target="#registrar">Registrarse</a>
+                    <a class="login" href="#" data-toggle="modal" data-target="#ingresar">Login</a>
+                    <a class="signUp" href="#" data-toggle="modal" data-target="#registrar">Sign up</a>
                 </div>
                 <li>
                     <a class="nav-item">
                         <a class="nav-link" href="cart">
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-                            Carrito
-=======
                             Cart
->>>>>>> develop:app/views/ItemDesc.html
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         </a>
                     </a>
@@ -61,12 +49,13 @@
         <!--User Profile-->
 
     </nav>
+
     <!-- Login Modal -->
     <div class="modal fade" id="ingresar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Iniciar sesión</h5>
+                    <h5 class="modal-title">Login</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -88,7 +77,7 @@
                             <label for="password">Contraseña</label>
                             <div class="input-group mb-3">
                                 <input type="password" class="col-10 form-control" name="" id=""
-                                    aria-describedby="helpId" placeholder="Ingresa tu contraseña">
+                                    aria-describedby="helpId" placeholder="Enter your password">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon2"><i
                                             class="fas fa-key    "></i></span>
@@ -98,7 +87,7 @@
                         <div class="form-group">
                             <div class="controls">
                                 <button type="button" class="login-button btn btn-success"
-                                    data-dismiss="modal">Iniciar sesión</button>
+                                    data-dismiss="modal">Login</button>
                             </div>
                         </div>
                         <div class="form-group">
@@ -106,7 +95,7 @@
                             <div class="col-md-12 control">
                                 <div>
                                     No tienes una cuenta?
-                                    <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registrar">
+                                    <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#registro">
                                         Registrate aquí!
                                     </a>
                                 </div>
@@ -117,13 +106,14 @@
             </div>
         </div>
     </div>
+
     <!-- Sign Up Modal -->
     <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Registrarse</h5>
+                    <h5 class="modal-title">Sign Up</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -133,27 +123,27 @@
                         <div class="row">
                             <div class="col-6">
                                 Nombre(s)
-                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tu(s) nombre(s)"
+                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tu Nombre"
                                     aria-describedby="helpId" required>
                             </div>
                             <div class="col-6">
                                 Apellidos
-                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tus Apellidos"
+                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tu Apellidos"
                                     aria-describedby="helpId" required>
                             </div>
                         </div>
                         <br>
                         Tu correo
-                        <input type="mail" name="" id="" class="form-control mt-3" placeholder="Ingresa tú correo"
+                        <input type="mail" name="" id="" class="form-control mt-3" placeholder="Ingresa tu Tu correo"
                             aria-describedby="helpId" required>
                         <br>
                         Contraseña
                         <input type="password" name="" id="" class="form-control mt-3"
-                            placeholder="Ingresa tú contraseña" aria-describedby="helpId" required>
+                            placeholder="Ingresa tu Contraseña" aria-describedby="helpId" required>
                         <br>
                         Confirma tu contraseña
                         <input type="password" name="" id="" class="form-control mt-3"
-                            placeholder="Confirma tú contraseña" aria-describedby="helpId" required>
+                            placeholder="Confirma tu contraseña" aria-describedby="helpId" required>
 
                         <div class="btn-center">
                             <button type="submit" class="btn btn-success mt-3">Registrarse</button>
@@ -163,6 +153,7 @@
             </div>
         </div>
     </div>
+
     <!-- Carrousel -->
     <div id="carouselId" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -173,23 +164,23 @@
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active coffee">
                 <div class="textInBanner">
-                    <h4>Search the coffee YOU want</h4>
+                    <h3>Search the coffee YOU want</h3>
                     <h5>Search by any andl all criteria</h5>
                 </div>
-                <img class="large-image" src="resources/coffeeItems/banner1.jpg" alt="First slide">
+                <img class="large-image" src="/app/Resources/Cofee Items/Banner1.jpg" alt="First slide">
             </div>
-            
+
             <div class="carousel-item">
                 <div class="textInBanner">
                 </div>
-                <img class="large-image" src="resources/coffeeItems/banner2.png" alt="Second slide">
+                <img class="large-image" src="/app/Resources/Cofee Items/Banner2.png" alt="Second slide">
             </div>
             <div class="carousel-item">
                 <div class="textInBanner">
                 </div>
-                <img class="large-image" src="resources/coffeeItems/banner3.jpg" alt="Third slide">
+                <img class="large-image" src="/app/Resources/Cofee Items/Banner3.jpg" alt="Third slide">
             </div>
-        
+
         </div>
         <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -200,6 +191,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
+
     <!-- Select type coffee -->
     <br>
     <!-- Coffee stock -->
@@ -209,28 +201,20 @@
                 <div class="column">
                     <div class="coffeeImg">
                         <div class="column">
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-                            <img class="productImg" src="resources/coffeeItems/peetsCoffee.jpg"
-=======
                             <img class="productImg" src="resources/Cofee Items/peetsCoffee.jpg"
->>>>>>> develop:app/views/ItemDesc.html
                                 alt="Peet's Coffee">
                             <div class="coffeeIcons">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="progress">
-                                        <div class="progress-bar" style="width: 80%;">
-                                            <div class="progress-value">80%</div>
+                                        <div class="progress-bar" style="width: 85%; background:none;">
+                                            <div class="progress-value">100%</div>
                                         </div>
                                     </div>
                                 </div>
                                 <br>
                                 <div class="col-md-12">
                                     <div class="column">
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-                                        <img class="espiral" src="resources/coffeeDescImg/coffeeCup.svg" active
-=======
                                         <img class="espiral" src="resources/Coffee desc Img/coffee-cup.png" active
->>>>>>> develop:app/views/ItemDesc.html
                                             alt="TazaCafe">
                                         <div class="Tasting Notes">
                                             Tasting Notes - Incomparable World blend,
@@ -238,22 +222,14 @@
                                         </div>
 
                                     </div>
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-                                    <img class="espiral" src="resources/CoffeeDescImg/coffeeBean.svg" active
-=======
                                     <img class="espiral" src="resources/Coffee desc Img/coffee-beans.png" active
->>>>>>> develop:app/views/ItemDesc.html
                                         alt="TazaCafe">
                                     <div class="Origin">
                                         Origin - World Blend; Combines the best origin coffes
                                         from the world's premier growing regions.
                                     </div>
 
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-                                    <img class="espiral" src="resources/coffeeDescImg/spiral.svg" active
-=======
                                     <img class="espiral" src="resources/Coffee desc Img/espiral.png" active
->>>>>>> develop:app/views/ItemDesc.html
                                         alt="TazaCafe">
                                     <div class="Signature Blend">
                                         Signature Blend - The best blend of the best coffee
@@ -330,21 +306,17 @@
             </div>
         </div>
     </div>
+    </div>
     <!--FOOTER-->
     <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
         <div class="container">
             <div class="row row-30">
                 <div class="col-md-4 col-xl-5">
-<<<<<<< HEAD:app/views/html/ItemDesc.html
-                    <div class="pr-xl-4"><a class="brand" href="#"></a>
-                        <p>We are coffee People.</p>
-=======
                     <div class="pr-xl-4"><a class="brand" href="/"></a>
                         <p>We are an award-winning creative agency, dedicated to the
                             best result in web design,
                             promotion, business consulting, and marketing.</p>
                         F
->>>>>>> develop:app/views/ItemDesc.html
                         <!-- Rights-->
                         <p class="rights"><span>©  </span><span class="copyright-year">2021</span>
                             <span> </span><span>Company</span><span>
@@ -355,16 +327,18 @@
                     <h5>Contacts</h5>
                     <dl class="contact-list">
                         <dt>Address:</dt>
-                        <dd>Anillo Perif. Sur Manuel Gómez Morín 8585, Santa María Tequepexpan, 45604 San Pedro
+                        <dd>Anillo Perif. Sur Manuel Gómez Morín 8585, Santa María
+                            Tequepexpan, 45604 San Pedro
                             Tlaquepaque, Jal.</dd>
                     </dl>
                     <dl class="contact-list">
                         <dt>email:</dt>
-                        <dd><a href="mailto:coffee4home@gmail.com">coffee4home@gmail.com</a></dd>
+                        <dd><a href="mailto:#">coffee4home@gmail.com</a></dd>
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
-                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a href="tel:+52 1 33 1242">+52 1 33 1242
+                        <dd><a href="tel:#">+52 1 452 107 5541</a> <span>or</span> <a href="tel:#">+52 1 33
+                                1242
                                 1332</a>
                         </dd>
                     </dl>
@@ -383,6 +357,16 @@
         </div>
     </footer>
 
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="../../controllers/data_handler.js"></script>
+    <script src="../../controllers/products.js"></script>
+    <script src="../../controllers/shopping_cart.js"></script>
+    <script src="../../controllers/utils.js"></script>
     <!--<script src="../../controllers/index.js"></script>-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">

@@ -216,26 +216,23 @@ ul, ol {
 
 /* Login & signUp */
 
+.btn.login-button.btn.btn-success {
+    background-color: burlywood;
+    border: black;
+    font-family: patrick hand;
+}
 .modal-content {
     background-color: burlywood;
     border: black;
     font-family: patrick hand;
 
 }
-.btn.login-button.btn.btn-success,
 .btn.btn-success.mt-3 {
     background-color: burlywood !important;
-    border: 1px solid rgb(115, 73, 18) !important;
+    border: black;
     font-family: patrick hand;
-}
-.btn.login-button.btn.btn-success:active,
-.btn.login-button.btn.btn-success:focus,
-.btn.btn-success.mt-3:active,
-.btn.btn-success.mt-3:focus {
-    background-color: burlywood !important;
-    border: 1px solid rgb(115, 73, 18) !important;
-    font-family: patrick hand;
-    box-shadow: 0 0 0 .2rem rgb(115, 73, 18,.5) !important;
+    color: #000
+    
 }
 .fas {
     margin-left: 0px;
