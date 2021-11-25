@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/Producti.css">
+    <link rel="stylesheet" href="css/productInfo">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick Hand">
 </head>
@@ -19,8 +19,8 @@
     <!--Navigation header-->
     <nav class="navbar navbar-expand-sm navbar-dark">
         <div>
-            <a href="/app/views/html/home.html">
-                <img class="logo" src="/app/Resources/logo.png" alt="Logo">
+            <a href="home">
+                <img class="logo" src="resources/logo.png" alt="Logo">
             </a>
         </div>
 
@@ -40,7 +40,7 @@
                 </div>
                 <li>
                     <a class="nav-item">
-                        <a class="nav-link" href="/app/views/html/shopping_cart.html">
+                        <a class="nav-link" href="cart">
                             Carrito
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         </a>
@@ -166,20 +166,20 @@
                     <h4>Search the coffee YOU want</h4>
                     <h5>Search by any andl all criteria</h5>
                 </div>
-                <img class="large-image" src="/app/Resources/Cofee Items/Banner1.jpg" alt="First slide">
+                <img class="large-image" src="resources/coffeeItems/banner1.jpg" alt="First slide">
             </div>
-
+            
             <div class="carousel-item">
                 <div class="textInBanner">
                 </div>
-                <img class="large-image" src="/app/Resources/Cofee Items/Banner2.png" alt="Second slide">
+                <img class="large-image" src="resources/coffeeItems/banner2.png" alt="Second slide">
             </div>
             <div class="carousel-item">
                 <div class="textInBanner">
                 </div>
-                <img class="large-image" src="/app/Resources/Cofee Items/Banner3.jpg" alt="Third slide">
+                <img class="large-image" src="resources/coffeeItems/banner3.jpg" alt="Third slide">
             </div>
-
+        
         </div>
         <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -472,39 +472,40 @@
     <!-- Coffee stock -->
     <div class="container coffeeStockContainer">
         <div class="row rowProducts">
-            <a href="./ItemDesc.html" style="width: 100%; text-decoration: none !important; color: black;">
-            <div class="productContainer">
-
-                <div class="coffeeImg">
-                    <img class="productImg" src="../../Resources/Cofee Items/peetsCoffee.jpg" alt="Peet's Coffee">
+            <a href="itemDesc" style="width: 100%; text-decoration: none !important; color: black;">
+                <div class="productContainer">
+                    <div class="coffeeImg">
+                        <img class="productImg" src="resources/coffeeItems/peetsCoffee.jpg" alt="Peet's Coffee">
+                    </div>
+                    <div class="coffeeIntormation">
+                        <h4>Peet's Coffee</h4>
+                        <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
+                        <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                        <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                        <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
+                        <p class="productText"><b>Tipo:</b> Mezcla.</p>
+                        <p class="productText"><b>Sabor:</b> Fuerte.</p>
+                        <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
+                    </div>
                 </div>
-                <div class="coffeeIntormation">
-                    <h4>Peet's Coffee</h4>
-                    <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
-                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                    <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
-                    <p class="productText"><b>Tipo:</b> Mezcla.</p>
-                    <p class="productText"><b>Sabor:</b> Fuerte.</p>
-                    <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
-                </div>
-            </div>
             </a>
-            <div class="productContainer">
-                <div class="coffeeImg">
-                    <img class="productImg" src="../../Resources/Cofee Items/KenyaAA.jpeg" alt="Peet's Coffee">
+            <a href="itemDesc" style="width: 100%; text-decoration: none !important; color: black;">            
+                <div class="productContainer">
+                    <div class="coffeeImg">
+                        <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
+                    </div>
+                    <div class="coffeeIntormation">
+                        <h4>Kenya AA</h4>
+                        <p class="productText"><b>Marca:</b> Java House Africa.</p>
+                        <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                        <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                        <p class="productText"><b>Origen:</b> Kenya.</p>
+                        <p class="productText"><b>Tipo:</b> Origen único.</p>
+                        <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
+                        <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
+                    </div>
                 </div>
-                <div class="coffeeIntormation">
-                    <h4>Kenya AA</h4>
-                    <p class="productText"><b>Marca:</b> Java House Africa.</p>
-                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                    <p class="productText"><b>Origen:</b> Kenya.</p>
-                    <p class="productText"><b>Tipo:</b> Origen único.</p>
-                    <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
-                    <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
     <!--FOOTER-->
@@ -512,9 +513,8 @@
         <div class="container">
             <div class="row row-30">
                 <div class="col-md-4 col-xl-5">
-                    <div class="pr-xl-4"><a class="brand" href="index.html"></a>
-                        <p>We are an award-winning creative agency, dedicated to the best result in web design,
-                            promotion, business consulting, and marketing.</p>
+                    <div class="pr-xl-4"><a class="brand" href="#"></a>
+                        <p>We are coffee People.</p>
                         <!-- Rights-->
                         <p class="rights"><span>©  </span><span class="copyright-year">2021</span>
                             <span> </span><span>Company</span><span>
@@ -530,11 +530,11 @@
                     </dl>
                     <dl class="contact-list">
                         <dt>email:</dt>
-                        <dd><a href="mailto:#">coffee4home@gmail.com</a></dd>
+                        <dd><a href="mailto:coffee4home@gmail.com">coffee4home@gmail.com</a></dd>
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
-                        <dd><a href="tel:#">+52 1 452 107 5541</a> <span>or</span> <a href="tel:#">+52 1 33 1242
+                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a href="tel:+52 1 33 1242">+52 1 33 1242
                                 1332</a>
                         </dd>
                     </dl>
