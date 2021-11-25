@@ -271,25 +271,27 @@ ol {
     transition: .22s ease;
 }
 
-.btn.login-button.btn.btn-success {
-    background-color: burlywood;
-    border: black;
-    font-family: patrick hand;
-}
-
 .modal-content {
     background-color: burlywood;
     border: black;
     font-family: patrick hand;
-
 }
 
+.btn.login-button.btn.btn-success,
 .btn.btn-success.mt-3 {
     background-color: burlywood !important;
-    border: black;
+    border: 1px solid rgb(115, 73, 18) !important;
     font-family: patrick hand;
-    color: #000
-    
+}
+
+.btn.login-button.btn.btn-success:active,
+.btn.login-button.btn.btn-success:focus,
+.btn.btn-success.mt-3:active,
+.btn.btn-success.mt-3:focus {
+    background-color: burlywood !important;
+    border: 1px solid rgb(115, 73, 18) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18,.5) !important;
 }
 
 .column {
@@ -356,48 +358,52 @@ ol {
     width: 100%;
 }
 
-.espiral{
+.espiral {
     width: 20%;
 }
 
 
-.progress{
-    background: linear-gradient(to right, #fff 35%,#915804 50%,#3a2101 68%);
-    border-radius: 20px;
-    height: 20px;
-    border-top: 1px solid #000;
+.progress {
+    background: linear-gradient(to right, #caa56f 5%,#755a33 33%,#3e2300 75%);
+    border-radius: 20px !important;
+    height: 8px !important;
     box-shadow: 0 5px 4px -6px #aaa;
     margin-top: 50px;
-    overflow: visible;
+    overflow: visible !important;
+    padding: 0px;
 }
-.progress .progress-bar{
+.progress .progress-bar {
     border-radius: 20px;
     position: relative;
     animation: animate-positive 2s;
+    background:none;
 }
-.progress .progress-bar:after{
-    content: "\f111";
+.progress .progress-bar:after {
+    background-image: url(../../Resources/Coffee\ desc\ Img/coffee-bean-svgrepo-com.svg);
+    content: ' ';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    font-size: 10px;
-    size: 10px;
-    color: #fff;
+    font-size: 1px !important;
+    color: white !important;
     position: absolute;
-    top: -1px;
-    right: 10px;
+    right: -3px;
+    top: -4px;
+    background-size: 15px 15px;
+    padding: 10px;
+    background-repeat: no-repeat;
 }
-.progress .progress-value{
+.progress .progress-value {
     display: block;
-    font-size: 13px;
+    font-size: 5px;
     color: #fff;
     border-radius: 4px;
-    padding: 3px 8px;
+    padding: 3px 5px;
     background:#191919;
     position: absolute;
-    top: -40px;
-    right: -27px;
+    top: -25px;
+    right: -13px;
 }
-.progress .progress-value:after{
+.progress .progress-value:after {
     content: "";
     border-top: 5px solid #191919;
     border-left: 5px solid #191919;
@@ -407,10 +413,10 @@ ol {
     bottom: -6px;
     left: 0;
 }
-@-webkit-keyframes animate-positive{
+@-webkit-keyframes animate-positive {
     0% { width: 0%; }
 }
-@keyframes animate-positive{
+@keyframes animate-positive {
     0% { width: 0%; }
 }
 
