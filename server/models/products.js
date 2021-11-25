@@ -12,7 +12,10 @@ let productSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        required: true
+        required: true,
+        unique: false,
+        index: true,
+
     },
     description: {
         type: String,
@@ -24,24 +27,11 @@ let productSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-    },
-    category: {
-        type: String,
-        required: true
+        required: false
     },
     stock: {
         type: Number,
         required: true
-    },
-    createdAt: {
-        type: Date,
-        required: false,
-        default: Date.now
-    },
-    updatedAt: {
-        type: Date,
-        required: false,
-        default: Date.now
     },
     tipoCafe: {
         type: String,
