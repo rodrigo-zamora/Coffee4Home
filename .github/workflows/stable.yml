@@ -1,11 +1,11 @@
-name: Deploy
+name: Stable
 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ stable ]
   pull_request:
-    branches: [ master ]
+    branches: [ stable ]
 
 jobs:
   build:
@@ -17,4 +17,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "coffe4home" #Must be unique in Heroku
           heroku_email: "is727254@iteso.mx"
-          branch: "master"
+          branch: "stable"
