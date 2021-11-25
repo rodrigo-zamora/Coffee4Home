@@ -379,7 +379,7 @@ ol {
     background:none;
 }
 .progress .progress-bar:after {
-    background-image: url(../../Resources/Coffee\ desc\ Img/coffee-bean-svgrepo-com.svg);
+    background-image: url(resources/coffeeDescImg/coffeeBean.svg);
     content: ' ';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
