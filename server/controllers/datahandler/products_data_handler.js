@@ -70,7 +70,7 @@ function updateProduct(req, res) {
       delete updatedProduct[property];
   }
   Product.findOneAndUpdate({
-      uuid: `${UUID}`
+      uuid: `${uuid}`
   }, updatedProduct, {
       new: true
   }).then(product => {
@@ -82,7 +82,7 @@ function updateProduct(req, res) {
 function removeProduct(req, res) {
   let uuid = req.params.UUID;
   Product.findOneAndDelete({
-      uuid: `${UUID}`
+      uuid: `${uuid}`
   }).then(product => {
       res.type('text/plain; charset=utf-8');
       res.send(product != undefined ? `Product with uuid ${uuid} has been deleted!` 

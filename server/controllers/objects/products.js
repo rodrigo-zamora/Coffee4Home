@@ -7,7 +7,7 @@ class ProductException {
 }
 
 class Product {
-    constructor(name, description, image, pricePerUnit, category, stock) {
+    constructor(name, description, image, pricePerUnit, category, stock, tipoCafe, tipoGrano, estado) {
         this._uuid = utils.generateUUID();
         this.name = name;
         this.description = description;
@@ -15,6 +15,9 @@ class Product {
         this.pricePerUnit = pricePerUnit;
         this.category = category;
         this.stock = stock;
+        this.tipoCafe = tipoCafe;
+        this.tipoGrano = tipoGrano;
+        this.estado = estado;
     }
 
     get uuid() {
@@ -101,6 +104,45 @@ class Product {
             throw new ProductException('Products stock must be a number');
         }
         this._stock = stock;
+    }
+
+    get tipoCafe() {
+        return this._tipoCafe;
+    }
+
+    set tipoCafe(tipoCafe) {
+        if (!tipoCafe) {
+            throw new ProductException('Products must have a tipoCafe');
+        } else if (typeof tipoCafe !== 'string') {
+            throw new ProductException('Products tipoCafe must be a string');
+        }
+        this._tipoCafe = tipoCafe;
+    }
+
+    set tipoGrano(tipoGrano) {
+        if (!tipoGrano) {
+            throw new ProductException('Products must have a tipoGrano');
+        } else if (typeof tipoGrano !== 'string') {
+            throw new ProductException('Products tipoGrano must be a string');
+        }
+        this._tipoGrano = tipoGrano;
+    }
+
+    get tipoGrano() {
+        return this._tipoGrano;
+    }
+
+    get estado() {
+        return this._estado;
+    }
+
+    set estado(estado) {
+        if (!estado) {
+            throw new ProductException('Products must have a estado');
+        } else if (typeof estado !== 'string') {
+            throw new ProductException('Products estado must be a string');
+        }
+        this._estado = estado;
     }
 
     static createFromJSON(json) {
