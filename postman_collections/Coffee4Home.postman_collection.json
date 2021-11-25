@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b2f0d12a-4d74-4e86-8e70-18f0345f4718",
+		"_postman_id": "d19a8a04-02d7-4a79-9e4c-bb26bdd94463",
 		"name": "Coffee4Home",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -294,7 +294,18 @@
 							"name": "admin/products",
 							"request": {
 								"method": "POST",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
 								"body": {
 									"mode": "raw",
 									"raw": "{\r\n    \"name\": \"Etnia 52, Café de Altura Sabor Avellana, Tueste Medio, Molido, 454 gr\",\r\n    \"description\": \"CAFÉ SABORIZADO: acidez balanceada, sabor y aroma altamente agradable como la avellana recién tostada\\nCAFÉ GOURMET: 100% granos de café fresco de especialidad. Tueste Medio. Pre-Molido para una preparación fácil y para mantener su molino limpio de diferentes sabores\\nALTA CALIDAD: Zipper resellable y válvula de desgasificación unidireccional para preservar la frescura del café\\nOrgullosamente un producto 100% mexicano, comprometido con nuestro medio ambiente y con las comunidades que lo producen, libre de químicos\\nCERTIFICACIÓN Kosher. Calidad de exportación. Nuestra mejor selección en cada grano. Perfecto para cafeteras de filtro, prensa francesa, percoladora\",\r\n    \"pricePerUnit\": 140.72,\r\n    \"image\": \"https://m.media-amazon.com/images/I/81TAR7QtiQL._AC_SL1500_.jpg\",\r\n    \"category\": \"Café molido\",\r\n    \"stock\": 196\r\n}",
@@ -305,7 +316,7 @@
 									}
 								},
 								"url": {
-									"raw": "https://coffe4home-development.herokuapp.com/admin/products?Content-Type=application/json&x-auth=admin",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/products",
 									"protocol": "https",
 									"host": [
 										"coffe4home-development",
@@ -315,16 +326,6 @@
 									"path": [
 										"admin",
 										"products"
-									],
-									"query": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "x-auth",
-											"value": "admin"
-										}
 									]
 								}
 							},
@@ -334,9 +335,24 @@
 							"name": "admin/products/:uuid",
 							"request": {
 								"method": "PUT",
-								"header": [],
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Etnia 52, Café de Altura Sabor Avellana, Tueste Medio, Molido, 454 gr\",\n    \"description\": \"CAFÉ SABORIZADO: acidez balanceada, sabor y aroma altamente agradable como la avellana recién tostada\\nCAFÉ GOURMET: 100% granos de café fresco de especialidad. Tueste Medio. Pre-Molido para una preparación fácil y para mantener su molino limpio de diferentes sabores\\nALTA CALIDAD: Zipper resellable y válvula de desgasificación unidireccional para preservar la frescura del café\\nOrgullosamente un producto 100% mexicano, comprometido con nuestro medio ambiente y con las comunidades que lo producen, libre de químicos\\nCERTIFICACIÓN Kosher. Calidad de exportación. Nuestra mejor selección en cada grano. Perfecto para cafeteras de filtro, prensa francesa, percoladora\",\n    \"pricePerUnit\": 150.72,\n    \"image\": \"https://m.media-amazon.com/images/I/81TAR7QtiQL._AC_SL1500_.jpg\",\n    \"category\": \"Café molido\",\n    \"stock\": 196\n}"
+								},
 								"url": {
-									"raw": "https://coffe4home-development.herokuapp.com/admin/products/?Content-Type=application/json&x-auth=admin",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/products/ee211608-7620-40d0-bb17-78c2c3c3021a",
 									"protocol": "https",
 									"host": [
 										"coffe4home-development",
@@ -346,17 +362,7 @@
 									"path": [
 										"admin",
 										"products",
-										""
-									],
-									"query": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "x-auth",
-											"value": "admin"
-										}
+										"ee211608-7620-40d0-bb17-78c2c3c3021a"
 									]
 								}
 							},
@@ -366,9 +372,15 @@
 							"name": "admin/products/:uuid",
 							"request": {
 								"method": "DELETE",
-								"header": [],
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
 								"url": {
-									"raw": "https://coffe4home-development.herokuapp.com/admin/products/?x-auth=admin",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/products/ee211608-7620-40d0-bb17-78c2c3c3021a",
 									"protocol": "https",
 									"host": [
 										"coffe4home-development",
@@ -378,13 +390,7 @@
 									"path": [
 										"admin",
 										"products",
-										""
-									],
-									"query": [
-										{
-											"key": "x-auth",
-											"value": "admin"
-										}
+										"ee211608-7620-40d0-bb17-78c2c3c3021a"
 									]
 								}
 							},
@@ -438,7 +444,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://coffe4home-development.herokuapp.com/products/",
+							"raw": "https://coffe4home-development.herokuapp.com/products/ee211608-7620-40d0-bb17-78c2c3c3021a",
 							"protocol": "https",
 							"host": [
 								"coffe4home-development",
@@ -447,7 +453,7 @@
 							],
 							"path": [
 								"products",
-								""
+								"ee211608-7620-40d0-bb17-78c2c3c3021a"
 							]
 						}
 					},
