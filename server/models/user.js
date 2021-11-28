@@ -7,10 +7,12 @@ let Utils = require('../controllers/utils/uuid_utils');
 let userSchema = mongoose.Schema({
     UUID: {
         type: String,
-        required: false,
+        default: function () {
+            return Utils.generateUUID();
+        },
         unique: true,
-        index: true,
-        default: Utils.generateUUID()
+        required: false,
+        index: true
     },
     firstName: {
         type: String,
@@ -58,6 +60,7 @@ let userSchema = mongoose.Schema({
 userSchema.pre('save', function (next) {
     let user = this;
     user.password = bcrypt.hashSync(user.password, 10);
+    user.UUID = Utils.generateUUID();
     next();
 });
 
