@@ -5,8 +5,11 @@ let Utils = require('../controllers/utils/uuid_utils');
 let productSchema = new mongoose.Schema({
     UUID: {
         type: String,
-        required: false,
+        default: function () {
+            return Utils.generateUUID();
+        },
         unique: true,
+        required: false,
         index: true
     },
     name: {
@@ -47,11 +50,5 @@ let productSchema = new mongoose.Schema({
 }, { collection : 'products' });
 
 let Product = mongoose.model('product', productSchema);
-
-productSchema.pre('save', function (next) {
-    let product = this;
-    product.UUID = Utils.generateUUID();
-    next();
-});
 
 module.exports = Product;
