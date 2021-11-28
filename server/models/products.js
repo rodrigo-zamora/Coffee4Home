@@ -51,4 +51,10 @@ let productSchema = new mongoose.Schema({
 
 let Product = mongoose.model('product', productSchema);
 
+productSchema.pre('save', function (next) {
+    let product = this;
+    product.UUID = Utils.generateUUID();
+    next();
+});
+
 module.exports = Product;
