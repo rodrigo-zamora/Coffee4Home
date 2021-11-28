@@ -96,22 +96,51 @@ function getProductByUUID(req, res) {
 
 function createProduct(req, res) {
   let product = req.body;
-  try {
+  if (product == undefined) {
+    return res.status(400).json({
+      error: "Product is required"
+    });
+  } else {
+    // Check if product name is already in use
     Product.findOne({
-      uuid: `${product.UUID}`
-    }).then(newProduct => {
-      if (newProduct == undefined) {
-        Product.create(product).then(product => {
-          res.type('text/plain; charset=utf-8');
-          res.send(`Product ${product.UUID} was created!`);
+      name: product.name
+    }, (err, productFound) => {
+      if (err) {
+        return res.status(500).json({
+          error: "Error in the request"
+        });
+      }
+      if (productFound) {
+        return res.status(400).json({
+          error: "A product with that name already exists!"
         });
       } else {
-        res.type('text/plain; charset=utf-8');
-        res.send(`Product with uuid ${product.UUID} already exists!`);
+        let newProduct = new Product();
+        newProduct.name = product.name;
+        newProduct.description = product.description;
+        newProduct.pricePerUnit = product.pricePerUnit;
+        newProduct.image = product.image;
+        newProduct.stock = product.stock;
+        newProduct.tipoCafe = product.tipoCafe;
+        newProduct.tipoGrano = product.tipoGrano;
+        newProduct.estado = product.estado;
+        newProduct.save((err, productStored) => {
+          if (err) {
+            res.status(500).send(err);
+          } else {
+            if (!productStored) {
+              res.status(404).send({
+                message: "No se ha guardado el producto"
+              });
+            } else {
+              res.status(200).send({
+                product: productStored
+              });
+            }
+          }
+        });
       }
     });
-  } catch (err) {
-    res.status(400).json(err);
   }
 }
 
@@ -145,6 +174,7 @@ function updateProduct(req, res) {
 
 function removeProduct(req, res) {
   let uuid = req.params.uuid;
+  console.log(uuid);
   if (uuid == undefined) {
     res.status(400).json({
       error: "UUID is required"
@@ -152,13 +182,13 @@ function removeProduct(req, res) {
   } else {
     Product.findOneAndDelete({
       uuid: `${uuid}`
-    }).then(product => {
-      if (product == undefined) {
-        res.type('text/plain; charset=utf-8');
-        res.send(`Product with uuid ${uuid} was not found!`);
+    }, (err, product) => {
+      if (err) {
+        res.status(500).send(err);
+      } else if (product == null || product.uuid == undefined) {
+        res.status(404).send(`Product with UUID ${uuid} was not found!`);
       } else {
-        res.type('text/plain; charset=utf-8');
-        res.send(`Product with uuid ${uuid} and name ${product.name} was deleted!`);
+        res.status(200).send(`Product with UUID ${product.uuid} and name ${product.name} was deleted!`);
       }
     });
   }
