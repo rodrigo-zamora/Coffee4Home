@@ -11,7 +11,11 @@ router.route('/')
 
 router.route('/:email')
     .delete((req, res) => {
-        dataHandler.deleteUser(req, res);
+        if (req.params.email.includes('@')) {
+            dataHandler.deleteUser(req, res);
+        } else {
+            dataHandler.deleteUserByUUID(req, res);
+        }
     });
 
 module.exports = router;
