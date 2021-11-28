@@ -7,8 +7,7 @@ let productSchema = new mongoose.Schema({
         type: String,
         required: false,
         unique: true,
-        index: true,
-        default: Utils.generateUUID()
+        index: true
     },
     name: {
         type: String,
@@ -48,5 +47,11 @@ let productSchema = new mongoose.Schema({
 }, { collection : 'products' });
 
 let Product = mongoose.model('product', productSchema);
+
+productSchema.pre('save', function (next) {
+    let product = this;
+    product.UUID = Utils.generateUUID();
+    next();
+});
 
 module.exports = Product;
