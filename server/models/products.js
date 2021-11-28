@@ -5,8 +5,11 @@ let Utils = require('../controllers/utils/uuid_utils');
 let productSchema = new mongoose.Schema({
     UUID: {
         type: String,
-        required: false,
+        default: function () {
+            return Utils.generateUUID();
+        },
         unique: true,
+        required: false,
         index: true
     },
     name: {

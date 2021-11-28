@@ -7,8 +7,11 @@ let Utils = require('../controllers/utils/uuid_utils');
 let userSchema = mongoose.Schema({
     UUID: {
         type: String,
-        required: false,
+        default: function () {
+            return Utils.generateUUID();
+        },
         unique: true,
+        required: false,
         index: true
     },
     firstName: {
