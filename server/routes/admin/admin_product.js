@@ -14,7 +14,7 @@ router.route('/:uuid')
         dataHandler.updateProduct(req, res);
     })
     .delete((req, res) => {
-        dataHandler.removeProduct(req, res);
+        dataHandler.deleteProduct(req, res);
     });;
 
 module.exports = router;
