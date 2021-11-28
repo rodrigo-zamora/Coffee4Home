@@ -22,56 +22,41 @@ function getProducts(req, res) {
   });
 }
 
-function getProduct(req, res) {
-  let query = req.query;
-  let filter = {};
-  if (query.name) {
-    filter.name = query.name;
-  }
-  if (query.price) {
-    filter.price = query.price;
-  }
-  if (query.stock) {
-    filter.stock = query.stock;
-  }
-  if (query.category) {
-    filter.category = query.category;
-  }
-  if (query.description) {
-    filter.description = query.description;
-  }
-  if (query.UUID) {
-    filter.UUID = query.UUID;
-  }
-  if (query.image) {
-    filter.image = query.image;
-  }
-  if (query.createdAt) {
-    filter.createdAt = query.createdAt;
-  }
-  if (query.updatedAt) {
-    filter.updatedAt = query.updatedAt;
-  }
-  if (query.__v) {
-    filter.__v = query.__v;
-  }
-  Product.find(filter, (err, products) => {
-    if (err) {
-      res.status(500).send({
-        message: "Error en la petición"
-      });
-    } else {
-      if (!products) {
-        res.status(404).send({
-          message: "No hay productos"
-        });
-      } else {
-        res.status(200).send({
-          products
-        });
+function searchProducts(req, res) {
+  let search = req.params.id;
+  if (search == undefined) {
+    res.status(404).send({
+      message: "No hay productos"
+    });
+  } else {
+    let tipoCafe = search.split("?")[1].split("=")[1];
+    let tipoGrano = search.split("?")[2].split("=")[1];
+    let cafeLocal = search.split("?")[3].split("=")[1];
+    Product.find(
+      {
+        tipoCafe: tipoCafe,
+        tipoGrano: tipoGrano,
+        cafeLocal: cafeLocal
+      },
+      (err, products) => {
+        if (err) {
+          res.status(500).send({
+            message: "Error en la petición"
+          });
+        } else {
+          if (!products) {
+            res.status(404).send({
+              message: "No hay productos"
+            });
+          } else {
+            res.status(200).send({
+              products
+            });
+          }
+        }
       }
-    }
-  });
+    );
+  }
 }
 
 function getProductByUUID(req, res) {
@@ -197,7 +182,7 @@ function deleteProduct(req, res) {
 
 
 exports.getProducts = getProducts;
-exports.getProduct = getProduct;
+exports.searchProducts = searchProducts;
 exports.getProductByUUID = getProductByUUID;
 exports.createProduct = createProduct;
 exports.updateProduct = updateProduct;
