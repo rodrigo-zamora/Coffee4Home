@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <title>Title</title>
     <!-- Required meta tags -->
@@ -13,6 +14,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick Hand">
 </head>
+
 <body>
     <!--Navigation header-->
     <nav class="navbar navbar-expand-sm navbar-dark">
@@ -38,7 +40,7 @@
                 </div>
                 <li>
                     <a class="nav-item">
-                        <a class="nav-link" href="cartl">
+                        <a class="nav-link" href="cart">
                             Carrito
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                         </a>
@@ -173,12 +175,14 @@
                         <div class="inputs">
                             <div class="input-quantity input-group mb-3">
                                 <span class="input-group-text">Cantidad:</span>
-                                <input type="number" class="quantity form-control" min="1" max="5" value="1" id="quantity">
-                                <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
+                                <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity" disabled>
+                                <button class="pen btn btn-outline-secondary" type="button" for="quantity"
+                                    name="quantity" id="button-addon2"><i class="fa fa-pen"
+                                        aria-hidden="true"></i></button>
                             </div>
                             <div class="input-price input-group mb-3">
                                 <span class="input-group-text">Precio:</span>
-                                <input type="text" class="price form-control " value="130.50">
+                                <input type="text" class="priceInput form-control " value="130.50">
                                 <span class="input-group-text">$ m.n.</span>
                             </div>
                             <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
@@ -194,12 +198,14 @@
                         <div class="inputs">
                             <div class="input-quantity input-group mb-3">
                                 <span class="input-group-text">Cantidad:</span>
-                                <input type="number" class="quantity form-control" min="1" max="5" value="1" id="quantity">
-                                <button class="pen btn btn-outline-secondary" type="button" for="quantity" name="quantity" id="button-addon2"><i class="fa fa-pen" aria-hidden="true"></i></button>
+                                <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity" disabled>
+                                <button class="pen btn btn-outline-secondary" type="button" for="quantity"
+                                    name="quantity" id="button-addon2"><i class="fa fa-pen"
+                                        aria-hidden="true"></i></button>
                             </div>
                             <div class="input-price input-group mb-3">
                                 <span class="input-group-text">Precio:</span>
-                                <input type="text" class="price form-control " value="130.50">
+                                <input type="text" class="priceInput form-control " value="130.50">
                                 <span class="input-group-text">$ m.n.</span>
                             </div>
                             <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
@@ -208,34 +214,106 @@
                 </div>
             </div>
             <!-- Right -->
-            <div class="col-md-4 col-12">
+            <div class="col-md-4">
                 <div class="leftCard">
                     <div class="card-body">
-                        <h4 class="card-title">Total de Compra</h4>
-                        <div class="dropdown-divider"></div>
-                        <p class="card-text">Peet's Coffee</p>
-                        <p class="card-text">Sonaja: 2 x $60.00</p>
-                        <p class="card-text">Costo de envío: $40.00</p>
-                        <div class="dropdown-divider"></div>
-                        <div class="total">
-                            <b>Monto a pagar: $290.50</b>
-                        </div>
-                        <div class="pagos">
-                            <button class="btn btn-outline-success">Pagar</button>
-                            <button class="btn btn-outline-danger d-flex">Cancelar</button>
-                        </div>
+                        <h5 class="card-title">Total de Compra</h6>
+                            <div class="divider"></div>
+                            <div class="infoProduct">
+                                <p class="coffeeTitle"><i>Peet's Coffee</i></p>
+                                <div class="totalProduct">
+                                    <p class="quantityText card-text">1</p>
+                                    <p class="priceText card-text">$130.00</p>
+                                </div>
+                            </div>
+                            <div class="infoProduct">
+                                <p class="coffeeTitle"><i>Kenya AA</i></p>
+                                <div class="totalProduct">
+                                    <p class="quantityText card-text">1</p>
+                                    <p class="priceText card-text">$1,038.00</p>
+                                </div>
+                            </div>
+                            <div class="infoProduct">
+                                <p class="coffeeTitle"><i>Costo de envío</i></p>
+                                <div class="totalProduct">
+                                    <p class="quantityText card-text"></p>
+                                    <p class="priceText card-text">$60.00</p>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div class="infoProduct">
+                                <p class="coffeeTitle"><i>Monto a pagar:</i></p>
+                                <div class="totalProduct">
+                                    <p class="quantityText card-text"></p>
+                                    <p class="priceText card-text">$1,228.00</p><br>
+                                </div>
+                            </div>
+                            <div class="pagos">
+                                <button class="btn btn-outline-success">Pagar</button>
+                                <button class="btn btn-outline-danger d-flex">Cancelar</button>
+                            </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <!--FOOTER-->
+    <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-md-4 col-xl-5">
+                    <div class="pr-xl-4"><a class="brand" href="#"></a>
+                        <p>We are coffee People.</p>
+                        <!-- Rights-->
+                        <p class="rights"><span>©  </span><span class="copyright-year">2021</span>
+                            <span> </span><span>Company</span><span>
+                                - </span><span>All Rights Reserved.</span></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacts</h5>
+                    <dl class="contact-list">
+                        <dt>Address:</dt>
+                        <dd>Anillo Perif. Sur Manuel Gómez Morín 8585, Santa María Tequepexpan, 45604 San Pedro
+                            Tlaquepaque, Jal.</dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>email:</dt>
+                        <dd><a href="mailto:coffee4home@gmail.com">coffee4home@gmail.com</a></dd>
+                    </dl>
+                    <dl class="contact-list">
+                        <dt>phones:</dt>
+                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a href="tel:+52 1 33 1242">+52 1 33 1242
+                                1332</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-md-4 col-xl-3">
+                    <h5>Links</h5>
+                    <ul class="nav-list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacts</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
 <!--MEDIA OBJECT bootstrap -->
