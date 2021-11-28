@@ -55,11 +55,11 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/cart', (req, res) => {    
-    res.render('shoppingCart');
+    res.render('cart');
 });
 
 app.get('/shoppingCart', (req, res) => {
-    res.render('shoppingCart');
+    res.render('cart');
  });
 
 /*app.get('/orders', (req, res) => {
