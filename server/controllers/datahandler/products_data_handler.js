@@ -174,23 +174,30 @@ function updateProduct(req, res) {
 
 function removeProduct(req, res) {
   let uuid = req.params.uuid;
-  console.log(uuid);
   if (uuid == undefined) {
     res.status(400).json({
       error: "UUID is required"
     });
   } else {
-    Product.findOneAndDelete({
+    let toDelete = Product.findOne({
       uuid: `${uuid}`
-    }, (err, product) => {
-      if (err) {
-        res.status(500).send(err);
-      } else if (product == null || product.uuid == undefined) {
-        res.status(404).send(`Product with UUID ${uuid} was not found!`);
-      } else {
-        res.status(200).send(`Product with UUID ${product.uuid} and name ${product.name} was deleted!`);
-      }
     });
+    if (toDelete == undefined || toDelete == null) {
+      res.status(404).send(`Product with UUID ${uuid} was not found`);
+  } else if (toDelete.length == 0) {
+      res.status(404).send(`Product with UUID ${uuid} was not found`);
+    } else {
+      console.log(toDelete);
+      Product.findOneAndDelete({
+        uuid
+      }, (err, product) => {
+        if (err) {
+          res.status(500).send(err);
+        } else {
+          res.status(200).send(`Product with UUID ${uuid} was deleted`);
+        }
+      });
+    }
   }
 }
 

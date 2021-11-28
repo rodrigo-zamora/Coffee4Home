@@ -106,9 +106,21 @@ function deleteUser(req, res) {
     });
 }
 
+function deleteUserByUUID(req, res) {
+    let email = req.params.email;
+
+    User.findOneAndDelete({
+        uuid: `${email}`
+    }).then(user => {
+        res.type('text/plain; charset=utf-8');
+        res.send(user != undefined ? `User with UUID ${email} has been deleted!` : `No user with UUID ${email} was found!`);
+    });
+}
+
 exports.login = login;
 exports.getUsers = getUsers;
 exports.getUserByEmail = getUserByEmail;
 exports.createUser = createUser;
 exports.updateUser = updateUser;
 exports.deleteUser = deleteUser;
+exports.deleteUserByUUID = deleteUserByUUID;
