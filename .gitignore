@@ -108,4 +108,5 @@ Thumbs.db
 !.phpcs.xml.dist
 !.env.example
 
+package.json
 nodemon.json
