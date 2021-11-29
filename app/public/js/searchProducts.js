@@ -36,6 +36,6 @@ function searchProducts() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "/products" + query, true);
     xhr.onreadystatechange = function () {
-        
+
     }
 }
