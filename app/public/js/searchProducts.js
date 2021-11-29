@@ -15,6 +15,7 @@ function getURLparameters(sParam) {
 }
 
 function updatePage() {
+    //localStorage.clear();
     let query = "?";
     let tipoCafe = getURLparameters("tipoCafe");
     let tipoGrano = getURLparameters("tipoGrano");
@@ -127,13 +128,12 @@ function productToHTML(product) {
                     </div>
                     <div class="buttons col-md-4">
                         <div>
-                            <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity">
-                            <button type="button" class="accept-button btn btn-success" data-dismiss="modal" uuid=${product.UUID}>Agregar</button>
+                            <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity" uuid=${product.UUID} >
+                            <button type="button" name="add" class="accept-button btn btn-success" data-dismiss="modal" uuid=${product.UUID} onclick="addToCart('${product.UUID}')">Agregar</button>
                         </div>
                     </div>
                 </div>`
 }
-
 
 function showProducts(products) {
     for (let i = 0; i < products.products.length; i++) {
@@ -141,4 +141,33 @@ function showProducts(products) {
         let productHTML = productToHTML(product);
         document.getElementById("productsContainer").innerHTML += productHTML;
     }
+}
+
+function addToCart(uuid) {
+    console.log("Adding to cart: " + uuid);
+    // Get input above button
+    let quantity = 0;
+    let quantities = document.getElementsByClassName("quantityInput form-control");
+    for (let i = 0; i < quantities.length; i++) {
+        if (quantities[i].getAttribute("uuid") == uuid) {
+            quantity = quantities[i].value;
+            console.log("Quantity: " + quantity);
+        }
+    }
+    console.log("Adding to cart: " + uuid + " quantity: " + quantity);
+    let shoppingCart = localStorage.getItem("shoppingCart");
+    if (shoppingCart == null) {
+        console.log("Shopping cart is empty");
+        shoppingCart = [];
+    } else {
+        console.log("Shopping cart is not empty");
+        shoppingCart = JSON.parse(shoppingCart);
+    }
+    let product = {
+        "UUID": uuid,
+        "quantity": quantity
+    };
+    shoppingCart.push(product);
+    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+    console.log(shoppingCart);
 }
