@@ -35,7 +35,9 @@ function productToHTML(product) {
 function updatePage() {
     let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     let products = [];
-    if (shoppingCart != []) {
+    if (shoppingCart != [] && shoppingCart != null) {
+        document.getElementById('emptyCart').hidden = true;
+        document.getElementById('shoppingCartContainer').hidden = false;
         // Make a petition to the server to get get each product for each item in the shopping cart
         // and then add it to the page
         for (let i = 0; i < shoppingCart.length; i++) {
@@ -59,6 +61,7 @@ function updatePage() {
         }
         cartContainer.innerHTML = productsHTML;
     } else {
-        
+        document.getElementById('emptyCart').hidden = false;
+        document.getElementById('shoppingCartContainer').hidden = true;
     }
 }
