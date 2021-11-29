@@ -4,6 +4,8 @@ const express = require('express');
 const router = express.Router();
 const dataHandler = require('../controllers/datahandler/orders_data_handler');
 
+console.log("AA"+tokenUtils.verifyToken);
+
 router.route('/:uuid')
     .get((req, res) => {
         dataHandler.getOrderByUUID(req, res);

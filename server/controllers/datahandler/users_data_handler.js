@@ -6,13 +6,11 @@ const bcrypt = require('bcrypt');
 function login(req, res) {
     let email = req.body.email;
     let password = req.body.password;
-    //console.log(email, password);
     User.findOne({
             email: `${email}`
         })
         .then(user => {
             let token = user.generateToken(password);
-            console.log(token)
             if (token != undefined) {
                 res.status(200)
                 res.set('Content-Type', 'text/plain; charset=utf-8');

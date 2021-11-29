@@ -11,12 +11,10 @@ const tokenUtils = require('./utils/token_utils');
 
 router.use('/:email', tokenUtils.verifyToken);
 
-router.use('/orders', ordersRouter);
-router.use('/users', userRouter);
+router.use('/orders', ordersRouter, tokenUtils.verifyToken);
+//router.use('/users', userRouter);
 //router.use('/users', tokenUtils);
 router.use('/products', productRouter);
-router.use('/admin', adminRouter);
-
-console.log(tokenUtils.verifyToken);
+router.use('/admin', adminRouter, tokenUtils.verifyToken);
 
 module.exports = router;
