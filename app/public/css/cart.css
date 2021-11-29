@@ -38,6 +38,7 @@ body {
     padding: 0px 20px;
     /*position: fixed;*/
     top: 0;
+    background-color: antiquewhite;
 }
 
 .logo {
@@ -227,7 +228,6 @@ ol {
     padding: 10px 0px;
     border-style: dashed;
     margin: 10px;
-    width: 100%;
 }
 .productImg {
     margin-left: 10px;
@@ -382,4 +382,10 @@ input[disabled] {
     width: 100%;
     background-color: black;
     margin: .5rem 0;
+}
+
+.h1{
+    font-family: patrick hand;
+    font-size: 30px;
+    color: rgb(115, 73, 18);
 }
