@@ -9,11 +9,12 @@ const productRouter = require('../routes/products');
 
 const tokenUtils = require('./utils/token_utils');
 
-router.route('/:email', tokenUtils.verifyToken);
+router.use('/:email', tokenUtils.verifyToken);
 
-router.use('/orders', ordersRouter);
-router.use('/users', userRouter);
+router.use('/orders', ordersRouter, " ? uuid = req.params.uuid ");
+//router.use('/users', userRouter);
+//router.use('/users', tokenUtils);
 router.use('/products', productRouter);
-router.use('/admin', adminRouter);
+router.use('/admin', adminRouter, " ? uuid = req.params.uuid ");
 
 module.exports = router;
