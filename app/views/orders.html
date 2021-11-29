@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/searchProducts.css">
+    <link rel="stylesheet" href="css/orders.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick Hand">
 </head>
@@ -24,6 +24,14 @@
             <a href="/">
                 <img class="logo" src="resources/logo.png" alt="Logo">
             </a>
+        </div>
+
+        <div class="flex-grow-1">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control" type="text" placeholder="Buscar café...">
+                <i class="fas fa-search"></i>
+                <!--<button class="btn btn-outline-light col-sm-3 col-lg-2" type="submit">Search</button>-->
+            </form>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -81,8 +89,8 @@
                         </div>
                         <div class="form-group">
                             <div class="controls">
-                                <button type="button" class="login-button btn btn-success"
-                                    data-dismiss="modal">Iniciar sesión</button>
+                                <button type="button" class="login-button btn btn-success" data-dismiss="modal">Iniciar
+                                    sesión</button>
                             </div>
                         </div>
                         <div class="form-group">
@@ -117,13 +125,13 @@
                         <div class="row">
                             <div class="col-6">
                                 Nombre(s)
-                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tu(s) nombre(s)"
-                                    aria-describedby="helpId" required>
+                                <input type="text" name="" id="" class="form-control"
+                                    placeholder="Ingresa tu(s) nombre(s)" aria-describedby="helpId" required>
                             </div>
                             <div class="col-6">
                                 Apellidos
-                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tus Apellidos"
-                                    aria-describedby="helpId" required>
+                                <input type="text" name="" id="" class="form-control"
+                                    placeholder="Ingresa tus Apellidos" aria-describedby="helpId" required>
                             </div>
                         </div>
                         <br>
@@ -147,112 +155,48 @@
             </div>
         </div>
     </div>
-    
-    <!-- Select type coffee -->
-    <div class="items container " id="mainList">
-        <div class="row prepare">
-            <div class="column">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Tipo de Café</h5>
-                        <form id="tipoCafe">
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Café-capsulas" value="cápsulas">
-                            <label class="form-check-label" for="Café-capsulas">Café en capsulas</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-grano" value="grano">
-                            <label class="form-check-label" for="Cafe-grano">Café en grano</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-instantaneo" value="instantáneo" checked>
-                            <label class="form-check-label" for="Cafe-instantaneo">Café instantaneo</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-molido" value="molido">
-                            <label class="form-check-label" for="Cafe-molido">Café molido</label><br>
-                        </form>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Tipo de Grano </h5>
-                        <form id="tipoGrano">
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Arabico" value="arábico">
-                            <label class="form-check-label" for="Arabico">Arabico</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Mixto" value="mixto" checked>
-                            <label class="form-check-label" for="Mixto">Mixto</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Robusto" value="robusto">
-                            <label class="form-check-label" for="Robusto">Robusto</label><br>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Café local</h5>
-                    <form id="cafeLocal">
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Chiapas" value="chiapas">
-                        <label class="form-check-label" for="Chiapas">Chiapas</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colima" value="colima">
-                        <label class="form-check-label" for="Colima">Colima</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero" value="guerrero">
-                        <label class="form-check-label" for="Guerrero">Guerrero</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco" value="jalisco" checked>
-                        <label class="form-check-label" for="Jalisco">Jalisco</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo" value="hidalgo">
-                        <label class="form-check-label" for="Hidalgo">Hidalgo</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit" value="nayarit">
-                        <label class="form-check-label" for="Nayarit">Nayarit</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca" value="oaxaca">
-                        <label class="form-check-label" for="Oaxaca">Oaxaca</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla" value="puebla">
-                        <label class="form-check-label" for="Puebla">Puebla</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="San-luis-potosi" value="slp">
-                        <label class="form-check-label" for="San-luis-potosi">San luis potosí</label><br>
-                    </form>
-                </div>
-            </div>
-            <div class="searchSection">
-                <button type="submit" class="btn btn-success mt-3" id="searchButton">Buscar</button>
-            </div>
-        </div>
-    </div>
     <!-- Coffee stock -->
     <div class="container coffeeStockContainer">
-        <div class="row rowProducts">
+        <div class="row rowProducts" style="width: 100%;">
             <a style="width: 100%; text-decoration: none !important; color: black;">
-                <div class="productContainer">
-                    <div class="coffeeImg">
-                        <img class="productImg" src="resources/coffeeItems/peetsCoffee.jpg" alt="Peet's Coffee">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header ">
+                        <div class="coffeeproduct">Pedido Realizado</div>
+                        <div class="coffeeproduct">Total</div>
+                        <div class="coffeeproduct">Enviar a</div>
+                        <div class="coffeeproduct">Pedido N°2194819121349013449</div>
                     </div>
-                    <div class="coffeeIntormation">
-                        <h4>Peet's Coffee</h4>
-                        <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
-                        <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                        <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                        <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
-                        <p class="productText"><b>Tipo:</b> Mezcla.</p>
-                        <p class="productText"><b>Sabor:</b> Fuerte.</p>
-                        <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
+                    <div class="card-header">
+                        Entregado el viernes, 12 de junio
                     </div>
-                    <div class="buttons col-md-4">
-                        <div>
-                            <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity">
-                            <button type="button" class="accept-button btn btn-success" data-dismiss="modal">Agregar</button>
+                    <div class="productContainer">
+                        <div class="row productRow">
+                            <div class="coffeeImg col-md-2">
+                                <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
+                            </div>
+                            <div class="coffeeIntormation col-md-7">
+                                <h4>Kenya AA</h4>
+                                <p class="productText"><b>Marca:</b> Java House Africa.</p>
+                                <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                                <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                                <p class="productText"><b>Origen:</b> Kenya.</p>
+                                <p class="productText"><b>Tipo:</b> Origen único.</p>
+                                <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
+                                <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
+                            </div>
+                            <div class="buttons col-md-2">
+                                <div>
+                                    <button type="button" class="cancel-button btn btn-success"
+                                        data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="accept-button btn btn-success"
+                                        data-dismiss="modal">Aceptar</button>
+                                    <button type="button" class="reject-button btn btn-success"
+                                        data-dismiss="modal">Rechazar</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
-            <a style="width: 100%; text-decoration: none !important; color: black;">
-            <div class="productContainer">
-                <div class="coffeeImg">
-                    <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
-                </div>
-                <div class="coffeeIntormation">
-                    <h4>Kenya AA</h4>
-                    <p class="productText"><b>Marca:</b> Java House Africa.</p>
-                    <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                    <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                    <p class="productText"><b>Origen:</b> Kenya.</p>
-                    <p class="productText"><b>Tipo:</b> Origen único.</p>
-                    <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
-                    <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
-                </div>
-            </div>
             </a>
         </div>
     </div>
@@ -283,7 +227,8 @@
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
-                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a href="tel:+52 1 33 1242">+52 1 33 1242
+                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a
+                                href="tel:+52 1 33 1242">+52 1 33 1242
                                 1332</a>
                         </dd>
                     </dl>
@@ -301,7 +246,7 @@
             </div>
         </div>
     </footer>
-    
+
     <!--<script src="../../controllers/index.js"></script>-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -315,7 +260,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="js/searchProducts.js"></script>
 </body>
 
 </html>

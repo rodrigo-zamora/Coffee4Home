@@ -2,71 +2,15 @@ body {
     font-family: "Patrick Hand", sans-serif;
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
 }
+
 form {
     margin-left: 10px;
 }
-.searchSection {
-    display: flex;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    right: 0;
-    width: 100%;
-}
-.form-control {
-    border-color: rgb(115, 73, 18)  !important;
-    color: rgb(115, 73, 18) !important;
-}
-.quantityInput {
-    border-color: rgb(115, 73, 18) !important;
-    height: auto !important;
-    margin: 0px -2px 0px -2px !important;
-    margin: 5px !important;
-}
-#quantity {
-    width: 40% !important;
-}
-.buttons > div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#searchButton {
-    width: 300px;
-}
-
-.btn.accept-button.btn.btn-success {
-    width: 40%;
-    background-color: rgb(189, 222, 135) !important;
-    border: 1px solid rgb(18, 115, 47) !important;
-    font-family: patrick hand;
-    margin:5px;
-}
-
-.btn.accept-button.btn.btn-success:active,
-.btn.accept-button.btn.btn-success:focus,
-.btn.accept-button.btn.btn-success:hover {
-    background-color: rgb(130, 219, 46) !important;
-    border: 1px solid rgb(10, 112, 18) !important;
-    font-family: patrick hand;
-    box-shadow: 0 0 0 .1rem rgba(31, 110, 15, 0.5) !important;
-    margin:5px;
-}
-.buttons {
-    text-align: end;
-    align-self: center;
-    display: flex;
-    justify-content: center;
-}
-.form {
-    margin-left: 10px;
-}
 /* card */
-
 .card {
     padding: 1px;
-    width: 220px;
-    max-width: 300px;
+    width: 100% !important;
+    max-width: 100%s !important;
     border: 1px solid rgba(0, 0, 0, .125);
     transition: border .5s ease-in-out;
     border-radius: .25rem;
@@ -313,6 +257,7 @@ ol {
     background-color: burlywood !important;
     border: 1px solid rgb(115, 73, 18) !important;
     font-family: patrick hand;
+    margin:5px;
 }
 
 .btn.login-button.btn.btn-success:active,
@@ -323,6 +268,69 @@ ol {
     border: 1px solid rgb(115, 73, 18) !important;
     font-family: patrick hand;
     box-shadow: 0 0 0 .2rem rgb(115, 73, 18,.5) !important;
+    margin:5px;
+}
+
+.btn.cancel-button.btn.btn-success {
+    width: 60%;
+    background-color: rgb(222, 155, 135) !important;
+    border: 1px solid rgb(115, 54, 18) !important;
+    font-family: patrick hand;
+    margin:5px;
+}
+
+.btn.cancel-button.btn.btn-success:active,
+.btn.cancel-button.btn.btn-success:focus,
+.btn.cancel-button.btn.btn-success:hover {
+    background-color: rgb(219, 86, 46) !important;
+    border: 1px solid rgb(112, 47, 10) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .1rem rgba(110, 69, 15, 0.5) !important;
+    margin:5px;
+}
+
+.btn.accept-button.btn.btn-success {
+    width: 60%;
+    background-color: rgb(189, 222, 135) !important;
+    border: 1px solid rgb(18, 115, 47) !important;
+    font-family: patrick hand;
+    margin:5px;
+}
+
+.btn.accept-button.btn.btn-success:active,
+.btn.accept-button.btn.btn-success:focus,
+.btn.accept-button.btn.btn-success:hover {
+    background-color: rgb(130, 219, 46) !important;
+    border: 1px solid rgb(10, 112, 18) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .1rem rgba(31, 110, 15, 0.5) !important;
+    margin:5px;
+}
+
+.btn.reject-button.btn.btn-success {
+    width: 60%;
+    background-color: rgb(221, 222, 135) !important;
+    border: 1px solid rgb(129, 131, 11) !important;
+    font-family: patrick hand;
+    margin:5px;
+}
+
+.btn.reject-button.btn.btn-success:active,
+.btn.reject-button.btn.btn-success:focus,
+.btn.reject-button.btn.btn-success:hover {
+    background-color: rgb(219, 187, 46) !important;
+    border: 1px solid rgb(112, 92, 10) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .1rem rgba(110, 99, 15, 0.5) !important;
+    margin:5px;
+}
+
+.buttons {
+    text-align: end;
+    align-self: center;
+}
+.productRow {
+    width: 100%;
 }
 
 .column {
@@ -353,14 +361,13 @@ ol {
     border-radius: 10px;
     position: relative;
     overflow: auto;
-    margin-bottom: 50px;
+    margin: 50px 0px 50px 0px;
 }
 .productContainer {
     display: flex;
-    border: 1.5px solid black;
+    border: 0px solid black;
     border-radius: 10px;
     padding: 10px 0px;
-    border-style: dashed;
     width: 95%;
     margin: 10px;
 }
@@ -385,11 +392,4 @@ ol {
 }
 .rowProducts {
     padding: 15px !important;
-}
-
-form{
-    
-    width: 80%;
-
-    margin-left: 10%;
 }
