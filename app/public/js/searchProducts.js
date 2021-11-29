@@ -1,4 +1,8 @@
+var searchButton = document.getElementById("searchButton");
+searchButton.addEventListener("click", searchProducts);
+
 function searchProducts() {
+    console.log("searchProducts");
     let tipoCafe = document.getElementById("tipoCafe").value;
     let tipoGrano = document.getElementById("tipoGrano").value;
     let cafeLocal = document.getElementById("cafeLocal").value;
