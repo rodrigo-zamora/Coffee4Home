@@ -15,7 +15,6 @@ function getURLparameters(sParam) {
 }
 
 function updatePage() {
-    console.log("updatePage()");
     let query = "?";
     let tipoCafe = getURLparameters("tipoCafe");
     let tipoGrano = getURLparameters("tipoGrano");
@@ -89,7 +88,6 @@ function readFilters() {
 }
 
 function searchProducts(query) {
-    console.log("searchProducts(query): " + query);
     // Make a request to /products + query
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -140,7 +138,6 @@ function productToHTML(product) {
 function showProducts(products) {
     for (let i = 0; i < products.products.length; i++) {
         let product = products.products[i];
-        console.log(product);
         let productHTML = productToHTML(product);
         document.getElementById("productsContainer").innerHTML += productHTML;
     }
