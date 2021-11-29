@@ -23,8 +23,7 @@ function productToHTML(product) {
                             </div>
                             <div class="input-price input-group mb-3">
                                 <span class="input-group-text">Precio:</span>
-                                <input type="text" class="priceInput form-control " value="${product.product.pricePerUnit}">
-                                <span class="input-group-text">$ m.n.</span>
+                                <input type="text" class="priceInput form-control " value="$ ${product.product.pricePerUnit}.00">
                             </div>
                             <button class="btn btn-outline-danger d-flex" uuid=${product.product.UUID} onclick="removeFromCart('${product.product.UUID}')">Eliminar producto</button>
                         </div>
