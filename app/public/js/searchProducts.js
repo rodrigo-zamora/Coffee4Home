@@ -144,6 +144,7 @@ function showProducts(products) {
 }
 
 function addToCart(uuid) {
+    toast();
     console.log("Adding to cart: " + uuid);
     // Get input above button
     let quantity = 0;
@@ -188,4 +189,10 @@ function addToCart(uuid) {
     }
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
     console.log(shoppingCart);
+}
+
+function toast() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
