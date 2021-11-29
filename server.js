@@ -62,9 +62,9 @@ app.get('/shoppingCart', (req, res) => {
     res.render('cart');
  });
 
-/*app.get('/orders', (req, res) => {
+app.get('/orders', (req, res) => {
     res.render('orders');
-});*/
+});
 app.get('*', function(req, res){
     res.render('404');
   });
