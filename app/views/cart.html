@@ -162,22 +162,24 @@
         </center>
     </div>
     <!-- Products -->
-    <div class="container" id="shoppingCartContainer">
-        <div class="productContainer" style="
-        width: 40%;">
-            <form class=" Shipping">
-                <div class="shipping" style="
-                margin-left: 15%;">
-                    <div class="row">
-                        <div class="col-12">
+    <div id="shoppingCartContainer">
+        <div class="totalCard">
+            <div class="card-body" id="productsContainer">
+            </div>
+        </div>
+        <div class="shippingInfo">
+            <form>
+                <div>
+                    <div class="">
+                        <div class="">
                             <h4>Envío</h4>
                         </div>
-                        <div class="col-4">
+                        <div class="">
                             Calle
                             <input type="text" name="" id="" class="form-control" placeholder="Calle"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="col-6">
+                        <div class="">
                             Telefono
                             <input type="tel" name="" id="" class="form-control" placeholder="Numero de Telefono"
                                 aria-describedby="helpId" required>
@@ -186,14 +188,13 @@
 
                     <br>
 
-                    <div class="row">
-
-                        <div class="col-4">
+                    <div class="">
+                        <div class="">
                             Colonia
                             <input type="text" name="" id="" class="form-control" placeholder="Colonia"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="col-6">
+                        <div class="">
                             Ciudad
                             <input type="tel" name="" id="" class="form-control" placeholder="Ciudad"
                                 aria-describedby="helpId" required>
@@ -201,14 +202,14 @@
                     </div>
                     <br>
 
-                    <div class="row">
+                    <div class="">
 
-                        <div class="col-4">
+                        <div class="">
                             Codigo postal
                             <input type="number" name="" id="" class="form-control" placeholder="Codigo postal"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="col-6">
+                        <div class="">
                             Estado
                             <input type="tel" name="" id="" class="form-control" placeholder="Estado"
                                 aria-describedby="helpId" required>
@@ -216,26 +217,23 @@
                     </div>
                 </div>
                 <br>
-                <div class="creditcard" style="
-                margin-left: 15%;
-            ">
-                    <div class="col-12" style="
-                    padding: 0px;">
+                <div class="creditcard">
+                    <div class="" style="padding: 0px;">
                         <h4>Tarjeta</h4>
                     </div>
-                    <div class=" row">
-                        <div class="col-4">
+                    <div class="">
+                        <div class="">
                             Nombre(s)
                             <input type="text" name="" id="" class="form-control" placeholder="Nombre(s)"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="col-6">
+                        <div class="">
                             Apellidos
                             <input type="text" name="" id="" class="form-control" placeholder="Apellidos"
                                 aria-describedby="helpId" required>
                         </div>
                         <br>
-                        <div class="col-10">
+                        <div class="">
                             Tarjeta
                             <input type="number" name="" id="" class="form-control" placeholder="Ingresa tú Tarjeta"
                                 aria-describedby="helpId" required>
@@ -243,13 +241,13 @@
                     </div>
                     <br>
 
-                    <div class="row">
-                        <div class="col-6">
+                    <div class="">
+                        <div class="">
                             Fecha de Exp.
                             <input type="month" name="" id="" class="form-control" placeholder="Fecha de Exp."
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="col-4">
+                        <div class="">
                             CCV
                             <input type="number" name="" id="" class="form-control" placeholder="CCV"
                                 aria-describedby="helpId" required>
@@ -263,17 +261,7 @@
                 </div>
             </form>
         </div>
-
-        <div class="row">
-            <div class="cards container col-md-8 col-12" style="padding-left: 30px;" id="cartContainer">
-            </div>
-            <div class="col-md-4" style="
-            display: flex;">
-                <div class="leftCard">
-                    <div class="card-body" id="productsContainer">
-                    </div>
-                </div>
-            </div>
+        <div class="cards" id="cartContainer">
         </div>
     </div>
     <!--FOOTER-->
