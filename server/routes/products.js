@@ -11,7 +11,11 @@ router.route('/')
 
 router.route('/:id')
     .get((req, res) => {
-        dataHandler.getProduct(req, res);
+        if(req.params.id.includes('?')) {
+            dataHandler.searchProducts(req, res);
+        } else {
+            dataHandler.getProduct(req, res);
+        }
     });
 
 module.exports = router;

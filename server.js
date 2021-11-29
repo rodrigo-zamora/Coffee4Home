@@ -65,10 +65,10 @@ app.get('/shoppingCart', (req, res) => {
 app.get('/orders', (req, res) => {
     res.render('orders');
 });
-/*
+
 app.get('*', function(req, res){
     res.render('404');
-  });*/
+  });
 
 app.listen(port, () => {
     console.log(`Coffe4Home app listening on port ${port}`);
