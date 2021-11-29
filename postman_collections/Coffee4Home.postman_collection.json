@@ -1,0 +1,465 @@
+{
+	"info": {
+		"_postman_id": "d19a8a04-02d7-4a79-9e4c-bb26bdd94463",
+		"name": "Coffee4Home",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "admin/users",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Rodrigo\",\r\n    \"lastName\": \"Zamora\",\r\n    \"email\": \"rodrigo.zamora@coffe4home.com\",\r\n    \"password\": \"password\",\r\n    \"street\": \"street\",\r\n    \"city\": \"city\",\r\n    \"state\": \"state\",\r\n    \"zip\": \"46851\",\r\n    \"phone\": \"11111111\",\r\n    \"role\": \"USER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/users",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/users/:email",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/users/rodrigo.zamora@coffe4home.com",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"users",
+										"rodrigo.zamora@coffe4home.com"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coffe4home-development.herokuapp.com/users",
+							"protocol": "https",
+							"host": [
+								"coffe4home-development",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users/:email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coffe4home-development.herokuapp.com/users/rodrigo.zamora@coffe4home.com",
+							"protocol": "https",
+							"host": [
+								"coffe4home-development",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"rodrigo.zamora@coffe4home.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "admin/orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"2cf4c2e8-2e8b-4464-8216-d3a6e0477926\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 300,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"uuid\",\r\n        \"productName\": \"productName\",\r\n        \"productPrice\": 100,\r\n        \"productQuantity\": 5,\r\n        \"productTotal\": 500\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders/:uuid",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userUUID\": \"2cf4c2e8-2e8b-4464-8216-d3a6e0477926\",\r\n    \"orderStatus\": \"PENDING\",\r\n    \"orderTotal\": 400,\r\n    \"orderItems\":\r\n    {\r\n        \"productUUID\": \"uuid\",\r\n        \"productName\": \"productName\",\r\n        \"productPrice\": 100,\r\n        \"productQuantity\": 5,\r\n        \"productTotal\": 500\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"orders",
+										"073a98bdc-ab54-41a8-bd7c-b6953a9d79c1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/orders/:uuid",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"orders",
+										"073a98bdc-ab54-41a8-bd7c-b6953a9d79c1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "orders:/uuid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coffe4home-development.herokuapp.com/orders/a1eabb22f-a7c9-496d-ab3c-aeb01b815c17",
+							"protocol": "https",
+							"host": [
+								"coffe4home-development",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"orders",
+								"a1eabb22f-a7c9-496d-ab3c-aeb01b815c17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "admin/products",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Etnia 52, Café de Altura Sabor Avellana, Tueste Medio, Molido, 454 gr\",\r\n    \"description\": \"CAFÉ SABORIZADO: acidez balanceada, sabor y aroma altamente agradable como la avellana recién tostada\\nCAFÉ GOURMET: 100% granos de café fresco de especialidad. Tueste Medio. Pre-Molido para una preparación fácil y para mantener su molino limpio de diferentes sabores\\nALTA CALIDAD: Zipper resellable y válvula de desgasificación unidireccional para preservar la frescura del café\\nOrgullosamente un producto 100% mexicano, comprometido con nuestro medio ambiente y con las comunidades que lo producen, libre de químicos\\nCERTIFICACIÓN Kosher. Calidad de exportación. Nuestra mejor selección en cada grano. Perfecto para cafeteras de filtro, prensa francesa, percoladora\",\r\n    \"pricePerUnit\": 140.72,\r\n    \"image\": \"https://m.media-amazon.com/images/I/81TAR7QtiQL._AC_SL1500_.jpg\",\r\n    \"category\": \"Café molido\",\r\n    \"stock\": 196\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/products",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"products"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/products/:uuid",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Etnia 52, Café de Altura Sabor Avellana, Tueste Medio, Molido, 454 gr\",\n    \"description\": \"CAFÉ SABORIZADO: acidez balanceada, sabor y aroma altamente agradable como la avellana recién tostada\\nCAFÉ GOURMET: 100% granos de café fresco de especialidad. Tueste Medio. Pre-Molido para una preparación fácil y para mantener su molino limpio de diferentes sabores\\nALTA CALIDAD: Zipper resellable y válvula de desgasificación unidireccional para preservar la frescura del café\\nOrgullosamente un producto 100% mexicano, comprometido con nuestro medio ambiente y con las comunidades que lo producen, libre de químicos\\nCERTIFICACIÓN Kosher. Calidad de exportación. Nuestra mejor selección en cada grano. Perfecto para cafeteras de filtro, prensa francesa, percoladora\",\n    \"pricePerUnit\": 150.72,\n    \"image\": \"https://m.media-amazon.com/images/I/81TAR7QtiQL._AC_SL1500_.jpg\",\n    \"category\": \"Café molido\",\n    \"stock\": 196\n}"
+								},
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/products/ee211608-7620-40d0-bb17-78c2c3c3021a",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"products",
+										"ee211608-7620-40d0-bb17-78c2c3c3021a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin/products/:uuid",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-auth",
+										"value": "admin",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://coffe4home-development.herokuapp.com/admin/products/ee211608-7620-40d0-bb17-78c2c3c3021a",
+									"protocol": "https",
+									"host": [
+										"coffe4home-development",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"admin",
+										"products",
+										"ee211608-7620-40d0-bb17-78c2c3c3021a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coffe4home-development.herokuapp.com/products",
+							"protocol": "https",
+							"host": [
+								"coffe4home-development",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://coffe4home-development.herokuapp.com/cart",
+							"protocol": "https",
+							"host": [
+								"coffe4home-development",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/:uuid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://coffe4home-development.herokuapp.com/products/ee211608-7620-40d0-bb17-78c2c3c3021a",
+							"protocol": "https",
+							"host": [
+								"coffe4home-development",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"products",
+								"ee211608-7620-40d0-bb17-78c2c3c3021a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
