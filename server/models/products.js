@@ -43,7 +43,7 @@ let productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    estado: {
+    cafeLocal: {
         type: String,
         required: true
     }
