@@ -142,7 +142,7 @@ form {
 }
 
 /* Navigation Right*/
-.login, .signUp, .signOut {
+.login, .signUp, .signOut, .myOrders {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -151,7 +151,7 @@ form {
     color: #000;
 }
 
-.login:hover, .signUp:hover, .signOut:hover {
+.login:hover, .signUp:hover, .signOut:hover, .myOrders:hover {
     color: #000;
     text-decoration: none;
 
