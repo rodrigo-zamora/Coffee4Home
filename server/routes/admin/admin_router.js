@@ -6,13 +6,10 @@ const router = express.Router();
 const adminOrderRouter = require("./admin_order");
 const adminUserRouter = require("./admin_user");
 const adminProductRouter = require("./admin_product");
-const users = require('../../controllers/datahandler/users_data_handler');
 
-router.use("/orders", validateAdminUser, adminOrderRouter);
-router.use("/users", validateAdminUser, adminUserRouter);
-router.use("/products", validateAdminUser, adminProductRouter);
-
-console.log("A"+'query');
+router.use("/orders", validateAdmin, adminOrderRouter);
+router.use("/users", validateAdmin, adminUserRouter);
+router.use("/products", validateAdmin, adminProductRouter);
 
 function validateAdmin(req, res, next) {
     const auth = req.header('x-auth');
@@ -33,24 +30,5 @@ function validateAdmin(req, res, next) {
         }
     }
 }
-
-function validateAdminUser(req, res, next) {
-    if(req.params.id.includes('?')) {
-        req.params.id = req.params.id.split('?')[0];
-        console.log('query');
-        const user = users.getUserByEmail(req, res);
-        console.log(user);
-        if (user.role != 'ADMIN') {
-            res.status(403).send("Not authorized");
-        }
-        else {
-            next();
-        }
-    }
-    else {
-        console.log('no query');
-    }
-}
-
 
 module.exports = router;
