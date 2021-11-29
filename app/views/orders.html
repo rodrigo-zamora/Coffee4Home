@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Description</title>
+    <title>Search Products</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +12,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/productDesc.css">
+    <link rel="stylesheet" href="css/orders.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick Hand">
 </head>
@@ -26,7 +26,13 @@
             </a>
         </div>
 
-
+        <div class="flex-grow-1">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control" type="text" placeholder="Buscar café...">
+                <i class="fas fa-search"></i>
+                <!--<button class="btn btn-outline-light col-sm-3 col-lg-2" type="submit">Search</button>-->
+            </form>
+        </div>
 
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -83,8 +89,8 @@
                         </div>
                         <div class="form-group">
                             <div class="controls">
-                                <button type="button" class="login-button btn btn-success"
-                                    data-dismiss="modal">Iniciar sesión</button>
+                                <button type="button" class="login-button btn btn-success" data-dismiss="modal">Iniciar
+                                    sesión</button>
                             </div>
                         </div>
                         <div class="form-group">
@@ -119,13 +125,13 @@
                         <div class="row">
                             <div class="col-6">
                                 Nombre(s)
-                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tu(s) nombre(s)"
-                                    aria-describedby="helpId" required>
+                                <input type="text" name="" id="" class="form-control"
+                                    placeholder="Ingresa tu(s) nombre(s)" aria-describedby="helpId" required>
                             </div>
                             <div class="col-6">
                                 Apellidos
-                                <input type="text" name="" id="" class="form-control" placeholder="Ingresa tus Apellidos"
-                                    aria-describedby="helpId" required>
+                                <input type="text" name="" id="" class="form-control"
+                                    placeholder="Ingresa tus Apellidos" aria-describedby="helpId" required>
                             </div>
                         </div>
                         <br>
@@ -149,155 +155,49 @@
             </div>
         </div>
     </div>
-    <!-- Carrousel -->
-    <div id="carouselId" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselId" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselId" data-slide-to="1"></li>
-            <li data-target="#carouselId" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active coffee">
-                <div class="textInBanner">
-                    <h4>Search the coffee YOU want</h4>
-                    <h5>Search by any andl all criteria</h5>
-                </div>
-                <img class="large-image" src="resources/coffeeItems/Banner1.jpg" alt="First slide">
-            </div>
-            
-            <div class="carousel-item">
-                <div class="textInBanner">
-                </div>
-                <img class="large-image" src="resources/coffeeItems/Banner2.png" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <div class="textInBanner">
-                </div>
-                <img class="large-image" src="resources/coffeeItems/Banner3.jpg" alt="Third slide">
-            </div>
-        
-        </div>
-        <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    <!-- Select type coffee -->
-    <br>
     <!-- Coffee stock -->
     <div class="container coffeeStockContainer">
-        <div class="row rowProducts">
-            <div class="productContainer">
-                <div class="column">
-                    <div class="coffeeImg">
-                        <div class="column">
-                            <img class="productImg" src="resources/coffeeItems/peetsCoffee.jpg"
-                                alt="Peet's Coffee">
-                            <div class="coffeeIcons">
-                                <div class="col-md-12">
-                                    <div class="progress">
-                                        <div class="progress-bar" style="width: 80%;">
-                                            <div class="progress-value">80%</div>
-                                        </div>
-                                    </div>
+        <div class="row rowProducts" style="width: 100%;">
+            <a style="width: 100%; text-decoration: none !important; color: black;">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header ">
+                        <div class="coffeeproduct">Pedido Realizado</div>
+                        <div class="coffeeproduct">Total</div>
+                        <div class="coffeeproduct">Enviar a</div>
+                        <div class="coffeeproduct">Pedido N°2194819121349013449</div>
+                    </div>
+                    <div class="card-header">
+                        Entregado el viernes, 12 de junio
+                    </div>
+                    <div class="productContainer">
+                        <div class="row productRow">
+                            <div class="coffeeImg col-md-2">
+                                <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
+                            </div>
+                            <div class="coffeeIntormation col-md-7">
+                                <h4>Kenya AA</h4>
+                                <p class="productText"><b>Marca:</b> Java House Africa.</p>
+                                <p class="productText"><b>Tipo de café:</b> Molido.</p>
+                                <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
+                                <p class="productText"><b>Origen:</b> Kenya.</p>
+                                <p class="productText"><b>Tipo:</b> Origen único.</p>
+                                <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
+                                <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
+                            </div>
+                            <div class="buttons col-md-2">
+                                <div>
+                                    <button type="button" class="cancel-button btn btn-success"
+                                        data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="accept-button btn btn-success"
+                                        data-dismiss="modal">Aceptar</button>
+                                    <button type="button" class="reject-button btn btn-success"
+                                        data-dismiss="modal">Rechazar</button>
                                 </div>
-                                <br>
-                                <div class="col-md-12">
-                                    <div class="column">
-                                        <img class="espiral" src="resources/coffeeDescImg/coffeeCup.png" active
-                                            alt="TazaCafe">
-                                        <div class="Tasting Notes">
-                                            Tasting Notes - Incomparable World blend,
-                                            rich, complex, and full-bodied.
-                                        </div>
-
-                                    </div>
-                                    <img class="espiral" src="resources/coffeeDescImg/coffeeBeans.png" active
-                                        alt="TazaCafe">
-                                    <div class="Origin">
-                                        Origin - World Blend; Combines the best origin coffes
-                                        from the world's premier growing regions.
-                                    </div>
-
-                                    <img class="espiral" src="resources/coffeeDescImg/spiral.png" active
-                                        alt="TazaCafe">
-                                    <div class="Signature Blend">
-                                        Signature Blend - The best blend of the best coffee
-                                        from the best coffee regions.
-                                    </div>
-
-                                </div>
-
                             </div>
                         </div>
-                        <div class="coffeeIntormation">
-                            <h4>Peet's Coffee </h4> <button id="agregar">Agregar</button>
-                            <br>
-
-                            <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
-                            <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                            <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                            <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
-                            <p class="productText"><b>Tipo:</b> Mezcla.</p>
-                            <p class="productText"><b>Sabor:</b> Fuerte.</p>
-                            <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
-                        </div>
-
-                    </div>
-                    <div class="productDescPack">
-                        <div class="dataPackage">
-                            <br>
-                            <h5>Descripción del producto</h5>
-                            <p>Estilo:Ground | Nombre del sabor:Major Dickason's | Tamaño:18 Ounce (Pack of 1)
-                                Peet's Major Dickason's Blend Dark Roast Cofee is the roast that put Peet's Cofee on
-                                the
-                                map. A loyal customer of
-                                our original Berkeley store, retired army sergeant Key Dickason, brought the idea
-                                for
-                                our
-                                most beloved blend to Mr.
-                                Peet in 1969. Intrigued, our founder worked with the local gourmand and cofee
-                                afcionado
-                                to
-                                refne it. They sampled
-                                countless combinations before arriving at what is now our all-time bestseller. The
-                                result
-                                was so good, Alfred Peet
-                                decided naming it after his friend wasn't enough. Dickason's rich, complex blend
-                                also
-                                deserved a promotion from
-                                sergeant to major. Major Dickason's combines the best origin cofees from the world's
-                                premier
-                                growing regions, each
-                                imparting its distinctive regional characteristics while still efortlessly rounding
-                                into
-                                a
-                                smooth, balanced cup. Over the
-                                years, it has become the cofee that epitomizes Peet's: favorful, deeply roasted, and
-                                unsurpassingly satisfying. But for
-                                us, "Major D" is just like a relationship with an old friend. We'll always remember
-                                it
-                                as
-                                the story of a customer's passion,
-                                an expert's palate, and a shared love of cofee.</p>
-                        </div>
-                    </div>
-                    <div class="ProductDetails">
-                        <h5>Detalles del Producto</h5>
-                        <p class="productText"><b>Marca:</b> Peet's Coffee.</p>
-                        <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                        <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                        <p class="productText"><b>Origen:</b> Mixto (sabores americanos, africanos y asiáticos).</p>
-                        <p class="productText"><b>Tipo:</b> Mezcla.</p>
-                        <p class="productText"><b>Sabor:</b> Fuerte.</p>
-                        <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
     <!--FOOTER-->
@@ -305,8 +205,9 @@
         <div class="container">
             <div class="row row-30">
                 <div class="col-md-4 col-xl-5">
-                    <div class="pr-xl-4"><a class="brand" href="#"></a>
-                        <p>We are coffee People.</p>
+                    <div class="pr-xl-4"><a class="brand" href="/"></a>
+                        <p>We are an award-winning creative agency, dedicated to the best result in web design,
+                            promotion, business consulting, and marketing.</p>
                         <!-- Rights-->
                         <p class="rights"><span>©  </span><span class="copyright-year">2021</span>
                             <span> </span><span>Company</span><span>
@@ -326,7 +227,8 @@
                     </dl>
                     <dl class="contact-list">
                         <dt>phones:</dt>
-                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a href="tel:+52 1 33 1242">+52 1 33 1242
+                        <dd><a href="tel:+52 1 452 107 5541">+52 1 452 107 5541</a> <span>or</span> <a
+                                href="tel:+52 1 33 1242">+52 1 33 1242
                                 1332</a>
                         </dd>
                     </dl>
@@ -347,8 +249,7 @@
 
     <!--<script src="../../controllers/index.js"></script>-->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js">
-    </script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

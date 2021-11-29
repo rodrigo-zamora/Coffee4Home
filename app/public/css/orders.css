@@ -3,6 +3,82 @@ body {
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
 }
 
+form {
+    margin-left: 10px;
+}
+/* card */
+.card {
+    padding: 1px;
+    width: 100% !important;
+    max-width: 100%s !important;
+    border: 1px solid rgba(0, 0, 0, .125);
+    transition: border .5s ease-in-out;
+    border-radius: .25rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    margin: 10px;
+    font-family: "Patrick Hand", sans-serif;
+    font-size: 1.5rem;
+}
+
+.card-title{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: burlywood;
+    border-radius:10px 10px 10px 10px;
+}
+.form-check-input {
+    position: absolute;
+    margin-top: .9rem !important;
+    margin-left: -1.25rem;
+}
+
+
+.card:hover {
+    border: 1px solid black;
+}
+
+.card-body {
+    padding: .5rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-img-top {
+    height: 200px;
+    max-height: 200px;
+    max-width: 250px;
+}
+
+#mainList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+
+.carousel-item {
+    max-height: 400px;
+}
+
+.carousel-inner {
+    margin-bottom: 50px;
+}
+
+.large-image {
+    height: 600px;
+    width: 100% !important;
+}
+
+.precio {
+    bottom: 0px;
+}
+
 .controls,
 .btn-center,
 .Page.navigation {
@@ -22,6 +98,10 @@ body {
 
 .input-group-prepend {
     margin-left: -1px;
+}
+
+.input-group-text {
+    border-radius: 0 3px 3px 0 !important;
 }
 
 .btn-success {
@@ -122,7 +202,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 .nav-list li a:hover:before {
@@ -166,11 +245,19 @@ ol {
     transition: .22s ease;
 }
 
+.modal-content {
+    background-color: burlywood;
+    border: black;
+    font-family: patrick hand;
+
+}
+
 .btn.login-button.btn.btn-success,
 .btn.btn-success.mt-3 {
     background-color: burlywood !important;
     border: 1px solid rgb(115, 73, 18) !important;
     font-family: patrick hand;
+    margin:5px;
 }
 
 .btn.login-button.btn.btn-success:active,
@@ -180,18 +267,72 @@ ol {
     background-color: burlywood !important;
     border: 1px solid rgb(115, 73, 18) !important;
     font-family: patrick hand;
-    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .5) !important;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18,.5) !important;
+    margin:5px;
 }
 
-
-.modal-content {
-    background-color: burlywood;
-    border: black;
+.btn.cancel-button.btn.btn-success {
+    width: 60%;
+    background-color: rgb(222, 155, 135) !important;
+    border: 1px solid rgb(115, 54, 18) !important;
     font-family: patrick hand;
-
+    margin:5px;
 }
 
-/* Resumen de compra */
+.btn.cancel-button.btn.btn-success:active,
+.btn.cancel-button.btn.btn-success:focus,
+.btn.cancel-button.btn.btn-success:hover {
+    background-color: rgb(219, 86, 46) !important;
+    border: 1px solid rgb(112, 47, 10) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .1rem rgba(110, 69, 15, 0.5) !important;
+    margin:5px;
+}
+
+.btn.accept-button.btn.btn-success {
+    width: 60%;
+    background-color: rgb(189, 222, 135) !important;
+    border: 1px solid rgb(18, 115, 47) !important;
+    font-family: patrick hand;
+    margin:5px;
+}
+
+.btn.accept-button.btn.btn-success:active,
+.btn.accept-button.btn.btn-success:focus,
+.btn.accept-button.btn.btn-success:hover {
+    background-color: rgb(130, 219, 46) !important;
+    border: 1px solid rgb(10, 112, 18) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .1rem rgba(31, 110, 15, 0.5) !important;
+    margin:5px;
+}
+
+.btn.reject-button.btn.btn-success {
+    width: 60%;
+    background-color: rgb(221, 222, 135) !important;
+    border: 1px solid rgb(129, 131, 11) !important;
+    font-family: patrick hand;
+    margin:5px;
+}
+
+.btn.reject-button.btn.btn-success:active,
+.btn.reject-button.btn.btn-success:focus,
+.btn.reject-button.btn.btn-success:hover {
+    background-color: rgb(219, 187, 46) !important;
+    border: 1px solid rgb(112, 92, 10) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .1rem rgba(110, 99, 15, 0.5) !important;
+    margin:5px;
+}
+
+.buttons {
+    text-align: end;
+    align-self: center;
+}
+.productRow {
+    width: 100%;
+}
+
 .column {
     display: flex;
     flex-direction: column;
@@ -205,7 +346,6 @@ ol {
 .row-30 {
     margin-top: 50px;
 }
-
 .prepare {
     display: flex;
     flex-wrap: wrap;
@@ -221,218 +361,35 @@ ol {
     border-radius: 10px;
     position: relative;
     overflow: auto;
-    margin-bottom: 50px;
+    margin: 50px 0px 50px 0px;
 }
-
 .productContainer {
     display: flex;
-    border: 1.5px solid black;
+    border: 0px solid black;
     border-radius: 10px;
     padding: 10px 0px;
-    border-style: dashed;
+    width: 95%;
     margin: 10px;
-    width: 100%;
-
 }
-
 .productImg {
-    margin-left: 10px;
+    margin-left: 35px;
     max-width: 120px;
     max-height: 220px;
 }
-
 .coffeeIntormation {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
+    margin-left: 30px;
 }
-
 .productText {
     margin: 0px 20px;
 }
-
 .coffeeImg {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .rowProducts {
     padding: 15px !important;
-}
-
-input[disabled] {
-    background-color: rgb(255, 248, 238) !important;
-}
-
-/* Products Left */
-.item {
-    width: 145px;
-    height: 145px;
-    padding: 0px 10px;
-}
-
-.media {
-    display: flex;
-    border-radius: 3px;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px 0px 10px 20px;
-    border: 1px solid rgb(115, 73, 18);
-    transition: border 1s ease-in-out;
-}
-
-.media:hover {
-    border: 1px solid black;
-}
-
-.pen {
-    margin-left: -1px;
-    border-radius: 0 3px 3px 0;
-    border-color: rgb(115, 73, 18) !important;
-    background-color: burlywood !important;
-    transition: background-color 1s ease-in-out;
-}
-
-.fa-pen {
-    color: rgb(115, 73, 18) !important;
-    transition: color 1s ease-in-out;
-    transition: background-color 1s ease-in-out;
-}
-
-.pen:hover>.fa-pen {
-    color: burlywood !important;
-}
-
-.pen:hover {
-    background-color: rgb(115, 73, 18) !important;
-}
-
-.cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.input-group-text {
-    background-color: burlywood !important;
-    color: rgb(63, 39, 8) !important;
-    border-color: rgb(115, 73, 18) !important;
-}
-
-.form-control {
-    border-color: rgb(115, 73, 18) !important;
-    color: rgb(115, 73, 18) !important;
-}
-
-.input-group-text:first-child {
-    border-radius: 3px 0px 0px 3px !important;
-}
-
-.input-group-text:last-child {
-    border-radius: 0px 3px 3px 0px !important;
-}
-
-.quantityInput,
-.priceInput {
-    border-color: rgb(115, 73, 18) !important;
-    width: 70px !important;
-    height: auto !important;
-    margin: 0px -2px 0px -2px !important;
-}
-
-.productTitle {
-    margin: 15px 0px;
-}
-
-.inputs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-}
-
-/* Products Right */
-.leftCard {
-    display: flex;
-    border: 1.5px solid black;
-    border-radius: 10px;
-    padding: 10px 0px;
-    border-style: dashed;
-    margin: 10px;
-    width: 100%;
-}
-
-.pagos>.btn {
-    width: 70%;
-}
-
-.btn-outline-success {
-    height: 45px;
-    margin-bottom: 10px;
-}
-
-.btn-outline-danger {
-    height: 30px;
-    display: flex;
-    font-size: 12px;
-    align-items: center;
-    justify-content: center;
-}
-
-.resumen {
-    display: flex;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    justify-content: center;
-}
-
-.btn-success {
-    width: 360px;
-}
-
-.totalProduct {
-    display: flex;
-}
-
-.coffeeTitle {
-    font-size: 15px;
-    font-weight: bold;
-    font-style: italic;
-}
-
-.quantityText,
-.priceText {
-    width: 50%;
-}
-
-.quantityText {
-    display: flex;
-    justify-content: center;
-}
-
-.divider {
-    height: 1px;
-    width: 100%;
-    background-color: black;
-    margin: .5rem 0;
-}
-
-
-.h1 {
-    font-family: patrick hand;
-    font-size: 30px;
-    color: rgb(115, 73, 18);
-}
-
-.pagos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.card-title {
-    text-align: center;
 }
