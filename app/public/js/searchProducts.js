@@ -128,7 +128,7 @@ function productToHTML(product) {
                     <div class="buttons col-md-4">
                         <div>
                             <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity">
-                            <button type="button" class="accept-button btn btn-success" data-dismiss="modal">Agregar</button>
+                            <button type="button" class="accept-button btn btn-success" data-dismiss="modal" uuid=${product.UUID}>Agregar</button>
                         </div>
                     </div>
                 </div>`
