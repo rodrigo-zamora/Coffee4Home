@@ -29,9 +29,9 @@ function searchProducts(req, res) {
       message: "No hay productos"
     });
   } else {
-    let tipoCafe = search.split("?")[1].split("=")[1];
-    let tipoGrano = search.split("?")[2].split("=")[1];
-    let cafeLocal = search.split("?")[3].split("=")[1];
+    let tipoCafe = req.query.tipoCafe;
+    let tipoGrano = req.query.tipoGrano;
+    let cafeLocal = req.query.cafeLocal;
     Product.find(
       {
         tipoCafe: tipoCafe,

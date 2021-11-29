@@ -155,14 +155,14 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Tipo de Café</h5>
-                        <form>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Café-capsulas" value="Café-capsulas">
+                        <form id="tipoCafe">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Café-capsulas" value="cápsulas">
                             <label class="form-check-label" for="Café-capsulas">Café en capsulas</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-grano" value="Cafe-grano">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-grano" value="grano">
                             <label class="form-check-label" for="Cafe-grano">Café en grano</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-instantaneo" value="Cafe-instantaneo" checked>
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-instantaneo" value="instantáneo" checked>
                             <label class="form-check-label" for="Cafe-instantaneo">Café instantaneo</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-molido" value="Cafe-molido">
+                            <input class="form-check-input" type="radio" name="flexRadioTC" id="Cafe-molido" value="molido">
                             <label class="form-check-label" for="Cafe-molido">Café molido</label><br>
                         </form>
                     </div>
@@ -170,13 +170,13 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Tipo de Grano </h5>
-                        <form>
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Arabico" value="Arabico">
+                        <form id="tipoGrano">
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Arabico" value="arábico">
                             <label class="form-check-label" for="Arabico">Arabico</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Mixta" value="Mixta" checked>
-                            <label class="form-check-label" for="Mixta">Mixta</label><br>
-                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Robusta" value="Robusta">
-                            <label class="form-check-label" for="Robusta">Robusta</label><br>
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Mixto" value="mixto" checked>
+                            <label class="form-check-label" for="Mixto">Mixto</label><br>
+                            <input class="form-check-input" type="radio" name="flexRadioTG" id="Robusto" value="robusto">
+                            <label class="form-check-label" for="Robusto">Robusto</label><br>
                         </form>
                     </div>
                 </div>
@@ -184,24 +184,24 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Café local</h5>
-                    <form>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Chiapas" value="Chiapas">
+                    <form id="cafeLocal">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Chiapas" value="chiapas">
                         <label class="form-check-label" for="Chiapas">Chiapas</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colima" value="Colima">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Colima" value="colima">
                         <label class="form-check-label" for="Colima">Colima</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero" value="Guerrero">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Guerrero" value="guerrero">
                         <label class="form-check-label" for="Guerrero">Guerrero</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco" value="Jalisco" checked>
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Jalisco" value="jalisco" checked>
                         <label class="form-check-label" for="Jalisco">Jalisco</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo" value="Hidalgo">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Hidalgo" value="hidalgo">
                         <label class="form-check-label" for="Hidalgo">Hidalgo</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit" value="Nayarit">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Nayarit" value="nayarit">
                         <label class="form-check-label" for="Nayarit">Nayarit</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca" value="Oaxaca">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Oaxaca" value="oaxaca">
                         <label class="form-check-label" for="Oaxaca">Oaxaca</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla" value="Puebla">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="Puebla" value="puebla">
                         <label class="form-check-label" for="Puebla">Puebla</label><br>
-                        <input class="form-check-input" type="radio" name="Ubicacion" id="San-luis-potosi" value="San-luis-potosi">
+                        <input class="form-check-input" type="radio" name="Ubicacion" id="San-luis-potosi" value="slp">
                         <label class="form-check-label" for="San-luis-potosi">San luis potosí</label><br>
                     </form>
                 </div>
@@ -309,6 +309,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="js/searchProducts.js"></script>
 </body>
 
 </html>
