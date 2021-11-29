@@ -6,23 +6,25 @@ const bcrypt = require('bcrypt');
 function login(req, res) {
     let email = req.body.email;
     let password = req.body.password;
+    console.log(email, password);
     User.findOne({
             email: `${email}`
         })
         .then(user => {
-            let token = user.generateToken(password);
-            if (token != undefined) {
-                res.status(200)
-                res.set('Content-Type', 'text/plain; charset=utf-8');
-                res.send(token);
+            if (user == undefined) {
+                res.status(404).type('text/plain')
+                    .send(`User with email ${email} was NOT found!`);
             } else {
-                res.status(404);            
-                res.set('Content-Type', 'text/plain; charset=utf-8');
-                res.send(`Wrong email or password`);
+                if (bcrypt.compareSync(password, user.password)) {
+                    res.status(200).json(user);
+                } else {
+                    res.status(404).type('text/plain')
+                        .send(`User with email ${email} was NOT found!`);
+                }
             }
         })
         .catch(err => {
-            res.status(404);            
+            res.status(404);
             res.set('Content-Type', 'text/plain; charset=utf-8');
             res.send(`Wrong email or password`);
         });
