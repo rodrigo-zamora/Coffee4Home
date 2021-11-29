@@ -23,39 +23,45 @@ function getProducts(req, res) {
 }
 
 function searchProducts(req, res) {
-  let search = req.params;
+  let search = req.query;
+  console.log(search);
   if (search == undefined) {
     res.status(404).send({
       message: "No hay productos"
     });
   } else {
-    let tipoCafe = req.query.tipoCafe;
-    let tipoGrano = req.query.tipoGrano;
-    let cafeLocal = req.query.cafeLocal;
-    Product.find(
-      {
-        tipoCafe: tipoCafe,
-        tipoGrano: tipoGrano,
-        cafeLocal: cafeLocal
-      },
-      (err, products) => {
-        if (err) {
-          res.status(500).send({
-            message: "Error en la petición"
+    let query = {};
+    // Separate search parameters
+    let searchTipoCafe = search.tipoCafe;
+    let searchTipoGrano = search.tipoGrano;
+    let searchCafeLocal = search.cafeLocal;
+    if (searchTipoCafe != undefined) {
+      query.tipoCafe = searchTipoCafe;
+    }
+    if (searchTipoGrano != undefined) {
+      query.tipoGrano = searchTipoGrano;
+    }
+    if (searchCafeLocal != undefined) {
+      query.cafeLocal = searchCafeLocal;
+    }
+    // Search in database with given parameters
+    Product.find(query, (err, products) => {
+      if (err) {
+        res.status(500).send({
+          message: "Error en la petición"
+        });
+      } else {
+        if (!products) {
+          res.status(404).send({
+            message: "No hay productos"
           });
         } else {
-          if (!products) {
-            res.status(404).send({
-              message: "No hay productos"
-            });
-          } else {
-            res.status(200).send({
-              products
-            });
-          }
+          res.status(200).send({
+            products
+          });
         }
       }
-    );
+    });
   }
 }
 
