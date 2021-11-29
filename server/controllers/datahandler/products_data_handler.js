@@ -23,15 +23,15 @@ function getProducts(req, res) {
 }
 
 function searchProducts(req, res) {
-  let search = req.params.id;
+  let search = req.params;
   if (search == undefined) {
     res.status(404).send({
       message: "No hay productos"
     });
   } else {
-    let tipoCafe = search.split("?")[1].split("=")[1];
-    let tipoGrano = search.split("?")[2].split("=")[1];
-    let cafeLocal = search.split("?")[3].split("=")[1];
+    let tipoCafe = req.query.tipoCafe;
+    let tipoGrano = req.query.tipoGrano;
+    let cafeLocal = req.query.cafeLocal;
     Product.find(
       {
         tipoCafe: tipoCafe,

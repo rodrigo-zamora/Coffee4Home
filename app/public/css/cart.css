@@ -433,6 +433,7 @@ input[disabled] {
     align-items: center;
     flex-direction: column;
 }
+
 .card-title {
     text-align: center;
 }
