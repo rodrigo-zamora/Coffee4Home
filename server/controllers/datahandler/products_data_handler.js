@@ -23,7 +23,7 @@ function getProducts(req, res) {
 }
 
 function searchProducts(req, res) {
-  let search = req.params.id;
+  let search = req.params;
   if (search == undefined) {
     res.status(404).send({
       message: "No hay productos"
