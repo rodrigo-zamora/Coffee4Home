@@ -214,7 +214,7 @@
     <!-- Coffee stock -->
     <div class="container coffeeStockContainer">
         <div class="row rowProducts">
-            <a href="productDesc" style="width: 100%; text-decoration: none !important; color: black;">
+            <a style="width: 100%; text-decoration: none !important; color: black;">
                 <div class="productContainer">
                     <div class="coffeeImg">
                         <img class="productImg" src="resources/coffeeItems/peetsCoffee.jpg" alt="Peet's Coffee">
@@ -229,9 +229,15 @@
                         <p class="productText"><b>Sabor:</b> Fuerte.</p>
                         <p class="productText"><b>Preparación recomendada:</b> prensa francesa o expresso.</p>
                     </div>
+                    <div class="buttons col-md-4">
+                        <div>
+                            <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity">
+                            <button type="button" class="accept-button btn btn-success" data-dismiss="modal">Agregar</button>
+                        </div>
+                    </div>
                 </div>
             </a>
-            <a ref="productDesc" style="width: 100%; text-decoration: none !important; color: black;">
+            <a style="width: 100%; text-decoration: none !important; color: black;">
             <div class="productContainer">
                 <div class="coffeeImg">
                     <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
