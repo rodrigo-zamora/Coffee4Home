@@ -387,3 +387,9 @@ ol {
     padding: 15px !important;
 }
 
+form{
+    
+    width: 80%;
+
+    margin-left: 10%;
+}
