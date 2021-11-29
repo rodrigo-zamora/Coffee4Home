@@ -9,6 +9,8 @@ router.route('/')
         dataHandler.createUser(req, res);
     });
 
+//router.route('/:email', tokenUtils.verifyToken);
+
 router.route('/:email')
     .delete((req, res) => {
         if (req.params.email.includes('@')) {
