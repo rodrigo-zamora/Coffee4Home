@@ -128,7 +128,7 @@ function productToHTML(product) {
                     </div>
                     <div class="buttons col-md-4">
                         <div>
-                            <input type="number" class="quantityInput form-control" min="1" max="5" value="1" id="quantity" uuid=${product.UUID} >
+                            <input type="number" class="quantityInput form-control" min="1" max="5" value=1 id="quantity" uuid=${product.UUID} >
                             <button type="button" name="add" class="accept-button btn btn-success" data-dismiss="modal" uuid=${product.UUID} onclick="addToCart('${product.UUID}')">Agregar</button>
                         </div>
                     </div>
@@ -156,7 +156,7 @@ function addToCart(uuid) {
     }
     console.log("Adding to cart: " + uuid + " quantity: " + quantity);
     let shoppingCart = localStorage.getItem("shoppingCart");
-    if (shoppingCart == null) {
+    if (shoppingCart == null || shoppingCart == "") { 
         console.log("Shopping cart is empty");
         shoppingCart = [];
     } else {
@@ -167,7 +167,25 @@ function addToCart(uuid) {
         "UUID": uuid,
         "quantity": quantity
     };
-    shoppingCart.push(product);
+    // Check if product is already in the cart
+    console.log("Checking if product is already in the cart");
+    console.log(shoppingCart);
+    if (shoppingCart == null || shoppingCart == "") {
+        console.log("Shopping cart is empty");
+        shoppingCart.push(product);
+    } else {
+        console.log("Shopping cart is not empty");
+        console.log(shoppingCart.length);
+        for (let i = 0; i < shoppingCart.length; i++) {
+            if (shoppingCart[i].UUID == uuid) {
+                console.log("Product already in the cart");
+                shoppingCart[i].quantity = (Number(shoppingCart[i].quantity) + Number(quantity));
+            } else {
+                console.log("Product not in the cart");
+                shoppingCart.push(product);
+            }
+        }
+    }
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
     console.log(shoppingCart);
 }
