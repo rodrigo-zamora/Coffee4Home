@@ -25,7 +25,7 @@ function productToHTML(product) {
                                 <input type="text" class="priceInput form-control " value="${product.product.pricePerUnit}">
                                 <span class="input-group-text">$ m.n.</span>
                             </div>
-                            <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
+                            <button class="btn btn-outline-danger d-flex" uuid=${product.product.UUID} onclick="removeFromCart('${product.product.UUID}')">Eliminar producto</button>
                         </div>
                     </div>
                 </div>
@@ -66,4 +66,15 @@ function updatePage() {
         document.getElementById('shoppingCartContainer').hidden = true;
         document.getElementById('cartTitle').hidden = true;
     }
+}
+
+function removeFromCart(UUID) {
+    let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    let index = shoppingCart.findIndex(product => product.UUID === UUID);
+    shoppingCart.splice(index, 1);
+    localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
+    if (shoppingCart.length == 0) {
+        localStorage.clear();
+    }
+    updatePage();
 }
