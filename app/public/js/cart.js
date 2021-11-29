@@ -38,6 +38,7 @@ function updatePage() {
     if (shoppingCart != [] && shoppingCart != null) {
         document.getElementById('emptyCart').hidden = true;
         document.getElementById('shoppingCartContainer').hidden = false;
+        document.getElementById('cartTitle').hidden = false;
         // Make a petition to the server to get get each product for each item in the shopping cart
         // and then add it to the page
         for (let i = 0; i < shoppingCart.length; i++) {
@@ -63,5 +64,6 @@ function updatePage() {
     } else {
         document.getElementById('emptyCart').hidden = false;
         document.getElementById('shoppingCartContainer').hidden = true;
+        document.getElementById('cartTitle').hidden = true;
     }
 }

@@ -148,7 +148,7 @@
         </div>
     </div>
     <!-- Title -->
-    <div class="resumen container">
+    <div id="cartTitle" class="resumen container">
         <h2>
             Resumen de compra
         </h2>
@@ -156,13 +156,10 @@
     <!-- Empty Cart -->
     <div class="emptyCart" id="emptyCart">
         <center>
-            <h3>Tu carrito está vacío</h3>
+            <h3 class="emptyTitle">Tu carrito está vacío</h3>
             <a href="/search">
-                <button class="btn btn-success">
-                    <i class="fas fa-shopping-cart"></i>
-                    Continuar comprando
-                </button></a>
-        </center><hr>
+                <button type="submit" class="btn btn-success mt-3" id="searchButton">Continuar Buscando</button>
+        </center>
     </div>
     <!-- Products -->
     <div class="container" id="shoppingCartContainer">
