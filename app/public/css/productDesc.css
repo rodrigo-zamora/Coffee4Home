@@ -169,8 +169,7 @@ h4{
 }
 
 /* Navigation Right*/
-.login,
-.signUp {
+.login, .signUp, .signOut {
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -179,8 +178,7 @@ h4{
     color: #000;
 }
 
-.login:hover,
-.signUp:hover {
+.login:hover, .signUp:hover, .signOut:hover {
     color: #000;
     text-decoration: none;
 
