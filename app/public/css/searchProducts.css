@@ -2,9 +2,11 @@ body {
     font-family: "Patrick Hand", sans-serif;
     cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
 }
+
 form {
     margin-left: 10px;
 }
+
 .searchSection {
     display: flex;
     display: flex;
@@ -13,24 +15,29 @@ form {
     right: 0;
     width: 100%;
 }
+
 .form-control {
-    border-color: rgb(115, 73, 18)  !important;
+    border-color: rgb(115, 73, 18) !important;
     color: rgb(115, 73, 18) !important;
 }
+
 .quantityInput {
     border-color: rgb(115, 73, 18) !important;
     height: auto !important;
     margin: 0px -2px 0px -2px !important;
     margin: 5px !important;
 }
+
 #quantity {
     width: 40% !important;
 }
-.buttons > div {
+
+.buttons>div {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 #searchButton {
     width: 300px;
 }
@@ -40,7 +47,7 @@ form {
     background-color: rgb(189, 222, 135) !important;
     border: 1px solid rgb(18, 115, 47) !important;
     font-family: patrick hand;
-    margin:5px;
+    margin: 5px;
 }
 
 .btn.accept-button.btn.btn-success:active,
@@ -50,17 +57,20 @@ form {
     border: 1px solid rgb(10, 112, 18) !important;
     font-family: patrick hand;
     box-shadow: 0 0 0 .1rem rgba(31, 110, 15, 0.5) !important;
-    margin:5px;
+    margin: 5px;
 }
+
 .buttons {
     text-align: end;
     align-self: center;
     display: flex;
     justify-content: center;
 }
+
 .form {
     margin-left: 10px;
 }
+
 /* card */
 
 .card {
@@ -76,13 +86,14 @@ form {
     font-size: 1.5rem;
 }
 
-.card-title{
+.card-title {
     display: flex;
     justify-content: center;
     text-align: center;
     background-color: burlywood;
-    border-radius:10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
 }
+
 .form-check-input {
     position: absolute;
     margin-top: .9rem !important;
@@ -322,7 +333,7 @@ ol {
     background-color: burlywood !important;
     border: 1px solid rgb(115, 73, 18) !important;
     font-family: patrick hand;
-    box-shadow: 0 0 0 .2rem rgb(115, 73, 18,.5) !important;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .5) !important;
 }
 
 .column {
@@ -338,6 +349,7 @@ ol {
 .row-30 {
     margin-top: 50px;
 }
+
 .prepare {
     display: flex;
     flex-wrap: wrap;
@@ -355,6 +367,7 @@ ol {
     overflow: auto;
     margin-bottom: 50px;
 }
+
 .productContainer {
     display: flex;
     border: 1.5px solid black;
@@ -364,32 +377,46 @@ ol {
     width: 95%;
     margin: 10px;
 }
+
 .productImg {
     margin-left: 35px;
     max-width: 120px;
     max-height: 220px;
 }
+
 .coffeeIntormation {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 30px;
 }
+
 .productText {
     margin: 0px 20px;
 }
+
 .coffeeImg {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .rowProducts {
     padding: 15px !important;
 }
 
-form{
-    
+form {
+
     width: 80%;
 
     margin-left: 10%;
+}
+
+.noProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Patrick Hand", sans-serif;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+
 }
