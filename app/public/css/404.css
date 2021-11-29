@@ -297,6 +297,13 @@ body {
     margin: 50px;
 }
 
+.navbar {
+  padding: 0px 20px;
+  /*position: fixed;*/
+  top: 0;
+  background-color: antiquewhite;
+}
+
 .form-check-input {
     position: absolute;
     margin-top: .09 rem;
