@@ -148,13 +148,21 @@
         </div>
     </div>
     <!-- Title -->
-    <div class="resumen container">
+    <div id="cartTitle" class="resumen container">
         <h2>
             Resumen de compra
         </h2>
     </div>
+    <!-- Empty Cart -->
+    <div class="emptyCart" id="emptyCart">
+        <center>
+            <h3 class="emptyTitle">Tu carrito está vacío</h3>
+            <a href="/search">
+                <button type="submit" class="btn btn-success mt-3" id="searchButton">Continuar Buscando</button></a>
+        </center>
+    </div>
     <!-- Products -->
-    <div class="container">
+    <div class="container" id="shoppingCartContainer">
         <div class="productContainer" style="
         width: 40%;">
             <form class=" Shipping">
@@ -236,7 +244,6 @@
                     <br>
 
                     <div class="row">
-
                         <div class="col-6">
                             Fecha de Exp.
                             <input type="month" name="" id="" class="form-control" placeholder="Fecha de Exp."
@@ -252,100 +259,18 @@
                 <hr>
                 <div class="pagos">
                     <button class="btn btn-outline-success">Pagar</button>
-                    <button class="btn btn-outline-danger d-flex">Cancelar</button>
+                    <button type="cancel" class="btn btn-outline-danger d-flex" onclick="javascript:window.location='/'">Cancelar</button>
                 </div>
             </form>
         </div>
 
         <div class="row">
-            <div class="cards container col-md-8 col-12" style="padding-left: 30px;">
-                <!-- Left -->
-                <div class="productContainer">
-                    <div class="coffeeImg">
-                        <img class="productImg" src="resources/coffeeItems/peetsCoffee.jpg" alt="Peet's Coffee">
-                    </div>
-                    <div class="coffeeIntormation">
-                        <h5 class="productTitle">Peet's Coffee</h5>
-                        <div class="inputs">
-                            <div class="input-quantity input-group mb-3">
-                                <span class="input-group-text">Cantidad:</span>
-                                <input type="number" class="quantityInput form-control" min="1" max="5" value="1"
-                                    id="quantity" disabled>
-                                <button class="pen btn btn-outline-secondary" type="button" for="quantity"
-                                    name="quantity" id="button-addon2"><i class="fa fa-pen"
-                                        aria-hidden="true"></i></button>
-                            </div>
-                            <div class="input-price input-group mb-3">
-                                <span class="input-group-text">Precio:</span>
-                                <input type="text" class="priceInput form-control " value="130.50">
-                                <span class="input-group-text">$ m.n.</span>
-                            </div>
-                            <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="productContainer">
-                    <div class="coffeeImg">
-                        <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
-                    </div>
-                    <div class="coffeeIntormation">
-                        <h5 class="productTitle">Kenya AA</h5>
-                        <div class="inputs">
-                            <div class="input-quantity input-group mb-3">
-                                <span class="input-group-text">Cantidad:</span>
-                                <input type="number" class="quantityInput form-control" min="1" max="5" value="1"
-                                    id="quantity" disabled>
-                                <button class="pen btn btn-outline-secondary" type="button" for="quantity"
-                                    name="quantity" id="button-addon2"><i class="fa fa-pen"
-                                        aria-hidden="true"></i></button>
-                            </div>
-                            <div class="input-price input-group mb-3">
-                                <span class="input-group-text">Precio:</span>
-                                <input type="text" class="priceInput form-control " value="130.50">
-                                <span class="input-group-text">$ m.n.</span>
-                            </div>
-                            <button class="btn btn-outline-danger d-flex">Eliminar producto</button>
-                        </div>
-                    </div>
-                </div>
+            <div class="cards container col-md-8 col-12" style="padding-left: 30px;" id="cartContainer">
             </div>
-            <!-- Right -->
             <div class="col-md-4" style="
             display: flex;">
                 <div class="leftCard">
-                    <div class="card-body">
-                        <h5 class="card-title">Total de Compra</h6>
-                            <div class="divider"></div>
-                            <div class="infoProduct">
-                                <p class="coffeeTitle"><i>Peet's Coffee</i></p>
-                                <div class="totalProduct">
-                                    <p class="quantityText card-text">1</p>
-                                    <p class="priceText card-text">$130.00</p>
-                                </div>
-                            </div>
-                            <div class="infoProduct">
-                                <p class="coffeeTitle"><i>Kenya AA</i></p>
-                                <div class="totalProduct">
-                                    <p class="quantityText card-text">1</p>
-                                    <p class="priceText card-text">$1,038.00</p>
-                                </div>
-                            </div>
-                            <div class="infoProduct">
-                                <p class="coffeeTitle"><i>Costo de envío</i></p>
-                                <div class="totalProduct">
-                                    <p class="quantityText card-text"></p>
-                                    <p class="priceText card-text">$60.00</p>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="infoProduct">
-                                <p class="coffeeTitle"><i>Monto a pagar:</i></p>
-                                <div class="totalProduct">
-                                    <p class="quantityText card-text"></p>
-                                    <p class="priceText card-text">$1,228.00</p><br>
-                                </div>
-                            </div>
-
+                    <div class="card-body" id="productsContainer">
                     </div>
                 </div>
             </div>
@@ -408,6 +333,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

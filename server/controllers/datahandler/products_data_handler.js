@@ -72,15 +72,26 @@ function getProductByUUID(req, res) {
       error: "UUID is required"
     });
   } else {
-    Product.find({
-      uuid: uuid
+    console.log(uuid);
+    // Search in database with given parameters, return only one product
+    Product.findOne({
+      UUID: uuid
     }, (err, product) => {
       if (err) {
-        return res.status(400).json({
-          error: "Product not found"
+        res.status(500).send({
+          message: "Error en la petición"
         });
+      } else {
+        if (!product) {
+          res.status(404).send({
+            message: "No hay productos"
+          });
+        } else {
+          res.status(200).send({
+            product
+          });
+        }
       }
-      res.json(product);
     });
   }
 }

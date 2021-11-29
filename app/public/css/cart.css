@@ -437,3 +437,11 @@ input[disabled] {
 .card-title {
     text-align: center;
 }
+
+.emptyCart {
+    margin: 30px;
+}
+
+.emptyTitle {
+    margin-bottom: 15px;
+}
