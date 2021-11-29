@@ -6,7 +6,6 @@ const ordersRouter = require('../routes/orders');
 const userRouter = require('../routes/users');
 const adminRouter = require('../routes/admin/admin_router');
 const productRouter = require('../routes/products');
-const login = require('./login_router');
 
 const tokenUtils = require('./utils/token_utils');
 
