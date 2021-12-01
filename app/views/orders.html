@@ -38,7 +38,7 @@
                     <a class="login" href="#" data-toggle="modal" data-target="#ingresar" id="barLogin">Iniciar sesión</a>
                     <a class="signUp" href="#" data-toggle="modal" data-target="#registrar" id="barRegister">Registrarse</a>
                     <a class="signOut" href="#" data-toggle="modal" id="barSignOut" hidden>Cerrar sesión</a>
-                    <a class="myOrders" href="#" data-toggle="modal" id="barMyOrders" hidden>Mis ordenes</a>
+                    <a class="myOrders" href="orders" data-toggle="modal" id="barMyOrders" hidden>Mis ordenes</a>
                 </div>
                 <li>
                     <a class="nav-item">
@@ -194,7 +194,8 @@
                             </div>
                         </div>
                         <div class="btn-center">
-                            <button type="submit" class="btn btn-success mt-3" id="registerButton">Registrarse</button>
+                            <button type="button" class="btn btn-success mt-3"
+                                data-dismiss="modal" id="registerButton">Registrarse</button>
                         </div>
                     </form>
                 </div>

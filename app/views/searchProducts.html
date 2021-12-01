@@ -31,7 +31,7 @@
                     <a class="login" href="#" data-toggle="modal" data-target="#ingresar" id="barLogin">Iniciar sesión</a>
                     <a class="signUp" href="#" data-toggle="modal" data-target="#registrar" id="barRegister">Registrarse</a>
                     <a class="signOut" href="#" data-toggle="modal" id="barSignOut" hidden>Cerrar sesión</a>
-                    <a class="myOrders" href="#" data-toggle="modal" id="barMyOrders" hidden>Mis ordenes</a>
+                    <a class="myOrders" href="orders" data-toggle="modal" id="barMyOrders" hidden>Mis ordenes</a>
                 </div>
                 <li>
                     <a class="nav-item">
@@ -186,7 +186,8 @@
                             </div>
                         </div>
                         <div class="btn-center">
-                            <button type="submit" class="btn btn-success mt-3" id="registerButton">Registrarse</button>
+                            <button type="button" class="btn btn-success mt-3"
+                                data-dismiss="modal" id="registerButton">Registrarse</button>
                         </div>
                     </form>
                 </div>
@@ -312,6 +313,7 @@
     <!--<script src="../../controllers/index.js"></script>-->
     <script src="js/login.js"></script>
     <script src="js/register.js"></script>
+    <script src="js/searchProducts.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -324,7 +326,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
-    <script src="js/searchProducts.js"></script>
 </body>
 
 </html>
