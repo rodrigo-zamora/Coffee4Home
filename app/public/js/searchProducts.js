@@ -15,7 +15,6 @@ function getURLparameters(sParam) {
 }
 
 function updatePage() {
-    //localStorage.clear();
     let query = "?";
     let tipoCafe = getURLparameters("tipoCafe");
     let tipoGrano = getURLparameters("tipoGrano");
