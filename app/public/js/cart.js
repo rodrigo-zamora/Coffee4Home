@@ -160,6 +160,8 @@ function pay() {
             "street": calle,
             "phone": telefono,
             "zip": codigoPostal,
+            "city": ciudad,
+            "state": estado,
             "role": user.role
         }
         xhttp.onreadystatechange = function () {
