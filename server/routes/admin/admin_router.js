@@ -6,7 +6,6 @@ const router = express.Router();
 const adminOrderRouter = require("./admin_order");
 const adminUserRouter = require("./admin_user");
 const adminProductRouter = require("./admin_product");
-const users = require('../../controllers/datahandler/users_data_handler');
 
 router.use("/orders", validateAdmin, adminOrderRouter);
 router.use("/users", validateAdmin, adminUserRouter);

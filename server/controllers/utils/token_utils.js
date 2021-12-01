@@ -1,5 +1,3 @@
-"use strict";
-
 const jwt = require("jsonwebtoken");
 
 let privateKey = process.env.TOKEN_KEY;
@@ -46,6 +44,13 @@ const verifyToken = (req, res, next) => {
             message: "No token provided"
         });
     }
+
+    jwt.verify(token, privateKey, (err, decoded) => {
+        if (err) return res.status(401).send("Invalid Token");
+
+        req.userInfo = decoded;
+        return next();
+    });
 };
 
 exports.verifyToken = verifyToken;
