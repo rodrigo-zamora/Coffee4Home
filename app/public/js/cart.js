@@ -113,7 +113,7 @@ function removeFromCart(UUID) {
     shoppingCart.splice(index, 1);
     localStorage.setItem('shoppingCart', JSON.stringify(shoppingCart));
     if (shoppingCart.length == 0) {
-        localStorage.clear();
+        localStorage.removeItem('shoppingCart');
     }
     updatePage();
 }
