@@ -6,6 +6,7 @@ var barRegister = document.getElementById("barRegister");
 var barSignOut = document.getElementById("barSignOut");
 var barMyOrders = document.getElementById("barMyOrders");
 loginButton.addEventListener("click", sendLogin);
+barSignOut.addEventListener("click", signOut);
 document.addEventListener("load", checkLogin());
 
 function sendLogin() {
@@ -46,4 +47,10 @@ function checkLogin() {
         barSignOut.hidden = true;
         barMyOrders.hidden = true;
     }
+}
+
+function signOut() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("email");
+    checkLogin();
 }
