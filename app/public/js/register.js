@@ -11,10 +11,9 @@ var street = document.getElementById("street");
 var city = document.getElementById("city");
 var state = document.getElementById("state");
 var zip = document.getElementById("zip");
-
 registerButton.addEventListener("click", sendSignUp);
 
-/* function validatePassword(){
+function validatePassword(){
     if(password1.value != password2.value) {
         password2.setCustomValidity("Passwords Don't Match");
     } else {
@@ -32,7 +31,7 @@ function validateZip(){
     }
 }
 zip.onchange = validatePassword;
-zip.onkeyup = validatePassword; */
+zip.onkeyup = validatePassword;
 
 function sendSignUp() {
     console.log("sendSignUp");
@@ -78,7 +77,7 @@ function sendSignUp() {
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-                //window.location.href = "/";
+                //window.location.href = "/?";
                 console.log(xhr.responseText);
                 console.log(newUser);
                 console.log(newUser2);
