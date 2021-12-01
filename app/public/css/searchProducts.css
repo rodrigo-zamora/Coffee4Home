@@ -42,6 +42,10 @@ form {
 #searchButton {
     width: 300px;
 }
+#resetButton {
+    width: 300px;
+    background-color: rgb(158, 90, 42) !important;
+}
 
 .btn.accept-button.btn.btn-success {
     width: 40%;
