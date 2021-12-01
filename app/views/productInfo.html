@@ -23,8 +23,6 @@
                 <img class="logo" src="resources/logo.png" alt="Logo">
             </a>
         </div>
-
-
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <div class="userPart">
@@ -44,7 +42,6 @@
             </ul>
         </div>
         <!--User Profile-->
-
     </nav>
     <!-- Login Modal -->
     <div class="modal fade" id="ingresar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
@@ -102,7 +99,6 @@
             </div>
         </div>
     </div>
-
     <!-- Sign Up Modal -->
     <div class="modal fade" id="registrar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
         aria-hidden="true">
@@ -119,37 +115,39 @@
                         <div class="row">
                             <div class="col-6">
                                 Nombre(s)
-                                <input type="text" name="" id="" class="form-control"
+                                <input type="text" name="" id="firstname" class="form-control"
                                     placeholder="Ingresa tu(s) nombre(s)" aria-describedby="helpId" required>
                             </div>
                             <div class="col-6">
                                 Apellidos
-                                <input type="text" name="" id="" class="form-control"
+                                <input type="text" name="" id="lastname" class="form-control"
                                     placeholder="Ingresa tus Apellidos" aria-describedby="helpId" required>
                             </div>
                         </div>
                         <br>
                         Tu correo
-                        <input type="mail" name="" id="" class="form-control mt-3" placeholder="Ingresa tú correo"
+                        <input type="email" name="" id="email" class="form-control mt-3" placeholder="Ingresa tú correo"
                             aria-describedby="helpId" required>
                         <br>
                         Contraseña
-                        <input type="password" name="" id="" class="form-control mt-3"
-                            placeholder="Ingresa tú contraseña" aria-describedby="helpId" required>
+                        <input type="password" name="" id="password1" class="form-control mt-3"
+                            placeholder="Ingresa tú contraseña" aria-describedby="helpId" 
+                            title="Debe contener mayúsculas, minúsculas, números y en total 8 o más caracteres."
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                         <br>
                         Confirma tu contraseña
-                        <input type="password" name="" id="" class="form-control mt-3"
-                            placeholder="Confirma tú contraseña" aria-describedby="helpId" required>
-
+                        <input type="password" name="" id="password2" class="form-control mt-3"
+                            placeholder="Confirma tú contraseña" aria-describedby="helpId" 
+                            title="Debe contener mayúsculas, minúsculas, números y en total 8 o más caracteres."
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                         <div class="btn-center">
-                            <button type="submit" class="btn btn-success mt-3">Registrarse</button>
+                            <button type="submit" class="btn btn-success mt-3" id="registerButton">Registrarse</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Carrousel -->
     <div id="carouselId" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -187,7 +185,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
     <!-- Select type coffee -->
     <div class="items container " id="mainList">
         <div class="row prepare">
@@ -468,7 +465,6 @@
             </div>
         </div>
     </div>
-
     <!-- Coffee stock -->
     <div class="container coffeeStockContainer">
         <div class="row rowProducts">
@@ -509,7 +505,6 @@
             </a>
         </div>
     </div>
-
     <!--FOOTER-->
     <footer class="section footer-classic context-dark bg-image" style="background: #2d3246;">
         <div class="container">
@@ -554,6 +549,7 @@
             </div>
         </div>
     </footer>
+
     <!--<script src="../../controllers/index.js"></script>-->
     <script src="js/login.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
