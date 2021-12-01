@@ -74,7 +74,6 @@ body {
 .login:hover, .signUp:hover, .signOut:hover, .myOrders:hover {
     color: #000;
     text-decoration: none;
-
 }
 
 .fa-shopping-cart,
