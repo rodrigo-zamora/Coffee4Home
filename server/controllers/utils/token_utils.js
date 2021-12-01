@@ -44,13 +44,6 @@ const verifyToken = (req, res, next) => {
             message: "No token provided"
         });
     }
-
-    jwt.verify(token, privateKey, (err, decoded) => {
-        if (err) return res.status(401).send("Invalid Token");
-
-        req.userInfo = decoded;
-        return next();
-    });
 };
 
 exports.verifyToken = verifyToken;
