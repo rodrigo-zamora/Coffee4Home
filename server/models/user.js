@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
+let privateKey = process.env.TOKEN_KEY;
 let Utils = require('../controllers/utils/uuid_utils');
 
 // Creamos el modelo de Usuario con un esquema específico usando Mongoose
@@ -63,6 +65,20 @@ userSchema.pre('save', function (next) {
     user.UUID = Utils.generateUUID();
     next();
 });
+
+userSchema.methods.generateToken = function(password) {
+    let user = this;
+    let payload = {_id: user._id, role: user.role};
+    let options = { expiresIn: 60 * 60 }
+    if (bcrypt.compareSync(password, user.password)) {
+        try {
+            user.token = jwt.sign(payload, privateKey, options);
+            return user.token;
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
 
 let User = mongoose.model('user', userSchema);
 
