@@ -197,9 +197,9 @@ function toast() {
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 
-function uncheckAll() {
-    document.querySelectorAll('input[type="radio"]')
-      .forEach(el => el.checked = false);
-  }
+// function uncheckAll() {
+//     document.querySelectorAll('input[type="radio"]')
+//       .forEach(el => el.checked = false);
+//   }
   
-  document.querySelector('button[type="clear"]').addEventListener('click', uncheckAll)
+//   document.querySelector('button[type="clear"]').addEventListener('click', uncheckAll)
