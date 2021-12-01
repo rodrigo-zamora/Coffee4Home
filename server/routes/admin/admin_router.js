@@ -8,11 +8,11 @@ const adminUserRouter = require("./admin_user");
 const adminProductRouter = require("./admin_product");
 const users = require('../../controllers/datahandler/users_data_handler');
 
-router.use("/orders", validateAdminUser, adminOrderRouter);
-router.use("/users", validateAdminUser, adminUserRouter);
-router.use("/products", validateAdminUser, adminProductRouter);
+router.use("/orders", validateAdmin, adminOrderRouter);
+router.use("/users", validateAdmin, adminUserRouter);
+router.use("/products", validateAdmin, adminProductRouter);
 
-console.log("A"+'query');
+// console.log("A"+'query');
 
 function validateAdmin(req, res, next) {
     const auth = req.header('x-auth');
