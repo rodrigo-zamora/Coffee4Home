@@ -1,4 +1,5 @@
 let shoppingCartDiv = document.getElementById('shoppingCartContainer');
+let wordsDiv = document.getElementById('emptyCart');
 let addButtons = document.getElementsByTagName('add');
 let payButton = document.getElementById('pagar');
 
@@ -52,6 +53,7 @@ function updatePage() {
     if (shoppingCart != [] && shoppingCart != null) {
         let total = 60;
         shoppingCartDiv.hidden = false;
+        wordsDiv.hidden = true;
         // Make a petition to the server to get get each product for each item in the shopping cart
         // and then add it to the page
         for (let i = 0; i < shoppingCart.length; i++) {
@@ -104,6 +106,7 @@ function updatePage() {
         productsContainer.innerHTML = cartHTML;
     } else {
         shoppingCartDiv.hidden = true;
+        wordsDiv.hidden = false;
     }
 }
 
