@@ -1,5 +1,3 @@
-"use strict";
-
 const jwt = require("jsonwebtoken");
 
 let privateKey = process.env.TOKEN_KEY;

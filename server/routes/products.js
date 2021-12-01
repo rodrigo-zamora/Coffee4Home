@@ -9,13 +9,13 @@ router.route('/')
         dataHandler.searchProducts(req, res);
     });
 
-router.route('/:id')
+router.route('/:uuid')
     .get((req, res) => {
-        if(req.params.id.includes('?')) {
+        if(req.params.uuid.includes('?')) {
             console.log('query');
             dataHandler.searchProducts(req, res);
         } else {
-            dataHandler.getProduct(req, res);
+            dataHandler.getProductByUUID(req, res);
         }
     });
 

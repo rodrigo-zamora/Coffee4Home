@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8a4abc48-bf8b-47f0-acdd-1b7c47ae38e9",
+		"_postman_id": "d19a8a04-02d7-4a79-9e4c-bb26bdd94463",
 		"name": "Coffee4Home",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -25,17 +25,11 @@
 										"key": "x-auth",
 										"value": "admin",
 										"type": "text"
-									},
-									{
-										"key": "",
-										"value": "",
-										"type": "text",
-										"disabled": true
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"firstName\": \"Jaime\",\r\n    \"lastName\": \"Gutierrez\",\r\n    \"email\": \"jaime.gutierrez@coffe4home.com\",\r\n    \"password\": \"safest1234\",\r\n    \"street\": \"street\",\r\n    \"city\": \"city\",\r\n    \"state\": \"state\",\r\n    \"zip\": \"682942\",\r\n    \"phone\": \"49868380\",\r\n    \"role\": \"ADMIN\"\r\n}",
+									"raw": "{\r\n    \"firstName\": \"Rodrigo\",\r\n    \"lastName\": \"Zamora\",\r\n    \"email\": \"rodrigo.zamora@coffe4home.com\",\r\n    \"password\": \"password\",\r\n    \"street\": \"street\",\r\n    \"city\": \"city\",\r\n    \"state\": \"state\",\r\n    \"zip\": \"46851\",\r\n    \"phone\": \"11111111\",\r\n    \"role\": \"USER\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -43,12 +37,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/admin/users",
-									"protocol": "http",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/users",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"coffe4home-development",
+										"herokuapp",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"admin",
 										"users"
@@ -69,74 +64,17 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8080/admin/users/jaime.gutierrez@coffe4home.com",
-									"protocol": "http",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/users/rodrigo.zamora@coffe4home.com",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"coffe4home-development",
+										"herokuapp",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"admin",
 										"users",
-										"jaime.gutierrez@coffe4home.com"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "users/:email",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-auth",
-										"value": "admin",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://localhost:8080/users/jaime.gutierrez@coffe4home.com",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"users",
-										"jaime.gutierrez@coffe4home.com"
-									],
-									"query": [
-										{
-											"key": "",
-											"value": "",
-											"disabled": true
-										}
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "users",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "x-auth",
-										"value": "admin",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://localhost:8080/users",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8080",
-									"path": [
-										"users"
+										"rodrigo.zamora@coffe4home.com"
 									]
 								}
 							},
@@ -150,12 +88,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users",
-							"protocol": "http",
+							"raw": "https://coffe4home-development.herokuapp.com/users",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"coffe4home-development",
+								"herokuapp",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"users"
 							]
@@ -169,88 +108,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/users/jaime.gutierrez@coffe4home.com",
-							"protocol": "http",
+							"raw": "https://coffe4home-development.herokuapp.com/users/rodrigo.zamora@coffe4home.com",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"coffe4home-development",
+								"herokuapp",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"users",
-								"jaime.gutierrez@coffe4home.com"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-auth",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"email\": \"rodrigo.zamora@coffe4home.com\",\n    \"password\": \"password\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"login"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "New Request",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:8080/rodrigo.zamora@coffe4home.com",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
 								"rodrigo.zamora@coffe4home.com"
 							]
 						}
@@ -277,14 +143,14 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8080/jaime.gutierrez@coffe4home.com/admin/orders",
-									"protocol": "http",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"coffe4home-development",
+										"herokuapp",
+										"com"
 									],
-									"port": "8080",
 									"path": [
-										"jaime.gutierrez@coffe4home.com",
 										"admin",
 										"orders"
 									]
@@ -313,12 +179,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/admin/orders",
-									"protocol": "http",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"coffe4home-development",
+										"herokuapp",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"admin",
 										"orders"
@@ -348,12 +215,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:8080/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
-									"protocol": "http",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"coffe4home-development",
+										"herokuapp",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"admin",
 										"orders",
@@ -375,12 +243,13 @@
 									}
 								],
 								"url": {
-									"raw": "http://localhost:8080/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
-									"protocol": "http",
+									"raw": "https://coffe4home-development.herokuapp.com/admin/orders/073a98bdc-ab54-41a8-bd7c-b6953a9d79c1",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"coffe4home-development",
+										"herokuapp",
+										"com"
 									],
-									"port": "8080",
 									"path": [
 										"admin",
 										"orders",
@@ -398,12 +267,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/orders/a1eabb22f-a7c9-496d-ab3c-aeb01b815c17",
-							"protocol": "http",
+							"raw": "https://coffe4home-development.herokuapp.com/orders/a1eabb22f-a7c9-496d-ab3c-aeb01b815c17",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"coffe4home-development",
+								"herokuapp",
+								"com"
 							],
-							"port": "8080",
 							"path": [
 								"orders",
 								"a1eabb22f-a7c9-496d-ab3c-aeb01b815c17"
