@@ -1,6 +1,10 @@
 "use strict";
 
 var loginButton = document.getElementById("loginButton");
+var barLogin = document.getElementById("barLogin");
+var barRegister = document.getElementById("barRegister");
+var barSignOut = document.getElementById("barSignOut");
+var barMyOrders = document.getElementById("barMyOrders");
 loginButton.addEventListener("click", sendLogin);
 
 function sendLogin() {
@@ -15,19 +19,20 @@ function sendLogin() {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            var json = xhr.responseText;
-            if (json.success) {
-                window.location.href = "/";
-            } else {
-                alert("Login failed");
-            }
+            var response = xhr.responseText;
+            //window.location.href = "/"+email;
+            //window.location.href = "/";
+            barLogin.hidden = true;
+            barRegister.hidden = true;
+            barSignOut.hidden = false;
+            barMyOrders.hidden = false;
+            console.log("Response: " + response);
+            //console.log("user:" + user);
         }
-    }
+        else if (xhr.readyState === 4 && xhr.status !== 200) {
+            alert("Wrong email or password");
+        }
+    };
+    console.log(data);
     xhr.send(JSON.stringify(data));
 }
-
-/* let query = "?";
-var email = document.getElementById("loginMail");
-query = email.value;
-query = query.substring(0, query.length - 1);
-window.location.href = "search" + query; */
