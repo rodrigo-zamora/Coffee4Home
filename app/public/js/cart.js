@@ -1,8 +1,4 @@
-
-const bcrypt = require('bcrypt');
-
-let cartContainer = document.getElementById('cartContainer');
-let productsContainer = document.getElementById('productsContainer');
+let shoppingCartDiv = document.getElementById('shoppingCartContainer');
 let addButtons = document.getElementsByTagName('add');
 let payButton = document.getElementById('pagar');
 
@@ -55,9 +51,7 @@ function updatePage() {
     let products = [];
     if (shoppingCart != [] && shoppingCart != null) {
         let total = 60;
-        document.getElementById('emptyCart').hidden = true;
-        document.getElementById('shoppingCartContainer').hidden = false;
-        document.getElementById('cartTitle').hidden = false;
+        shoppingCartDiv.hidden = false;
         // Make a petition to the server to get get each product for each item in the shopping cart
         // and then add it to the page
         for (let i = 0; i < shoppingCart.length; i++) {
@@ -109,9 +103,7 @@ function updatePage() {
         `
         productsContainer.innerHTML = cartHTML;
     } else {
-        document.getElementById('emptyCart').hidden = false;
-        document.getElementById('shoppingCartContainer').hidden = true;
-        document.getElementById('cartTitle').hidden = true;
+        shoppingCartDiv.hidden = true;
     }
 }
 
