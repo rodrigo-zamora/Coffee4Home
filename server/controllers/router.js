@@ -7,6 +7,8 @@ const userRouter = require('../routes/users');
 const adminRouter = require('../routes/admin/admin_router');
 const productRouter = require('../routes/products');
 
+//const tokenUtils = require('./utils/token_utils');
+//router.use('/:email', tokenUtils.verifyToken);
 const tokenUtils = require('./utils/token_utils');
 
 router.route('/:email', tokenUtils.verifyToken);
