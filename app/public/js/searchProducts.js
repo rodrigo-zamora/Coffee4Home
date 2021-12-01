@@ -197,8 +197,7 @@ function toast() {
 }
 
 function uncheckAll() {
-    document.querySelectorAll('input[type="radio"]')
-      .forEach(el => el.checked = false);
+    window.location.href = "search";
   }
   
   document.querySelector('button[type="clear"]').addEventListener('click', uncheckAll)
