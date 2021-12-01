@@ -452,6 +452,60 @@ form {
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
   
+  #found {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    background-color: burlywood;
+    border: 1px solid rgb(115, 73, 18);
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .25);
+    color: rgb(115, 73, 18);
+  }
+  
+  #found.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+
+  #notFound {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    background-color: burlywood;
+    border: 1px solid rgb(115, 73, 18);
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .25);
+    color: rgb(115, 73, 18);
+  }
+  
+  #notFound.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  
+
+
+
   @-webkit-keyframes fadein {
     from {bottom: 0; opacity: 0;} 
     to {bottom: 30px; opacity: 1;}

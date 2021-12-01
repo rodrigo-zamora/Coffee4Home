@@ -21,7 +21,6 @@ function updatePage() {
     let cafeLocal = getURLparameters("cafeLocal");
     if (tipoCafe == null && tipoGrano == null && cafeLocal == null) {
         document.getElementById("productsContainer").hidden = true;
-        document.getElementById("noProducts").hidden = true;
     }
     var tipoCafeForm = document.getElementById("tipoCafe").elements;
     for (i = 0; i < tipoCafeForm.length; i++) {
@@ -97,11 +96,11 @@ function searchProducts(query) {
             // If the response is empty, show an error message
             if (products.products.length == 0) {
                 console.log("No products found");
+                notfoundtoast();
                 document.getElementById("productsContainer").hidden = true;
-                document.getElementById("noProducts").hidden = false;
             } else {
-                document.getElementById("noProducts").hidden = true;
                 document.getElementById("productsContainer").hidden = false;
+                foundtoast();
                 // Show the products
                 showProducts(products);
             }
@@ -192,6 +191,18 @@ function addToCart(uuid) {
 
 function toast() {
     var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function foundtoast() {
+    var x = document.getElementById("found");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
+function notfoundtoast() {
+    var x = document.getElementById("notFound");
     x.className = "show";
     setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
