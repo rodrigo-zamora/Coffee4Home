@@ -12,10 +12,6 @@ let orderSchema = new mongoose.Schema({
         index: true,
         default: Utils.generateOrderUUID()
     },
-    userUUID: {
-        type: String,
-        required: true
-    },
     orderDate: {
         type: Date,
         required: false,
@@ -31,27 +27,9 @@ let orderSchema = new mongoose.Schema({
         required: true
     },
     orderItems: [{
-        productUUID: {
-            type: String,
-            required: true
-        },
-        productName: {
-            type: String,
-            required: true
-        },
-        productPrice: {
-            type: Number,
-            required: true
-        },
-        productQuantity: {
-            type: Number,
-            required: true
-        },
-        productTotal: {
-            type: Number,
-            required: true
-        },
-    }],
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'products'
+    }]
 }, { collection : 'orders' });
 
 let Order = mongoose.model('order', orderSchema);
