@@ -63,7 +63,6 @@ function updatePage() {
                 if (this.readyState == 4 && this.status == 200) {
                     // Convert the response to JSON
                     var product = JSON.parse(this.responseText);
-                    // If the response is empty, show an error message
                     product.product.quantity = shoppingCart[i].quantity;
                     products.push(product);
                 }
@@ -122,7 +121,7 @@ function removeFromCart(UUID) {
 }
 
 function pay() {
-    if (false) {
+    if (searchToken()) {
         alert('Debes iniciar sesión para pagar');
         return;
     } else {
@@ -133,6 +132,10 @@ function pay() {
         let ciudad = document.getElementById('ciudad').value;
         let codigoPostal = document.getElementById('codigoPostal').value;
         let estado = document.getElementById('estado').value;
+        if (calle == '' || telefono == '' || colonia == '' || ciudad == '' || codigoPostal == '' || estado == '') {
+            alert('Debes llenar todos los campos');
+            return;
+        }
 
         console.log(calle, telefono, colonia, ciudad, codigoPostal, estado);
         // Get the user data from the server
