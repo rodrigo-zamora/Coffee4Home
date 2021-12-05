@@ -11,45 +11,171 @@ function searchToken() {
     }
 }
 
-function orderToHTML(order) {
-    return `
-    <a style="width: 100%; text-decoration: none !important; color: black;">
-                <div class="card" style="width: 100%;">
-                    <div class="card-header ">
-                        <div class="coffeeproduct">Pedido Realizado</div>
-                        <div class="coffeeproduct">Total</div>
-                        <div class="coffeeproduct">Enviar a</div>
-                        <div class="coffeeproduct">Pedido N°2194819121349013449</div>
-                    </div>
-                    <div class="card-header">
-                        Entregado el viernes, 12 de junio
-                    </div>
-                    <div class="productContainer">
-                        <div class="row productRow">
-                            <div class="coffeeImg col-md-2">
-                                <img class="productImg" src="resources/coffeeItems/kenyaAA.jpeg" alt="Peet's Coffee">
-                            </div>
-                            <div class="coffeeIntormation col-md-7">
-                                <h4>Kenya AA</h4>
-                                <p class="productText"><b>Marca:</b> Java House Africa.</p>
-                                <p class="productText"><b>Tipo de café:</b> Molido.</p>
-                                <p class="productText"><b>Tipo de grano:</b> Arábico.</p>
-                                <p class="productText"><b>Origen:</b> Kenya.</p>
-                                <p class="productText"><b>Tipo:</b> Origen único.</p>
-                                <p class="productText"><b>Sabor:</b> Fresco y floral.</p>
-                                <p class="productText"><b>Preparación recomendada:</b> Goteo.</p>
-                            </div>
-                            <div class="buttons col-md-2">
-                                <div>
-                                    <button type="button" class="cancel-button btn btn-success"
-                                        data-dismiss="modal">Cancelar</button>
+function requestCancelOrder(order) {
+    console.log("requestCancelOrder");
+    console.log("AAA");
+    let myOrder = order[0];
+    myOrder.orderStatus = "PENDING";
+    // Make a post request to modify order status
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("PUT", "/admin/orders/" + myOrder.orderUUID, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader("x-auth", "admin");
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+           alert("Solcitud de cancelacion enviada");
+            window.location.reload();
+        }
+    };
+    xhttp.send(JSON.stringify(myOrder));
+}
+
+function cancelOrder(orderUUID) {
+    console.log("cancelOrder");
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            requestCancelOrder(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", "orders/" + orderUUID, true);
+    xhttp.setRequestHeader("isOrder", "true");
+    xhttp.send();
+}
+
+function requestAcceptOrder(order) {
+    console.log("requestAcceptOrder");
+    let myOrder = order[0];
+    myOrder.orderStatus = "ACCEPTED";
+    // Make a post request to modify order status
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("PUT", "/admin/orders/" + myOrder.orderUUID, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader("x-auth", "admin");
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Solcitud de aceptacion enviada");
+            window.location.reload();
+        }
+    };
+    xhttp.send(JSON.stringify(myOrder));
+}
+
+function acceptOrder(orderUUID) {
+    console.log("acceptOrder");
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            requestAcceptOrder(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", "orders/" + orderUUID, true);
+    xhttp.setRequestHeader("isOrder", "true");
+    xhttp.send();
+}
+
+function requestRejectOrder(order) {
+    console.log("requestRejectOrder");
+    let myOrder = order[0];
+    myOrder.orderStatus = "REJECTED";
+    // Make a post request to modify order status
+    let xhttp = new XMLHttpRequest();
+    xhttp.open("PUT", "/admin/orders/" + myOrder.orderUUID, true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.setRequestHeader("x-auth", "admin");
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            alert("Solcitud de rechazo enviada");
+            window.location.reload();
+        }
+    };
+    xhttp.send(JSON.stringify(myOrder));
+}
+
+function rejectOrder(orderUUID) {
+    console.log("rejectOrder");
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            requestRejectOrder(JSON.parse(this.responseText));
+        }
+    };
+    xhttp.open("GET", "orders/" + orderUUID, true);
+    xhttp.setRequestHeader("isOrder", "true");
+    xhttp.send();
+}
+
+function orderToHTML(order, isAdmin) {
+    if (isAdmin) {
+        switch (order.orderStatus) {
+            case "PENDING":
+                return `
+                <a style="width: 100%; text-decoration: none !important; color: black;">
+                            <div class="card" style="width: 100%;">
+                                <div class="orderHeader card-header ">
+                                    <div id="orderInfo">
+                                    <div class="coffeeproduct">Pedido realizado</div>
+                                    <div class="coffeeproduct">Total: ${order.orderTotal}</div>
+                                    <div class="coffeeproduct">Pedido: #${order.orderUUID}</div>
+                                    <div class="coffeeproduct">Fecha del pedido: ${order.orderDate}</div>
+                                    <div class="coffeeproduct">Estado: ${order.orderStatus}</div>
+                                    </div>
+                                    <div class="buttons">
+                                    <div>
+                                        <button type="button" class="cancel-button btn btn-success"
+                                            data-dismiss="modal" id="cancelOrder" onclick="aceptOrder('${order.orderUUID}')">Aceptar</button>
+                                    </div>
+                                    <div class="buttons">
+                                    <div>
+                                        <button type="button" class="cancel-button btn btn-success"
+                                            data-dismiss="modal" id="cancelOrder" onclick="rejectOrder('${order.orderUUID}')">Rechazar</button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-    `;
+                        </a>
+                `;
+        }
+    } else {
+        switch (order.orderStatus) {
+            case "PENDING" || "DELIVERED":
+                return `
+                <a style="width: 100%; text-decoration: none !important; color: black;">
+                            <div class="card" style="width: 100%;">
+                                <div class="orderHeader card-header ">
+                                    <div id="orderInfo">
+                                    <div class="coffeeproduct">Pedido realizado</div>
+                                    <div class="coffeeproduct">Total: ${order.orderTotal}</div>
+                                    <div class="coffeeproduct">Pedido: #${order.orderUUID}</div>
+                                    <div class="coffeeproduct">Fecha del pedido: ${order.orderDate}</div>
+                                    <div class="coffeeproduct">Estado: ${order.orderStatus}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                `;
+            case "CONFIRMED":
+                return `
+                <a style="width: 100%; text-decoration: none !important; color: black;">
+                            <div class="card" style="width: 100%;">
+                                <div class="orderHeader card-header ">
+                                    <div id="orderInfo">
+                                    <div class="coffeeproduct">Pedido realizado</div>
+                                    <div class="coffeeproduct">Total: ${order.orderTotal}</div>
+                                    <div class="coffeeproduct">Pedido: #${order.orderUUID}</div>
+                                    <div class="coffeeproduct">Fecha del pedido: ${order.orderDate}</div>
+                                    <div class="coffeeproduct">Estado: ${order.orderStatus}</div>
+                                    </div>
+                                    <div class="buttons">
+                                    <div>
+                                        <button type="button" class="cancel-button btn btn-success"
+                                            data-dismiss="modal" id="cancelOrder" onclick="cancelOrder('${order.orderUUID}')">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                `;
+        }
+    }
 }
     /*
     <button type="button" class="accept-button btn btn-success"
@@ -62,41 +188,70 @@ function updatePage() {
 
         // Make a request to know if the user is an admin
         let email = "rodrigo.zamora@coffe4home.com";
+        //let email = localStorage.getItem('email');
+        console.log(email);
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 let user = JSON.parse(this.responseText);
+                console.log(user.role);
                 if (user.role == "ADMIN") {
-                    window.location.href = "/allOrders";
+                    loadAllOrders(user);
+                } else {
+                    loadUserOrders(user);
                 }
             }
         };
         xhttp.open("GET", "users/" + email, true);
         xhttp.send();
-
-        // Only users without admin privileges can see this page
-        // Make a request to get all the orders of the user
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                let orders = JSON.parse(this.responseText);
-                console.log(orders);
-                if (orders == null || orders.length == 0 || orders == undefined) {
-                    console.log("No hay pedidos");
-                    ordersContainer.innerHTML = "No has realizado ninguna orden";
-                } else {
-                    ordersContainer.innerHTML = "";
-                    for (let i = 0; i < orders.length; i++) {
-                        ordersContainer.innerHTML += orderToHTML(orders[i]);
-                    }
-                }
-            }
-        };
-        xhttp.open("GET", "orders/" + email, true);
-        xhttp.send();
-
     } else {
         alert("You must be logged in to access this page");
         window.location.href = "/";
     }
+}
+
+function loadAllOrders() {
+    console.log("loadAllOrders");
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let orders = JSON.parse(this.responseText);
+            let ordersAdmin = 0;
+            for (let i = 0; i < orders.length; i++) {
+                if (orders[i].orderStatus == "PENDING") {
+                    ordersAdmin++;
+                }
+            }
+            if (orders == [] || orders.length == 0 || ordersAdmin == 0) {
+                ordersContainer.innerHTML = "No hay pedidos de ningun usuario que requieran ser aceptados";
+            } else {
+                orders.forEach(order => {
+                    ordersContainer.innerHTML += orderToHTML(order, true);
+                });
+            }
+        }
+    };
+    xhttp.open("GET", "admin/orders", true);
+    xhttp.setRequestHeader("x-auth", "admin");
+    xhttp.send();
+}
+
+function loadUserOrders(user) {
+    let xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let orders = JSON.parse(this.responseText);
+            console.log(orders);
+            if (orders == [] || orders.length == 0) {
+                ordersContainer.innerHTML = "No hay pedidos";
+            } else {
+                orders.forEach(order => {
+                    ordersContainer.innerHTML += orderToHTML(order, false);
+                });
+            }
+        }
+    };
+    xhttp.open("GET", "orders/" + user.UUID, true);
+    xhttp.setRequestHeader("x-auth", "admin");
+    xhttp.send();
 }

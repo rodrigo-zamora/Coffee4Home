@@ -12,6 +12,11 @@ let orderSchema = new mongoose.Schema({
         index: true,
         default: Utils.generateOrderUUID()
     },
+    userUUID: {
+        type: String,
+        required: true,
+        unique: false
+    },
     orderDate: {
         type: Date,
         required: false,
@@ -19,7 +24,7 @@ let orderSchema = new mongoose.Schema({
     },
     orderStatus: { 
         type: String,
-        enum: ['PENDING', 'CONFIRMED', 'DELIVERED', 'CANCELLED'],
+        enum: ['PENDING', 'CONFIRMED', 'DELIVERED', 'CANCELLED', 'REJECTED'],
         required: true
     },
     orderTotal: {
@@ -27,8 +32,16 @@ let orderSchema = new mongoose.Schema({
         required: true
     },
     orderItems: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'products'
+        UUID: {
+            type: String,
+            required: true,
+            unique: false
+        },
+        quantity: {
+            type: Number,
+            required: true,
+            unique: false
+        }
     }]
 }, { collection : 'orders' });
 

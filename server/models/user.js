@@ -52,10 +52,6 @@ let userSchema = mongoose.Schema({
         type: String,
         required: false
     },
-    orders: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'orders'
-    }],
     role: {
         type: String,
         enum: ['ADMIN', 'USER', 'GUEST'],
