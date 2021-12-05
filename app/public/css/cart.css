@@ -1,0 +1,544 @@
+body {
+    font-family: "Patrick Hand", sans-serif;
+    cursor: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/heart.svg), auto;
+}
+
+.controls,
+.btn-center,
+.Page.navigation {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.control {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.fas {
+    margin-left: 0px;
+}
+
+.input-group-prepend {
+    margin-left: -1px;
+}
+
+.btn-success {
+    width: 360px;
+}
+
+.userPart {
+    display: flex;
+    flex-flow: row;
+}
+
+/* Navigation Left*/
+.navbar {
+    padding: 0px 20px;
+    /*position: fixed;*/
+    top: 0;
+    background-color: antiquewhite;
+}
+
+.logo {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.form-control {
+    width: 100% !important;
+    margin: 10px;
+}
+
+.form-inline {
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Navigation Right*/
+.login, .signUp, .signOut, .myOrders {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 8px;
+    color: #000;
+}
+
+.login:hover, .signUp:hover, .signOut:hover, .myOrders:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.fa-shopping-cart,
+.nav-link {
+    color: #000 !important;
+}
+
+/* Carousel */
+.carousel-item,
+.carousel-inner {
+    position: relative;
+    width: 100%;
+}
+
+.textInBanner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+/* Footer */
+.context-dark,
+.bg-gray-dark,
+.bg-primary {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-classic a,
+.footer-classic a:focus,
+.footer-classic a:active {
+    color: #ffffff;
+}
+
+.nav-list li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list li a:hover:before {
+    margin-left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 23px;
+    font: 900 13px/1 "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-list li a:before {
+    content: "\f14f";
+    font: 400 21px/1 "Material Design Icons";
+    color: #4d6de6;
+    display: inline-block;
+    vertical-align: baseline;
+    margin-left: -28px;
+    margin-right: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .22s ease;
+}
+
+.btn.login-button.btn.btn-success,
+.btn.btn-success.mt-3 {
+    background-color: burlywood !important;
+    border: 1px solid rgb(115, 73, 18) !important;
+    font-family: patrick hand;
+}
+
+.btn.login-button.btn.btn-success:active,
+.btn.login-button.btn.btn-success:focus,
+.btn.btn-success.mt-3:active,
+.btn.btn-success.mt-3:focus {
+    background-color: burlywood !important;
+    border: 1px solid rgb(115, 73, 18) !important;
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .5) !important;
+}
+
+
+.modal-content {
+    background-color: burlywood;
+    border: black;
+    font-family: patrick hand;
+
+}
+
+/* Resumen de compra */
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.items {
+    margin-bottom: 50px;
+}
+
+.row-30 {
+    margin-top: 50px;
+}
+
+.prepare {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.coffeeStockContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    overflow: auto;
+    margin-bottom: 50px;
+}
+
+.productContainer {
+    display: flex;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border-style: dashed;
+    margin: 10px;
+    width: 500px;
+    height: auto;
+}
+
+.totalInfo {
+    display: flex;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border-style: dashed;
+    margin: 10px;
+    width: 500px;
+    height: auto;
+}
+
+.shippingInfo {
+    display: flex;
+    margin: 30px;
+    height: 100%;
+}
+
+form {
+    padding: 20px;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    border-style: dashed;
+    height: auto;
+}
+
+.productImg {
+    margin-left: 10px;
+    max-width: 120px;
+    max-height: 220px;
+}
+
+.coffeeIntormation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.productText {
+    margin: 0px 20px;
+}
+
+.coffeeImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rowProducts {
+    padding: 15px !important;
+}
+
+input[disabled] {
+    background-color: rgb(255, 248, 238) !important;
+}
+
+/* Products Left */
+.item {
+    width: 145px;
+    height: 145px;
+    padding: 0px 10px;
+}
+
+.media {
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 0px 10px 20px;
+    border: 1px solid rgb(115, 73, 18);
+    transition: border 1s ease-in-out;
+}
+
+.media:hover {
+    border: 1px solid black;
+}
+
+.pen {
+    margin-left: -1px;
+    border-radius: 0 3px 3px 0;
+    border-color: rgb(115, 73, 18) !important;
+    background-color: burlywood !important;
+    transition: background-color 1s ease-in-out;
+}
+
+.fa-pen {
+    color: rgb(115, 73, 18) !important;
+    transition: color 1s ease-in-out;
+    transition: background-color 1s ease-in-out;
+}
+
+.pen:hover>.fa-pen {
+    color: burlywood !important;
+}
+
+.pen:hover {
+    background-color: rgb(115, 73, 18) !important;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-group-text {
+    background-color: burlywood !important;
+    color: rgb(63, 39, 8) !important;
+    border-color: rgb(115, 73, 18) !important;
+}
+
+.form-control {
+    border-color: rgb(115, 73, 18) !important;
+    color: rgb(115, 73, 18) !important;
+    margin: 0px !important;
+    padding: 10px !important;
+}
+
+.input-group-text:first-child {
+    border-radius: 3px 0px 0px 3px !important;
+}
+
+.input-group-text:last-child {
+    border-radius: 0px 3px 3px 0px !important;
+}
+
+.quantityInput,
+.priceInput {
+    border-color: rgb(115, 73, 18) !important;
+    width: 70px !important;
+    height: auto !important;
+    margin: 0px -2px 0px -2px !important;
+}
+
+.productTitle {
+    margin: 15px 0px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+/* Products Right */
+.totalCard {
+    display: flex;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 10px 0px;
+    border-style: dashed;
+    margin: 10px 50px;
+    max-width: 400px;
+    height: 100%;
+}
+
+.pagos>.btn {
+    width: 70%;
+}
+
+.btn-outline-success {
+    height: 45px;
+    margin-bottom: 10px;
+}
+
+.btn-outline-danger {
+    height: 30px;
+    display: flex;
+    font-size: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resumen {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.btn-success {
+    width: 360px;
+}
+
+.totalProduct {
+    display: flex;
+}
+
+.coffeeTitle {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.quantityText,
+.priceText {
+    width: 50%;
+}
+
+.quantityText {
+    display: flex;
+    justify-content: center;
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin: .5rem 0;
+}
+
+
+.h1 {
+    font-family: patrick hand;
+    font-size: 30px;
+    color: rgb(115, 73, 18);
+}
+
+.pagos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.emptyCart {
+    margin: 30px;
+}
+
+.emptyTitle {
+    margin-bottom: 15px;
+}
+
+#shoppingCartContainer {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#wrongEP,  #fillR, #passMatchR, #passMaxR, #passPatternR, #zipR, #emailR, #phoneR {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 100px;
+    font-size: 17px;
+    background-color: burlywood;
+    border: 1px solid rgb(115, 73, 18);
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .25);
+    color: rgb(115, 73, 18);
+}
+
+#wrongEP.show, #fillR.show, #passMatchR.show, #passMaxR.show, #passPatternR.show, #zipR.show, #emailR.show, #phoneR.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+
+.allProducts {
+    width: 100%;
+    display: flex;
+    margin: 0px 0px 0px 50px;
+    flex-flow: wrap;
+}
+
+.firsDiv {
+    width: 100%;
+    display: flex;
+}
+
+.shippingInputs {
+    display: flex;
+}
+
+.inputSpace {
+    margin: 0px 10px;
+}

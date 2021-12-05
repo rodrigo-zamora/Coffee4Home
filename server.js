@@ -1,7 +1,5 @@
 "use strict";
 
-process.env.TOKEN_KEY = "secret";
-
 const express = require('express');
 const router = require('./server/controllers/router');
 const loginRouter = require('./server/controllers/login_router');
@@ -62,9 +60,10 @@ app.get('/shoppingCart', (req, res) => {
     res.render('cart');
  });
 
-/*app.get('/orders', (req, res) => {
+app.get('/orders', (req, res) => {
     res.render('orders');
-});*/
+});
+
 app.get('*', function(req, res){
     res.render('404');
   });
