@@ -3,7 +3,7 @@ let wordsDiv = document.getElementById('emptyCart');
 let addButtons = document.getElementsByTagName('add');
 let payButton = document.getElementById('pagar');
 
-payButton.addEventListener('click', pay); 
+payButton.addEventListener('click', pay);
 
 for (let i = 0; i < addButtons.length; i++) {
     addButtons[i].addEventListener('click', addtoCart(addButtons[i].getElementsByTagName('UUID')));
@@ -122,10 +122,11 @@ function removeFromCart(UUID) {
 }
 
 function pay() {
-    if (!searchToken()) {
+    if (false) {
         alert('Debes iniciar sesión para pagar');
         return;
     } else {
+        console.log('Pagar');
         let calle = document.getElementById('calle').value;
         let telefono = document.getElementById('telefono').value;
         let colonia = document.getElementById('colonia').value;
@@ -133,68 +134,54 @@ function pay() {
         let codigoPostal = document.getElementById('codigoPostal').value;
         let estado = document.getElementById('estado').value;
 
+        console.log(calle, telefono, colonia, ciudad, codigoPostal, estado);
         // Get the user data from the server
         let userEmail = localStorage.getItem('email');
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 var user = JSON.parse(this.responseText);
+                console.log(user);
+                makeOrder(user);
             }
         };
         xhttp.open("GET", "users/" + userEmail, true);
         xhttp.send();
-
-        //  Update the user data with the new address
-        var xhttp = new XMLHttpRequest();
-        xhttp.data = {
-            "UUID": user.UUID,
-            "firstName": user.firstName,
-            "lastName": user.lastName,
-            "email": user.email,
-            "password": bcrypt.hashSync(user.password, 10),
-            "street": calle,
-            "phone": telefono,
-            "zip": codigoPostal,
-            "city": ciudad,
-            "state": estado,
-            "role": user.role
-        }
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var user = JSON.parse(this.responseText);
-            }
-        };
-        xhttp.open("PUT", "admin/users/" + userEmail, true);
-        xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.setRequestHeader("x-auth", "admin");
-        xhttp.send();
-
-        // Get the shopping cart from localStorage
-        let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-
-        // Make a post request to /orders
-        var xhttp = new XMLHttpRequest();
-        xhttp.data = {
-            "orderStatus": "PENDING",
-            "orderTotal": localStorage.getItem('total'),
-            "orderItems": shoppingCart,
-            "userUUID": user.UUID
-        }
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                var order = JSON.parse(this.responseText);
-            }
-        };
-        xhttp.open("POST", "admin/orders", true);
-        xhttp.setRequestHeader("Content-Type", "application/json");
-        xhttp.setRequestHeader("x-auth", "admin");
-        xhttp.send();
-        alert('Compra realizada con éxito');
-        localStorage.removeItem('shoppingCart');
-        localStorage.removeItem('total');
-        window.location.href = '/orders';
     }
 }
+
+function makeOrder(user) {
+    // Get the shopping cart from localStorage
+    let shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    console.log("Shopping cart");
+    console.log(shoppingCart);
+    let total = localStorage.getItem('total');
+    var data = {
+        "userUUID": user.UUID,
+        "orderStatus": "CONFIRMED",
+        "orderTotal": Number(total),
+        "orderItems": shoppingCart
+    }
+    var xhr = new XMLHttpRequest();
+    console.log("Making order");
+    console.log(data);
+    xhr.open("POST", "/admin/orders", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("x-auth", "admin");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = xhr.responseText;
+            console.log(this.responseText);
+            console.log('Orden creada');
+        }
+        else if (xhr.readyState === 4 && xhr.status !== 200) {
+            alert("Compra no realizada");
+        }
+    };
+    xhr.send(JSON.stringify(data));
+    //alert('Compra realizada con éxito');
+}
+
 
 function searchToken() {
     let token = localStorage.getItem('token');

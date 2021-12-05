@@ -270,8 +270,8 @@ ol {
 }
 
 .btn.cancel-button.btn.btn-success {
-    width: 60%;
-    background-color: rgb(222, 155, 135) !important;
+    width: 100%;
+    background-color: #de9b87 !important;
     border: 1px solid rgb(115, 54, 18) !important;
     font-family: patrick hand;
     margin:5px;
@@ -288,7 +288,7 @@ ol {
 }
 
 .btn.accept-button.btn.btn-success {
-    width: 60%;
+    width: 100%;
     background-color: rgb(189, 222, 135) !important;
     border: 1px solid rgb(18, 115, 47) !important;
     font-family: patrick hand;
@@ -326,6 +326,7 @@ ol {
 .buttons {
     text-align: end;
     align-self: center;
+    max-width: 120px;
 }
 .productRow {
     width: 100%;
@@ -390,4 +391,9 @@ ol {
 }
 .rowProducts {
     padding: 15px !important;
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
 }

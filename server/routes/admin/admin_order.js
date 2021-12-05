@@ -19,7 +19,7 @@ router.route("/:uuid")
     .delete((req, res) => {
         dataHandler.deleteOrder(req, res);
     })
-    .post((req, res) => {
+    .put((req, res) => {
         dataHandler.updateOrder(req, res);
     });
 
