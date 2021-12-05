@@ -176,7 +176,7 @@ function addToCart(uuid) {
         console.log("Shopping cart is not empty");
         console.log(shoppingCart.length);
         for (let i = 0; i < shoppingCart.length; i++) {
-            if (shoppingCart[i].UUID == uuid) {
+            if (shoppingCart[i].UUID == uuid || shoppingCart[i].UUID == product.UUID) { 
                 console.log("Product already in the cart");
                 shoppingCart[i].quantity = (Number(shoppingCart[i].quantity) + Number(quantity));
             } else {
