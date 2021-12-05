@@ -1,9 +1,0 @@
-"use strict";
-
-const router = require('express').Router();
-const dataHandler = require('./datahandler/users_data_handler');
-
-router.route('/login')
-  .post((req, res) => dataHandler.login(req, res));
-
-module.exports = router;
