@@ -13,27 +13,8 @@ var state = document.getElementById("state");
 var zip = document.getElementById("zip");
 registerButton.addEventListener("click", sendSignUp);
 
-function validatePassword(){
-    if(password1.value != password2.value) {
-        password2.setCustomValidity("Passwords Don't Match");
-    } else {
-        password2.setCustomValidity('');
-    }
-}
-password1.onchange = validatePassword;
-password2.onkeyup = validatePassword;
-
-function validateZip(){
-    if(zip.value.length != 5) {
-        zip.setCustomValidity("Zip code must be 5 digits");
-    } else {
-        zip.setCustomValidity('');
-    }
-}
-zip.onchange = validatePassword;
-zip.onkeyup = validatePassword;
-
 function sendSignUp() {
+    var regex = new RegExp('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/');
     if (firstname.value == "" || lastname.value == "" || email.value == "" || password1.value == "" || password2.value == "" || phone.value == "" || street.value == "" || city.value == "" || state.value == "" || zip.value == "") {
         filltoast();
         // alert("Please fill out all fields");
@@ -63,7 +44,7 @@ function sendSignUp() {
             passmaxtoast();
             // alert("Password must be at least 8 characters");
         }
-        else if (String(password1.value).match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/) == false) {
+        else if (String(password1.value).match(regex) == false) {
             passpatterntoast();
             // alert("Password must contain at least one number, one lowercase and one uppercase letter");
         }
