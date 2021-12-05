@@ -13,51 +13,40 @@ var state = document.getElementById("state");
 var zip = document.getElementById("zip");
 registerButton.addEventListener("click", sendSignUp);
 
-function validatePassword(){
-    if(password1.value != password2.value) {
-        password2.setCustomValidity("Passwords Don't Match");
-    } else {
-        password2.setCustomValidity('');
-    }
-}
-password1.onchange = validatePassword;
-password2.onkeyup = validatePassword;
-
-function validateZip(){
-    if(zip.value.length != 5) {
-        zip.setCustomValidity("Zip code must be 5 digits");
-    } else {
-        zip.setCustomValidity('');
-    }
-}
-zip.onchange = validatePassword;
-zip.onkeyup = validatePassword;
-
 function sendSignUp() {
+    var regex = new RegExp('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/');
     if (firstname.value == "" || lastname.value == "" || email.value == "" || password1.value == "" || password2.value == "" || phone.value == "" || street.value == "" || city.value == "" || state.value == "" || zip.value == "") {
-        alert("Please fill out all fields");
+        filltoast();
+        // alert("Please fill out all fields");
     }
     else {
         if(password1.value != password2.value) {
-            alert("Passwords don't match");
+            passmatchtoast();
+            // alert("Passwords don't match");
         }
         else if(zip.value.length != 5) {
-            alert("Zip code must be 5 digits");
+            ziptoast();
+            // alert("Zip code must be 5 digits");
         }
         else if (email.value.indexOf("@") == -1 || email.value.indexOf(".") == -1) {
-            alert("Please enter a valid email");
+            emailtoast();
+            // alert("Please enter a valid email");
         }
         else if (phone.value.length != 10) {
-            alert("Please enter a valid phone number");
+            phonetoast();
+            // alert("Please enter a valid phone number");
         }
         else if (isNaN(phone.value)) {
-            alert("Please enter a valid phone number");
+            phonetoast();
+            // alert("Please enter a valid phone number");
         }
         else if (password1.value.length < 8) {
-            alert("Password must be at least 8 characters");
+            passmaxtoast();
+            // alert("Password must be at least 8 characters");
         }
-        else if (String(password1.value).match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/) == false) {
-            alert("Password must contain at least one number, one lowercase and one uppercase letter");
+        else if (String(password1.value).match(regex) == false) {
+            passpatterntoast();
+            // alert("Password must contain at least one number, one lowercase and one uppercase letter");
         }
         else{
             var newUser = {
@@ -108,9 +97,50 @@ function loginFromRegister(email, password) {
             checkLogin();
         }
         else if (xhr.readyState === 4 && xhr.status !== 200) {
-            alert("Wrong email or password");
+            // alert("Wrong email or password");
+            wrongEPtoast();
         }
     };
     xhr.send(JSON.stringify(data));
 }
 
+function wrongEPtoast() {
+    var x = document.getElementById("wrongEP");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function filltoast() {
+    var x = document.getElementById("fillR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function passmatchtoast() {
+    var x = document.getElementById("passMatchR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function passmaxtoast() {
+    var x = document.getElementById("passMaxR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function passpatterntoast() {
+    var x = document.getElementById("passPatternR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function ziptoast() {
+    var x = document.getElementById("zipR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function emailtoast() {
+    var x = document.getElementById("emailR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+function phonetoast() {
+    var x = document.getElementById("phoneR");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
