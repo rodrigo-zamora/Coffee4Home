@@ -1,5 +1,10 @@
 var searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", readFilters);
+let ordersButton = document.getElementById('barMyOrders');
+
+ordersButton.addEventListener('click', function () {
+    window.location.href = '/orders';
+});
 
 document.addEventListener("load", updatePage());
 

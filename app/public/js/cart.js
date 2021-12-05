@@ -2,6 +2,11 @@ let shoppingCartDiv = document.getElementById('shoppingCartContainer');
 let wordsDiv = document.getElementById('emptyCart');
 let addButtons = document.getElementsByTagName('add');
 let payButton = document.getElementById('pagar');
+let ordersButton = document.getElementById('barMyOrders');
+
+ordersButton.addEventListener('click', function () {
+    window.location.href = '/orders';
+});
 
 payButton.addEventListener('click', pay);
 
@@ -176,6 +181,7 @@ function makeOrder(user) {
             var response = xhr.responseText;
             console.log(this.responseText);
             console.log('Orden creada');
+            window.location.href = '/orders';
         }
         else if (xhr.readyState === 4 && xhr.status !== 200) {
             alert("Compra no realizada");
