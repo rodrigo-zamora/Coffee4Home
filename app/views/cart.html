@@ -25,14 +25,13 @@
                 <img class="logo" src="resources/logo.png" alt="Logo">
             </a>
         </div>
-
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
                 <div class="userPart">
                     <a class="login" href="#" data-toggle="modal" data-target="#ingresar" id="barLogin">Iniciar sesión</a>
                     <a class="signUp" href="#" data-toggle="modal" data-target="#registrar" id="barRegister">Registrarse</a>
                     <a class="signOut" href="#" data-toggle="modal" id="barSignOut" hidden>Cerrar sesión</a>
-                    <a class="myOrders" href="#" data-toggle="modal" id="barMyOrders" hidden>Mis ordenes</a>
+                    <a class="myOrders" href="orders" data-toggle="modal" id="barMyOrders" hidden>Mis ordenes</a>
                 </div>
                 <li>
                     <a class="nav-item">
@@ -119,30 +118,77 @@
                         <div class="row">
                             <div class="col-6">
                                 Nombre(s)
-                                <input type="text" name="" id="" class="form-control"
-                                    placeholder="Ingresa tu(s) nombre(s)" aria-describedby="helpId" required>
+                                <input type="text" name="" id="firstname" class="form-control mt-1" placeholder="Ingresa tu(s) nombre(s)"
+                                    aria-describedby="helpId" required>
                             </div>
                             <div class="col-6">
                                 Apellidos
-                                <input type="text" name="" id="" class="form-control"
-                                    placeholder="Ingresa tus Apellidos" aria-describedby="helpId" required>
+                                <input type="text" name="" id="lastname" class="form-control mt-1" placeholder="Ingresa tus Apellidos"
+                                    aria-describedby="helpId" required>
                             </div>
                         </div>
                         <br>
-                        Tu correo
-                        <input type="mail" name="" id="" class="form-control mt-3" placeholder="Ingresa tú correo"
-                            aria-describedby="helpId" required>
+                        <div class="row">
+                            <div class="col-12">
+                                Tu correo
+                                <input type="email" name="" id="email" class="form-control mt-1" placeholder="Ingresa tú correo"
+                                    aria-describedby="helpId" required>
+                            </div>
+                        </div>
                         <br>
-                        Contraseña
-                        <input type="password" name="" id="" class="form-control mt-3"
-                            placeholder="Ingresa tú contraseña" aria-describedby="helpId" required>
+                        <div class="row">
+                            <div class="col-6">
+                                Contraseña
+                                <input type="password" name="" id="password1" class="form-control mt-1"
+                                    placeholder="Ingresa tú contraseña" aria-describedby="helpId" 
+                                    title="Debe contener mayúsculas, minúsculas, números y en total 8 o más caracteres."
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            </div>
+                            <div class="col-6">
+                                Confirma tu contraseña
+                                <input type="password" name="" id="password2" class="form-control mt-1"
+                                    placeholder="Confirma tú contraseña" aria-describedby="helpId" 
+                                    title="Debe contener mayúsculas, minúsculas, números y en total 8 o más caracteres."
+                                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            </div>
+                        </div>
                         <br>
-                        Confirma tu contraseña
-                        <input type="password" name="" id="" class="form-control mt-3"
-                            placeholder="Confirma tú contraseña" aria-describedby="helpId" required>
-
+                        <div class="row">
+                            <div class="col-12">
+                                Teléfono o Teléfono Celular
+                                <input type="tel" name="" id="phone" class="form-control mt-1" placeholder="Ingresa tú teléfono o teléfono celular"
+                                    aria-describedby="helpId" pattern="[0-9]{10}" title="El teléfono debe tener 10 digitos" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                Calle
+                                <input type="text" name="" id="street" class="form-control mt-1" placeholder="Ingresa tu calle"
+                                    aria-describedby="helpId" required>
+                            </div>
+                            <div class="col-6">
+                                Ciudad
+                                <input type="text" name="" id="city" class="form-control mt-1" placeholder="Ingresa tu ciudad"
+                                    aria-describedby="helpId" required>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-6">
+                                Código Postal
+                                <input type="number" name="" id="zip" class="form-control mt-1" placeholder="Ingresa tu código postal"
+                                    aria-describedby="helpId" title="El código postal debe tener 5 digitos" required>
+                            </div>
+                            <div class="col-6">
+                                Estado
+                                <input type="text" name="" id="state" class="form-control mt-1" placeholder="Ingresa tu estado"
+                                    aria-describedby="helpId" required>
+                            </div>
+                        </div>
                         <div class="btn-center">
-                            <button type="submit" class="btn btn-success mt-3">Registrarse</button>
+                            <button type="button" class="btn btn-success mt-3"
+                                data-dismiss="modal" id="registerButton">Registrarse</button>
                         </div>
                     </form>
                 </div>
@@ -198,7 +244,7 @@
                         </div>
                         <div class="">
                             Ciudad
-                            <input type="tel" name="" id="ciudad" class="form-control" placeholder="Ciudad"
+                            <input type="text" name="" id="" class="form-control" placeholder="Ciudad"
                                 aria-describedby="helpId" required>
                         </div>
                     </div>
@@ -213,7 +259,7 @@
                         </div>
                         <div class="">
                             Estado
-                            <input type="tel" name="" id="estado" class="form-control" placeholder="Estado"
+                            <input type="text" name="" id="" class="form-control" placeholder="Estado"
                                 aria-describedby="helpId" required>
                         </div>
                     </div>
@@ -315,6 +361,7 @@
     <!-- Optional JavaScript -->
     <script src="js/cart.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/register.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

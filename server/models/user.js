@@ -34,23 +34,23 @@ let userSchema = mongoose.Schema({
     },
     street: {
         type: String,
-        required: false
+        required: true
     },
     city: {
         type: String,
-        required: false
+        required: true
     },
     state: {
         type: String,
-        required: false
+        required: true
     },
     zip: {
         type: String,
-        required: false
+        required: true
     },
     phone: {
         type: String,
-        required: false
+        required: true
     },
     role: {
         type: String,
