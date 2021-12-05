@@ -13,7 +13,6 @@ function searchToken() {
 
 function requestCancelOrder(order) {
     console.log("requestCancelOrder");
-    console.log("AAA");
     let myOrder = order[0];
     myOrder.orderStatus = "PENDING";
     // Make a post request to modify order status
@@ -184,11 +183,10 @@ function orderToHTML(order, isAdmin) {
     data-dismiss="modal">Rechazar</button>
     */
 function updatePage() {
-    if (!searchToken()) {
+    if (searchToken()) {
 
         // Make a request to know if the user is an admin
-        let email = "rodrigo.zamora@coffe4home.com";
-        //let email = localStorage.getItem('email');
+        let email = localStorage.getItem('email');
         console.log(email);
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
