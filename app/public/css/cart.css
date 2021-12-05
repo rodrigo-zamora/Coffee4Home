@@ -48,6 +48,7 @@ body {
 
 .form-control {
     width: 100% !important;
+    margin: 10px;
 }
 
 .form-inline {
@@ -227,12 +228,24 @@ ol {
     padding: 10px 10px;
     border-style: dashed;
     margin: 10px;
-    width: 100%;
+    width: 500px;
+    height: auto;
+}
+
+.totalInfo {
+    display: flex;
+    border: 1.5px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+    border-style: dashed;
+    margin: 10px;
+    width: 500px;
+    height: auto;
 }
 
 .shippingInfo {
     display: flex;
-    margin: 10px;
+    margin: 30px;
     height: 100%;
 }
 
@@ -319,7 +332,9 @@ input[disabled] {
 }
 
 .cards {
-    max-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .input-group-text {
@@ -331,6 +346,8 @@ input[disabled] {
 .form-control {
     border-color: rgb(115, 73, 18) !important;
     color: rgb(115, 73, 18) !important;
+    margin: 0px !important;
+    padding: 10px !important;
 }
 
 .input-group-text:first-child {
@@ -368,8 +385,8 @@ input[disabled] {
     border-radius: 10px;
     padding: 10px 0px;
     border-style: dashed;
-    margin: 10px 10px;
-    max-width: 250px;
+    margin: 10px 50px;
+    max-width: 400px;
     height: 100%;
 }
 
@@ -460,4 +477,24 @@ input[disabled] {
     flex-flow: wrap;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+.allProducts {
+    width: 100%;
+    display: flex;
+    margin: 0px 0px 0px 50px;
+    flex-flow: wrap;
+}
+
+.firsDiv {
+    width: 100%;
+    display: flex;
+}
+
+.shippingInputs {
+    display: flex;
+}
+
+.inputSpace {
+    margin: 0px 10px;
 }
