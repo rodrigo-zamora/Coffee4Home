@@ -189,8 +189,7 @@ function makeOrder(user) {
 function searchToken() {
     let token = localStorage.getItem('token');
     if (token == null) {
-        return false;
-    } else {
         return true;
     }
+    return false;
 }
