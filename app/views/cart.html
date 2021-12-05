@@ -211,23 +211,30 @@
     </div>
     <!-- Products -->
     <div id="shoppingCartContainer">
-        <div class="totalCard">
-            <div class="card-body" id="productsContainer">
+        <div class="firsDiv">
+
+            <div class="allProducts">
+                <div class="cards" id="cartContainer">
+                </div>
+            </div>
+            <div class="totalCard">
+                <div class="card-body" id="productsContainer">
+                </div>
             </div>
         </div>
         <div class="shippingInfo">
             <form>
                 <div>
-                    <div class="">
-                        <div class="">
-                            <h4>Envío</h4>
-                        </div>
-                        <div class="">
+                    <div>
+                        <h4>Envío</h4>
+                    </div>
+                    <div class="shippingInputs">
+                        <div class="inputSpace">
                             Calle
                             <input type="text" name="" id="calle" class="form-control" placeholder="Calle"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="">
+                        <div class="inputSpace">
                             Telefono
                             <input type="tel" name="" id="telefono" class="form-control" placeholder="Numero de Telefono"
                                 aria-describedby="helpId" required>
@@ -236,13 +243,13 @@
 
                     <br>
 
-                    <div class="">
-                        <div class="">
+                    <div class="shippingInputs">
+                        <div class="inputSpace">
                             Colonia
                             <input type="text" name="" id="colonia" class="form-control" placeholder="Colonia"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="">
+                        <div class="inputSpace">
                             Ciudad
                             <input type="text" name="" id="" class="form-control" placeholder="Ciudad"
                                 aria-describedby="helpId" required>
@@ -250,14 +257,14 @@
                     </div>
                     <br>
 
-                    <div class="">
+                    <div class="shippingInputs">
 
-                        <div class="">
+                        <div class="inputSpace">
                             Codigo postal
                             <input type="number" name="" id="codigoPostal" class="form-control" placeholder="Codigo postal"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="">
+                        <div class="inputSpace">
                             Estado
                             <input type="text" name="" id="" class="form-control" placeholder="Estado"
                                 aria-describedby="helpId" required>
@@ -269,33 +276,34 @@
                     <div class="" style="padding: 0px;">
                         <h4>Tarjeta</h4>
                     </div>
-                    <div class="">
-                        <div class="">
+                    <div class="shippingInputs">
+                        <div class="inputSpace">
                             Nombre(s)
                             <input type="text" name="" id="" class="form-control" placeholder="Nombre(s)"
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="">
+                        <div class="inputSpace">
                             Apellidos
                             <input type="text" name="" id="" class="form-control" placeholder="Apellidos"
                                 aria-describedby="helpId" required>
                         </div>
                         <br>
-                        <div class="">
-                            Tarjeta
-                            <input type="number" name="" id="" class="form-control" placeholder="Ingresa tú Tarjeta"
-                                aria-describedby="helpId" required>
-                        </div>
+                    </div>
+                    <br>
+                    <div class="">
+                        Tarjeta
+                        <input type="number" name="" id="" class="form-control" placeholder="Ingresa tú Tarjeta"
+                            aria-describedby="helpId" required>
                     </div>
                     <br>
 
-                    <div class="">
-                        <div class="">
+                    <div class="shippingInputs">
+                        <div class="inputSpace">
                             Fecha de Exp.
                             <input type="month" name="" id="" class="form-control" placeholder="Fecha de Exp."
                                 aria-describedby="helpId" required>
                         </div>
-                        <div class="">
+                        <div class="inputSpace">
                             CCV
                             <input type="number" name="" id="" class="form-control" placeholder="CCV"
                                 aria-describedby="helpId" required>
@@ -308,8 +316,6 @@
                     <button type="cancel" class="btn btn-outline-danger d-flex" onclick="javascript:window.location='/'">Cancelar</button>
                 </div>
             </form>
-        </div>
-        <div class="cards" id="cartContainer">
         </div>
     </div>
     <!--FOOTER-->
