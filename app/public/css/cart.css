@@ -524,7 +524,7 @@ input[disabled] {
     to {top: 0; opacity: 0;}
 }
 
-.allProducts {
+/* .allProducts {
     width: 100%;
     display: flex;
     margin: 0px 0px 0px 50px;
@@ -542,4 +542,4 @@ input[disabled] {
 
 .inputSpace {
     margin: 0px 10px;
-}
+} */
