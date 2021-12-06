@@ -70,8 +70,10 @@ function createOrder(req, res) {
 }
 
 function updateOrder(req, res) {
+    console.log(req.params.uuid);
+    // Update order with the given order UUID
     Order.findOneAndUpdate({
-        uuid: req.params.uuid
+        orderUUID: req.params.uuid
     }, req.body, {
         new: true
     }, (err, order) => {

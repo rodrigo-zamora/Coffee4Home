@@ -16,8 +16,10 @@ function requestCancelOrder(order) {
     let myOrder = order[0];
     myOrder.orderStatus = "PENDING";
     // Make a post request to modify order status
+    console.log("request admin/orders/" + myOrder.orderUUID);
+    console.log(myOrder);
     let xhttp = new XMLHttpRequest();
-    xhttp.open("PUT", "/admin/orders/" + myOrder.orderUUID, true);
+    xhttp.open("PUT", "admin/orders/" + myOrder.orderUUID, true);
     xhttp.setRequestHeader("Content-Type", "application/json");
     xhttp.setRequestHeader("x-auth", "admin");
     xhttp.onreadystatechange = function () {
