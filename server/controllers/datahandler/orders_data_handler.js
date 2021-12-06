@@ -14,21 +14,39 @@ function getAllOrders(req, res) {
 }
 
 function getOrderByUUID(req, res) {
-    Order.findOne({
-        uuid: req.params.uuid
-    }, (err, order) => {
-        if (err) {
-            return res.status(400).json({
-                error: "Order not found"
-            });
-        }
-        return res.json(order);
-    }).select("-__v");
+    // UUID is the uuid of the user
+    // Search all orders for the user with the given UUID
+    console.log(req.params.uuid);
+    if (req.headers.isorder == undefined) {
+        console.log("Searching by userUUID")
+        Order.find({
+            userUUID: req.params.uuid
+        }, (err, orders) => {
+            if (err) {
+                return res.status(400).json({
+                    error: "Failed to get orders"
+                });
+            }
+            return res.json(orders);
+        });
+    } else {
+        console.log("Searching by orderUUID");
+        Order.find({
+            orderUUID: req.params.uuid
+        }, (err, orders) => {
+            if (err) {
+                return res.status(400).send(err);
+            }
+            return res.json(orders);
+        });
+    }
+    
 }
 
 function createOrder(req, res) {
     let order = req.body;
-    try {
+    console.log(order);
+   /*  try {
         Order.findOne({
             uuid: order.uuid
         }, (err, existingOrder) => {
@@ -37,7 +55,7 @@ function createOrder(req, res) {
             }
             if (existingOrder) {
                 return res.status(400).send("Order already exists");
-            }
+            } */
             let newOrder = new Order(order);
             newOrder.save((err, order) => {
                 if (err) {
@@ -45,15 +63,17 @@ function createOrder(req, res) {
                 }
                 return res.status(200).send("Order created!");
             });
-        });
+        /* });
     } catch (err) {
         res.status(400).json(err);
-    }
+    } */
 }
 
 function updateOrder(req, res) {
+    console.log(req.params.uuid);
+    // Update order with the given order UUID
     Order.findOneAndUpdate({
-        uuid: req.params.uuid
+        orderUUID: req.params.uuid
     }, req.body, {
         new: true
     }, (err, order) => {

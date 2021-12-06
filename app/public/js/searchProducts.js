@@ -1,5 +1,10 @@
 var searchButton = document.getElementById("searchButton");
 searchButton.addEventListener("click", readFilters);
+let ordersButton = document.getElementById('barMyOrders');
+
+ordersButton.addEventListener('click', function () {
+    window.location.href = '/orders';
+});
 
 document.addEventListener("load", updatePage());
 
@@ -143,7 +148,6 @@ function showProducts(products) {
 
 function addToCart(uuid) {
     toast();
-    console.log("Adding to cart: " + uuid);
     // Get input above button
     let quantity = 0;
     let quantities = document.getElementsByClassName("quantityInput form-control");
@@ -169,20 +173,24 @@ function addToCart(uuid) {
     // Check if product is already in the cart
     console.log("Checking if product is already in the cart");
     console.log(shoppingCart);
-    if (shoppingCart == null || shoppingCart == "") {
-        console.log("Shopping cart is empty");
+    if (shoppingCart == null || shoppingCart == "" || shoppingCart.length == 0) {
+        console.log("Shopping cart is empty, pushing product");
         shoppingCart.push(product);
     } else {
-        console.log("Shopping cart is not empty");
-        console.log(shoppingCart.length);
+        console.log("Shopping cart is not empty, checking if product is already in the cart");
+        let found = false;
         for (let i = 0; i < shoppingCart.length; i++) {
             if (shoppingCart[i].UUID == uuid) {
-                console.log("Product already in the cart");
-                shoppingCart[i].quantity = (Number(shoppingCart[i].quantity) + Number(quantity));
-            } else {
-                console.log("Product not in the cart");
-                shoppingCart.push(product);
+                console.log("Product is already in the cart");
+                shoppingCart[i].quantity = parseInt(shoppingCart[i].quantity) + parseInt(quantity);
+                found = true;
             }
+        }
+        if (!found) {
+            console.log("Product is not in the cart, pushing product");
+            shoppingCart.push(product);
+        } else {
+            console.log("Product is already in the cart, updating quantity");
         }
     }
     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));

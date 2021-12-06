@@ -14,7 +14,8 @@ let orderSchema = new mongoose.Schema({
     },
     userUUID: {
         type: String,
-        required: true
+        required: true,
+        unique: false
     },
     orderDate: {
         type: Date,
@@ -23,7 +24,7 @@ let orderSchema = new mongoose.Schema({
     },
     orderStatus: { 
         type: String,
-        enum: ['PENDING', 'CONFIRMED', 'DELIVERED', 'CANCELLED'],
+        enum: ['PENDING', 'CONFIRMED', 'DELIVERED', 'CANCELLED', 'REJECTED'],
         required: true
     },
     orderTotal: {
@@ -31,27 +32,17 @@ let orderSchema = new mongoose.Schema({
         required: true
     },
     orderItems: [{
-        productUUID: {
+        UUID: {
             type: String,
-            required: true
+            required: true,
+            unique: false
         },
-        productName: {
-            type: String,
-            required: true
-        },
-        productPrice: {
+        quantity: {
             type: Number,
-            required: true
-        },
-        productQuantity: {
-            type: Number,
-            required: true
-        },
-        productTotal: {
-            type: Number,
-            required: true
-        },
-    }],
+            required: true,
+            unique: false
+        }
+    }]
 }, { collection : 'orders' });
 
 let Order = mongoose.model('order', orderSchema);

@@ -270,8 +270,8 @@ ol {
 }
 
 .btn.cancel-button.btn.btn-success {
-    width: 60%;
-    background-color: rgb(222, 155, 135) !important;
+    width: 100%;
+    background-color: #de9b87 !important;
     border: 1px solid rgb(115, 54, 18) !important;
     font-family: patrick hand;
     margin:5px;
@@ -288,7 +288,7 @@ ol {
 }
 
 .btn.accept-button.btn.btn-success {
-    width: 60%;
+    width: 100%;
     background-color: rgb(189, 222, 135) !important;
     border: 1px solid rgb(18, 115, 47) !important;
     font-family: patrick hand;
@@ -326,6 +326,7 @@ ol {
 .buttons {
     text-align: end;
     align-self: center;
+    max-width: 120px;
 }
 .productRow {
     width: 100%;
@@ -390,4 +391,54 @@ ol {
 }
 .rowProducts {
     padding: 15px !important;
+}
+
+#wrongEP,  #fillR, #passMatchR, #passMaxR, #passPatternR, #zipR, #emailR, #phoneR {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 100px;
+    font-size: 17px;
+    background-color: burlywood;
+    border: 1px solid rgb(115, 73, 18);
+    font-family: patrick hand;
+    box-shadow: 0 0 0 .2rem rgb(115, 73, 18, .25);
+    color: rgb(115, 73, 18);
+}
+
+#wrongEP.show, #fillR.show, #passMatchR.show, #passMaxR.show, #passPatternR.show, #zipR.show, #emailR.show, #phoneR.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {top: 0; opacity: 0;} 
+    to {top: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {top: 0; opacity: 0;}
+    to {top: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {top: 30px; opacity: 1;} 
+    to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {top: 30px; opacity: 1;}
+    to {top: 0; opacity: 0;}
+}
+
+.orderHeader {
+    display: flex;
+    justify-content: space-between;
 }

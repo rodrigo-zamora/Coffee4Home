@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 
-let privateKey = process.env.TOKEN_KEY;
+process.env.TOKEN_KEY = "secret941736";
 
 /* const verifyAdmin = (req, res, next) => {
     let token = req.headers.authorization;

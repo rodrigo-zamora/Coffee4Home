@@ -27,7 +27,8 @@ function sendLogin() {
             checkLogin();
         }
         else if (xhr.readyState === 4 && xhr.status !== 200) {
-            alert("Wrong email or password");
+            //alert("Wrong email or password");
+            wrongEPtoast();
         }
     };
     xhr.send(JSON.stringify(data));
@@ -49,8 +50,21 @@ function checkLogin() {
     }
 }
 
+function wrongEPtoast() {
+    var x = document.getElementById("wrongEP");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+
 function signOut() {
-    localStorage.removeItem("token");
-    localStorage.removeItem("email");
+    var signOut = confirm("¿Quieres cerrar sesión?");
+    if (signOut == true) {
+        localStorage.removeItem("token");
+        localStorage.removeItem("email");
+        localStorage.removeItem("shoppingCart");
+        localStorage.removeItem("total");
+    } else {
+        return;
+    }
     checkLogin();
 }
