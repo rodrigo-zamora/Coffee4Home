@@ -22,7 +22,7 @@ function requestCancelOrder(order) {
     xhttp.setRequestHeader("x-auth", "admin");
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-           alert("Solcitud de cancelacion enviada");
+            alert("Solcitud de cancelacion enviada");
             window.location.reload();
         }
     };

@@ -1,7 +1,5 @@
 "use strict";
 
-process.env.TOKEN_KEY = "secret941736";
-
 const express = require('express');
 const router = require('./server/controllers/router');
 const loginRouter = require('./server/controllers/login_router');
