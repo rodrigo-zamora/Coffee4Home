@@ -14,7 +14,6 @@ var zip = document.getElementById("zip");
 registerButton.addEventListener("click", sendSignUp);
 
 function sendSignUp() {
-    var regex = new RegExp('/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/');
     if (firstname.value == "" || lastname.value == "" || email.value == "" || password1.value == "" || password2.value == "" || phone.value == "" || street.value == "" || city.value == "" || state.value == "" || zip.value == "") {
         filltoast();
         // alert("Please fill out all fields");
@@ -44,7 +43,7 @@ function sendSignUp() {
             passmaxtoast();
             // alert("Password must be at least 8 characters");
         }
-        else if (String(password1.value).match(regex) == false) {
+        else if (String(password1.value).match(/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/) == false) {
             passpatterntoast();
             // alert("Password must contain at least one number, one lowercase and one uppercase letter");
         }

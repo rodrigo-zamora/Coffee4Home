@@ -436,8 +436,9 @@ ol {
 @keyframes fadeout {
     from {top: 30px; opacity: 1;}
     to {top: 0; opacity: 0;}
+}
 
- .orderHeader {
+.orderHeader {
     display: flex;
     justify-content: space-between;
 }
