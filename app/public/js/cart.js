@@ -173,7 +173,7 @@ function makeOrder(user) {
     var xhr = new XMLHttpRequest();
     console.log("Making order");
     console.log(data);
-    xhr.open("POST", "/admin/orders", true);
+    xhr.open("POST", "/admin/orders", false);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("x-auth", "admin");
     xhr.onreadystatechange = function () {
@@ -181,14 +181,16 @@ function makeOrder(user) {
             var response = xhr.responseText;
             console.log(this.responseText);
             console.log('Orden creada');
-            window.location.href = '/orders';
         }
         else if (xhr.readyState === 4 && xhr.status !== 200) {
             alert("Compra no realizada");
         }
     };
     xhr.send(JSON.stringify(data));
-    //alert('Compra realizada con éxito');
+    alert('Compra realizada con éxito');
+    localStorage.removeItem('shoppingCart');
+    localStorage.removeItem('total');
+    window.location.href = 'orders';
 }
 
 
