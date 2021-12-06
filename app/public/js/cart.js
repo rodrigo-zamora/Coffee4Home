@@ -190,7 +190,7 @@ function makeOrder(user) {
     alert('Compra realizada con éxito');
     localStorage.removeItem('shoppingCart');
     localStorage.removeItem('total');
-    window.location.href = 'orders';
+    updatePage();
 }
 
 
